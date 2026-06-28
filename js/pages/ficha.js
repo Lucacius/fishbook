@@ -1,0 +1,901 @@
+/*
+=========================================================
+FishBook
+Página da Ficha da Isca
+=========================================================
+*/
+
+(() => {
+
+"use strict";
+
+let lure = null;
+
+/*=========================================================
+Carrega a isca
+=========================================================*/
+
+const loadLure = id=>{
+
+    lure =
+
+        window.Database
+
+            .getLure(id);
+
+};
+
+/*=========================================================
+Utilidades
+=========================================================*/
+
+const createSection = titulo => {
+
+    const section =
+        document.createElement("section");
+
+    section.className =
+        "ficha-section";
+
+    const h2 =
+        document.createElement("h2");
+
+    h2.textContent =
+        titulo;
+
+    section.append(h2);
+
+    return section;
+
+};
+
+const createInfoRow = (label,value)=>{
+
+    const row =
+        document.createElement("div");
+
+    row.className =
+        "ficha-info-row";
+
+    const left =
+        document.createElement("span");
+
+    left.className =
+        "ficha-info-label";
+
+    left.textContent =
+        label;
+
+    const right =
+        document.createElement("span");
+
+    right.className =
+        "ficha-info-value";
+
+    right.textContent =
+        value ?? "-";
+
+    row.append(
+
+        left,
+
+        right
+
+    );
+
+    return row;
+
+};
+
+const createBadge = value =>
+
+    window.FishBook
+        .Components
+        .Badge
+        .create({
+
+            value
+
+        });
+
+/*=========================================================
+Cabeçalho
+=========================================================*/
+
+const renderHeader = ()=>{
+
+    const header =
+        document.createElement("header");
+
+    header.className =
+        "ficha-header";
+
+    const voltar =
+        document.createElement("button");
+
+    voltar.className =
+        "button button-secondary";
+
+    voltar.textContent =
+        "← Catálogo";
+
+    voltar.onclick=()=>{
+
+        window.Router.open("catalogo");
+
+    };
+
+    const codigo =
+        document.createElement("div");
+
+    codigo.className =
+        "ficha-codigo";
+
+    codigo.textContent =
+        lure.id;
+
+    const nome =
+        document.createElement("h1");
+
+    nome.textContent =
+        lure.nome;
+
+    header.append(
+
+        voltar,
+
+        codigo,
+
+        nome,
+
+        createBadge(
+            lure.eficiencia
+        )
+
+    );
+
+    return header;
+
+};
+
+/*=========================================================
+Foto
+=========================================================*/
+
+const renderPhoto = ()=>{
+
+    const container =
+        document.createElement("div");
+
+    container.className =
+        "ficha-photo";
+
+    const img =
+        document.createElement("img");
+
+    img.className =
+        "foto-isca";
+
+    img.src =
+        `assets/img/iscas/${lure.foto}`;
+
+    img.alt =
+        lure.nome;
+
+    img.onerror = ()=>{
+
+        img.onerror = null;
+
+        img.src =
+            "assets/img/iscas/semfoto.png";
+
+    };
+
+    container.append(img);
+
+    return container;
+
+};
+
+/*=========================================================
+Informações
+=========================================================*/
+
+const renderInfo = ()=>{
+
+    const container =
+        document.createElement("div");
+
+    container.className =
+        "ficha-info";
+
+    [
+
+        ["Categoria", lure.categoria],
+
+        ["Kit", lure.kit],
+
+        ["Família", lure.familia],
+
+        ["Subtipo", lure.subtipo || "-"],
+
+        ["Peso", `${lure.peso} g`],
+
+        [
+
+            "Comprimento",
+
+            lure.comprimento
+
+                ? `${lure.comprimento} cm`
+
+                : "-"
+
+        ],
+
+        [
+
+            "Profundidade",
+
+            lure.profundidade?.tipo ?? "-"
+
+        ]
+
+    ]
+
+    .forEach(item=>{
+
+        container.append(
+
+            createInfoRow(
+
+                item[0],
+
+                item[1]
+
+            )
+
+        );
+
+    });
+
+    return container;
+
+};
+/*=========================================================
+Horários
+=========================================================*/
+
+const createRatingRow = (label,value)=>{
+
+    const row =
+        document.createElement("div");
+
+    row.className =
+        "ficha-rating-row";
+
+    const left =
+        document.createElement("span");
+
+    left.className =
+        "ficha-rating-label";
+
+    left.textContent =
+        label;
+
+    row.append(
+
+        left,
+
+        createBadge(value)
+
+    );
+
+    return row;
+
+};
+
+const renderHorario = ()=>{
+
+    const section =
+        createSection("Horários");
+
+    section.append(
+
+        createRatingRow(
+            "🌅 Amanhecer",
+            lure.horario?.amanhecer ?? 0
+        ),
+
+        createRatingRow(
+            "☀️ Manhã",
+            lure.horario?.manha ?? 0
+        ),
+
+        createRatingRow(
+            "🌤️ Tarde",
+            lure.horario?.tarde ?? 0
+        ),
+
+        createRatingRow(
+            "🌙 Noite",
+            lure.horario?.noite ?? 0
+        )
+
+    );
+
+    return section;
+
+};
+
+/*=========================================================
+Água
+=========================================================*/
+
+const renderAgua = ()=>{
+
+    const section =
+        createSection("Condição da Água");
+
+    section.append(
+
+        createRatingRow(
+            "Água Limpa",
+            lure.agua?.limpa ?? 0
+        ),
+
+        createRatingRow(
+            "Turva Leve",
+            lure.agua?.turvaLeve ?? 0
+        ),
+
+        createRatingRow(
+            "Turva",
+            lure.agua?.turva ?? 0
+        )
+
+    );
+
+    return section;
+
+};
+
+/*=========================================================
+Estruturas
+=========================================================*/
+
+const createChip = texto=>{
+
+    const chip =
+        document.createElement("span");
+
+    chip.className =
+        "chip";
+
+    chip.textContent =
+        texto;
+
+    return chip;
+
+};
+
+const renderEstruturas = ()=>{
+
+    const section =
+        createSection("Estruturas");
+
+    const area =
+        document.createElement("div");
+
+    area.className =
+        "ficha-tags";
+
+    (lure.estrutura ?? []).forEach(item=>{
+
+        area.append(
+
+            createChip(item)
+
+        );
+
+    });
+
+    section.append(area);
+
+    return section;
+
+};
+
+/*=========================================================
+Trabalhos
+=========================================================*/
+
+const renderTrabalhos = ()=>{
+
+    const section =
+        createSection("Trabalhos");
+
+    const area =
+        document.createElement("div");
+
+    area.className =
+        "ficha-tags";
+
+    (lure.trabalho ?? []).forEach(item=>{
+
+        area.append(
+
+            createChip(item)
+
+        );
+
+    });
+
+    section.append(area);
+
+    return section;
+
+};
+
+/*=========================================================
+Espécies
+=========================================================*/
+
+const renderEspecies = ()=>{
+
+    const section =
+        createSection("Espécies");
+
+    const area =
+        document.createElement("div");
+
+    area.className =
+        "ficha-tags";
+
+    (lure.alvos ?? []).forEach(item=>{
+
+        area.append(
+
+            createChip(item)
+
+        );
+
+    });
+
+    section.append(area);
+
+    return section;
+
+};
+
+/*=========================================================
+Estoque
+=========================================================*/
+
+const renderEstoque = ()=>{
+
+    const section =
+        createSection("Estoque");
+
+const estoque =
+
+    window.Database
+
+        .getStockByLure(
+
+            lure.id
+
+        );
+
+    section.append(
+
+        createInfoRow(
+
+            "Quantidade",
+
+            estoque.length
+
+        )
+
+    );
+
+    if(estoque.length){
+
+        const table =
+            document.createElement("table");
+
+        table.className =
+            "ficha-table";
+
+        const thead =
+            document.createElement("thead");
+
+        thead.innerHTML = `
+
+            <tr>
+
+                <th>Caixa</th>
+
+                <th>Cor</th>
+
+                <th></th>
+
+            </tr>
+
+        `;
+
+        table.append(thead);
+
+        const tbody =
+            document.createElement("tbody");
+
+estoque.forEach(item=>{
+
+    const tr =
+        document.createElement("tr");
+
+    const caixa =
+        document.createElement("td");
+
+    caixa.textContent =
+        item.caixa;
+
+    const cor =
+        document.createElement("td");
+
+    cor.textContent =
+        item.cor;
+
+    const status =
+        document.createElement("td");
+
+    status.style.textAlign =
+        "center";
+
+    const dot =
+        document.createElement("span");
+
+    dot.className =
+        "status-dot";
+
+    switch(item.status){
+
+        case "Ativa":
+
+            dot.classList.add(
+                "status-ativa"
+            );
+
+            break;
+
+        case "Reserva":
+
+            dot.classList.add(
+                "status-reserva"
+            );
+
+            break;
+
+        case "Manutenção":
+
+            dot.classList.add(
+                "status-manutencao"
+            );
+
+            break;
+
+        case "Baixada":
+
+            dot.classList.add(
+                "status-baixada"
+            );
+
+            break;
+
+    }
+
+    dot.title =
+        item.status;
+
+    status.append(dot);
+
+    tr.append(
+
+        caixa,
+
+        cor,
+
+        status
+
+    );
+
+    tbody.append(tr);
+
+});
+
+        table.append(tbody);
+
+        section.append(table);
+
+    }
+
+    return section;
+
+};
+
+/*=========================================================
+Observações
+=========================================================*/
+
+const renderObservacoes = ()=>{
+
+    const section =
+        createSection("Observações");
+
+    const texto =
+        document.createElement("p");
+
+    texto.className =
+        "ficha-observacoes";
+
+    texto.textContent =
+
+        lure.observacoes ||
+
+        "Nenhuma observação cadastrada.";
+
+    section.append(texto);
+
+    return section;
+
+};
+
+/*=========================================================
+Ações
+=========================================================*/
+
+const createActionButton = (
+
+    texto,
+
+    classe,
+
+    callback
+
+)=>{
+
+    const button =
+        document.createElement("button");
+
+    button.className =
+        classe;
+
+    button.textContent =
+        texto;
+
+    button.onclick =
+        callback;
+
+    return button;
+
+};
+
+const renderActions = ()=>{
+
+    const section =
+        createSection("Ações");
+
+    section.classList.add(
+        "ficha-actions"
+    );
+
+    section.append(
+
+        createActionButton(
+
+            "✏️ Editar",
+
+            "button",
+
+            ()=>{
+
+                console.log(
+
+                    "Editar",
+
+                    lure.id
+
+                );
+
+            }
+
+        ),
+
+        createActionButton(
+
+            "📄 Duplicar",
+
+            "button",
+
+            ()=>{
+
+                console.log(
+
+                    "Duplicar",
+
+                    lure.id
+
+                );
+
+            }
+
+        ),
+
+        createActionButton(
+
+            "🗑 Excluir",
+
+            "button button-danger",
+
+            ()=>{
+
+                console.log(
+
+                    "Excluir",
+
+                    lure.id
+
+                );
+
+            }
+
+        )
+
+    );
+
+    return section;
+
+};
+
+/*=========================================================
+Render da página
+=========================================================*/
+
+const render = ()=>{
+
+    const root =
+        document.querySelector("#app");
+
+    if(!root){
+
+        return;
+
+    }
+
+    if(!lure){
+
+        root.innerHTML =
+
+            "<h2>Isca não encontrada.</h2>";
+
+        return;
+
+    }
+
+    const page =
+        document.createElement("div");
+
+    page.className =
+        "ficha";
+
+    const hero =
+    document.createElement("section");
+
+hero.className =
+    "ficha-hero";
+
+const left =
+    document.createElement("div");
+
+left.className =
+    "ficha-left";
+
+left.append(
+
+    renderPhoto()
+
+);
+
+const right =
+    document.createElement("div");
+
+right.className =
+    "ficha-right";
+
+right.append(
+
+    renderInfo()
+
+);
+
+const heroCard =
+    document.createElement("section");
+
+heroCard.className =
+    "ficha-card";
+
+heroCard.append(
+
+    left,
+
+    right
+
+);
+
+page.append(
+
+    renderHeader(),
+
+    heroCard,
+
+    renderHorario(),
+
+    renderAgua(),
+
+    renderEstruturas(),
+
+    renderTrabalhos(),
+
+    renderEspecies(),
+
+    renderEstoque(),
+
+    renderObservacoes(),
+
+    renderActions()
+
+);
+    root.replaceChildren(page);
+
+};
+
+/*=========================================================
+Página
+=========================================================*/
+
+const Ficha = {
+
+    async open(id){
+
+        loadLure(id);
+
+        render();
+
+    },
+
+    async close(){
+
+        document
+            .querySelector("#app")
+            ?.replaceChildren();
+
+    }
+
+};
+
+window.FishBook =
+    window.FishBook ?? {};
+
+window.FishBook.Pages =
+    window.FishBook.Pages ?? {};
+
+window.FishBook.Pages.Ficha =
+    Object.freeze(Ficha);
+
+window.Router.register(
+    "ficha",
+    window.FishBook.Pages.Ficha
+);
+
+})();
+

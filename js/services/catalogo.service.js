@@ -1,0 +1,185 @@
+/*
+=========================================================
+FishBook
+Catalogo Service
+=========================================================
+*/
+
+(() => {
+
+"use strict";
+
+const sortById = list =>
+
+    [...list].sort(
+
+        (a,b)=>
+
+            a.id.localeCompare(
+
+                b.id,
+
+                "pt-BR",
+
+                {
+
+                    numeric:true
+
+                }
+
+            )
+
+    );
+
+const listar = (filters = {})=>{
+
+    const texto =
+
+        String(
+
+            filters.texto ?? ""
+
+        )
+
+        .trim()
+
+        .toLowerCase();
+
+    const categoria =
+
+        filters.categoria ?? "";
+
+    return sortById(
+
+        window.Database
+
+            .getLures()
+
+            .map(lure=>({
+
+                ...lure,
+
+                estoque:
+
+                    window.Database
+
+                        .getStockByLure(
+
+                            lure.id
+
+                        )
+
+                        .filter(item=>
+
+                            item.status !==
+
+                            "Baixada"
+
+                        )
+
+                        .length
+
+            }))
+
+            .filter(lure=>{
+
+                const pesquisa = [
+
+                    lure.id,
+
+                    lure.nome,
+
+                    lure.familia,
+
+                    lure.categoria,
+
+                    lure.kit,
+
+                    lure.subtipo
+
+                ]
+
+                .filter(Boolean)
+
+                .join(" ")
+
+                .toLowerCase();
+
+                const okTexto =
+
+                    !texto ||
+
+                    pesquisa.includes(
+
+                        texto
+
+                    );
+
+                const okCategoria =
+
+                    !categoria ||
+
+                    lure.categoria===
+
+                    categoria;
+
+                return (
+
+                    okTexto &&
+
+                    okCategoria
+
+                );
+
+            })
+
+    );
+
+};
+
+const categorias = ()=>{
+
+    return [
+
+        ...window.Database
+
+            .getCategories()
+
+    ]
+
+    .sort(
+
+        (a,b)=>
+
+            a.nome.localeCompare(
+
+                b.nome,
+
+                "pt-BR"
+
+            )
+
+    );
+
+};
+
+const CatalogoService =
+
+    Object.freeze({
+
+        listar,
+
+        categorias
+
+    });
+
+window.FishBook =
+    window.FishBook ?? {};
+
+window.FishBook.Services =
+    window.FishBook.Services ?? {};
+
+window.FishBook.Services.CatalogoService =
+    CatalogoService;
+
+})();

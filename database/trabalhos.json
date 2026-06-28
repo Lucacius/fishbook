@@ -1,0 +1,45 @@
+{
+  "versao": "1.0",
+  "trabalhos": [
+    {
+      "id": "zig-zag",
+      "nome": "Zig-zag"
+    },
+    {
+      "id": "popping",
+      "nome": "Popping"
+    },
+    {
+      "id": "toques",
+      "nome": "Toques"
+    },
+    {
+      "id": "pausas",
+      "nome": "Pausas"
+    },
+    {
+      "id": "toques-pausas",
+      "nome": "Toques • Pausas"
+    },
+    {
+      "id": "stop-go",
+      "nome": "Stop & Go"
+    },
+    {
+      "id": "recolhimento-continuo",
+      "nome": "Recolhimento contínuo"
+    },
+    {
+      "id": "recolhimento-lento",
+      "nome": "Recolhimento lento"
+    },
+    {
+      "id": "queda-livre",
+      "nome": "Queda livre"
+    },
+    {
+      "id": "bottom-hopping",
+      "nome": "Bottom Hopping"
+    }
+  ]
+}

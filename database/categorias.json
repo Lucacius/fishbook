@@ -1,0 +1,70 @@
+{
+  "versao": "1.0",
+  "categorias": [
+    {
+      "id": "p-sup",
+      "nome": "Power • Superfície",
+      "kit": "power"
+    },
+    {
+      "id": "p-min",
+      "nome": "Power • Minnow",
+      "kit": "power"
+    },
+    {
+      "id": "p-crk",
+      "nome": "Power • Crankbait",
+      "kit": "power"
+    },
+    {
+      "id": "p-vib",
+      "nome": "Power • Vibração",
+      "kit": "power"
+    },
+    {
+      "id": "p-swb",
+      "nome": "Power • Swimbait",
+      "kit": "power"
+    },
+    {
+      "id": "p-sft",
+      "nome": "Power • Soft",
+      "kit": "power"
+    },
+    {
+      "id": "p-fnd",
+      "nome": "Power • Fundo",
+      "kit": "power"
+    },
+    {
+      "id": "u-sup",
+      "nome": "Ultralight • Superfície",
+      "kit": "ultralight"
+    },
+    {
+      "id": "u-min",
+      "nome": "Ultralight • Minnow",
+      "kit": "ultralight"
+    },
+    {
+      "id": "u-crk",
+      "nome": "Ultralight • Crankbait",
+      "kit": "ultralight"
+    },
+    {
+      "id": "u-vib",
+      "nome": "Ultralight • Vibração",
+      "kit": "ultralight"
+    },
+    {
+      "id": "u-fin",
+      "nome": "Ultralight • Finesse",
+      "kit": "ultralight"
+    },
+    {
+      "id": "u-sft",
+      "nome": "Ultralight • Soft",
+      "kit": "ultralight"
+    }
+  ]
+}

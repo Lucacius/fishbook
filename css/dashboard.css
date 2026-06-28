@@ -1,0 +1,83 @@
+/*
+ * Composição visual exclusiva do Dashboard.
+ * O grid parte do iPhone SE e cresce progressivamente até o desktop.
+ */
+
+.dashboard {
+  display: grid;
+  gap: clamp(1.75rem, 5vw, 3rem);
+  margin-inline: auto;
+  max-width: var(--content-max-width);
+  width: 100%;
+}
+
+.dashboard-header {
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      color-mix(in srgb, var(--color-accent) 22%, transparent),
+      transparent 42%
+    ),
+    linear-gradient(145deg, var(--color-surface-elevated), var(--color-surface));
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 20%);
+  overflow: hidden;
+  padding: clamp(1.5rem, 5vw, 2.75rem);
+  position: relative;
+}
+
+.dashboard-brand {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.dashboard-brand__icon {
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1;
+}
+
+.dashboard-title {
+  font-size: clamp(2rem, 8vw, 3.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+}
+
+.dashboard-subtitle {
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  line-height: 1.6;
+  margin: 1.25rem 0 0;
+  max-width: 34rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Celulares maiores que o iPhone SE utilizam duas colunas. */
+@media (min-width: 23.5rem) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablets utilizam três colunas. */
+@media (min-width: 48rem) {
+  .dashboard-grid {
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Desktops utilizam quatro colunas. */
+@media (min-width: 64rem) {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

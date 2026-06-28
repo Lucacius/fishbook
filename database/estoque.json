@@ -1,0 +1,62 @@
+{
+  "versao": "1.0",
+  "caixas": [
+    {
+      "id": "power-01",
+      "nome": "Power 01",
+      "equipamento": "power",
+      "ordem": 1,
+      "ativa": true
+    },
+    {
+      "id": "power-02",
+      "nome": "Power 02",
+      "equipamento": "power",
+      "ordem": 2,
+      "ativa": true
+    },
+    {
+      "id": "ultralight-01",
+      "nome": "Ultralight 01",
+      "equipamento": "ultralight",
+      "ordem": 3,
+      "ativa": true
+    }
+  ],
+  "estoque": [
+    {
+      "id": "est-0001",
+      "isca": "p-sup-02",
+      "caixa": "power-01",
+      "ordem": 1,
+      "cor": "Branco",
+      "estado": "Nova",
+      "status": "Ativa",
+      "garateias": "Original",
+      "argolas": "Original",
+      "favorita": false,
+      "capturas": 0,
+      "ultimaCaptura": null,
+      "ultimaManutencao": null,
+      "foto": "",
+      "observacoes": ""
+    },
+    {
+      "id": "est-0002",
+      "isca": "p-sup-02",
+      "caixa": "power-01",
+      "ordem": 2,
+      "cor": "Verde",
+      "estado": "Nova",
+      "status": "Ativa",
+      "garateias": "Original",
+      "argolas": "Original",
+      "favorita": false,
+      "capturas": 0,
+      "ultimaCaptura": null,
+      "ultimaManutencao": null,
+      "foto": "",
+      "observacoes": ""
+    }
+  ]
+}

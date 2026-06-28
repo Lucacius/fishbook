@@ -1,0 +1,49 @@
+{
+  "versao": "1.0",
+  "estruturas": [
+    {
+      "id": "barranco",
+      "nome": "Barranco"
+    },
+    {
+      "id": "galhada",
+      "nome": "Galhada"
+    },
+    {
+      "id": "pedras",
+      "nome": "Pedras"
+    },
+    {
+      "id": "vegetacao",
+      "nome": "Vegetação"
+    },
+    {
+      "id": "vegetacao-pesada",
+      "nome": "Vegetação pesada"
+    },
+    {
+      "id": "capim",
+      "nome": "Capim"
+    },
+    {
+      "id": "margem",
+      "nome": "Margem"
+    },
+    {
+      "id": "praia",
+      "nome": "Praia"
+    },
+    {
+      "id": "parede",
+      "nome": "Parede"
+    },
+    {
+      "id": "canal",
+      "nome": "Canal"
+    },
+    {
+      "id": "fundo",
+      "nome": "Fundo"
+    }
+  ]
+}

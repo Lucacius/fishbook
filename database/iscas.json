@@ -1,0 +1,184 @@
+{
+  "versao": "1.0",
+  "iscas": [
+    {
+      "id": "P-SUP-01",
+      "categoria": "P-SUP",
+      "ordem": 1,
+      "nome": "Zara",
+      "subtipo": "Stick",
+      "kit": "Power",
+      "familia": "Superfície",
+      "peso": 16,
+      "comprimento": null,
+      "profundidade": {
+        "tipo": "Superfície",
+        "min": 0,
+        "max": 0
+      },
+      "horario": {
+        "amanhecer": 5,
+        "manha": 4,
+        "tarde": 5,
+        "noite": 1
+      },
+      "agua": {
+        "limpa": 5,
+        "turvaLeve": 4,
+        "turva": 2
+      },
+      "estrutura": [
+        "Barranco",
+        "Galhada"
+      ],
+      "trabalho": [
+        "Zig-Zag"
+      ],
+      "alvos": [
+        "Tucunaré"
+      ],
+      "eficiencia": 5,
+  "constante": "Floating",
+      "quantidade": 4,
+      "cor": "",
+      "foto": "P-SUP-01.jpg",
+      "ativo": true,
+      "observacoes": ""
+    },
+    {
+      "id": "P-SUP-02",
+      "categoria": "P-SUP",
+      "ordem": 2,
+      "nome": "Popper",
+      "subtipo": "",
+      "kit": "Power",
+      "familia": "Superfície",
+      "peso": 12,
+      "comprimento": 6.5,
+      "profundidade": {
+        "tipo": "Superfície",
+        "min": 0,
+        "max": 0
+      },
+      "horario": {
+        "amanhecer": 5,
+        "manha": 1,
+        "tarde": 4,
+        "noite": 1
+      },
+      "agua": {
+        "limpa": 5,
+        "turvaLeve": 4,
+        "turva": 2
+      },
+      "estrutura": [
+        "Barranco",
+        "Galhada"
+      ],
+      "trabalho": [
+        "Popping",
+        "Pausas"
+      ],
+      "alvos": [
+        "Tucunaré"
+      ],
+      "eficiencia": 5,
+  "constante": "Floating",
+      "quantidade": 1,
+      "cor": "",
+      "foto": "P-SUP-02.jpg",
+      "ativo": true,
+      "observacoes": ""
+    },
+    {
+      "id": "P-SUP-03",
+      "categoria": "P-SUP",
+      "ordem": 3,
+      "nome": "Popper",
+      "subtipo": "",
+      "kit": "Power",
+      "familia": "Superfície",
+      "peso": 12,
+      "comprimento": 8,
+      "profundidade": {
+        "tipo": "Superfície",
+        "min": 0,
+        "max": 0
+      },
+      "horario": {
+        "amanhecer": 5,
+        "manha": 1,
+        "tarde": 4,
+        "noite": 1
+      },
+      "agua": {
+        "limpa": 5,
+        "turvaLeve": 4,
+        "turva": 2
+      },
+      "estrutura": [
+        "Barranco",
+        "Galhada"
+      ],
+      "trabalho": [
+        "Popping",
+        "Pausas"
+      ],
+      "alvos": [
+        "Tucunaré"
+      ],
+      "eficiencia": 5,
+  "constante": "Floating",
+      "quantidade": 5,
+      "cor": "",
+      "foto": "P-SUP-03.jpg",
+      "ativo": true,
+      "observacoes": ""
+    },
+    {
+      "id": "P-SUP-04",
+      "categoria": "P-SUP",
+      "ordem": 4,
+      "nome": "Hollow Body Frog",
+      "subtipo": "",
+      "kit": "Power",
+      "familia": "Superfície",
+      "peso": 9,
+      "comprimento": null,
+      "profundidade": {
+        "tipo": "Superfície",
+        "min": 0,
+        "max": 0
+      },
+      "horario": {
+        "amanhecer": 4,
+        "manha": 1,
+        "tarde": 5,
+        "noite": 2
+      },
+      "agua": {
+        "limpa": 2,
+        "turvaLeve": 5,
+        "turva": 5
+      },
+      "estrutura": [
+        "Vegetação pesada"
+      ],
+      "trabalho": [
+        "Toques",
+        "Pausas"
+      ],
+      "alvos": [
+        "Tucunaré",
+        "Traíra"
+      ],
+      "eficiencia": 4,
+  "constante": "Floating",
+      "quantidade": 1,
+      "cor": "",
+      "foto": "P-SUP-04.jpg",
+      "ativo": true,
+      "observacoes": ""
+    }
+  ]
+}

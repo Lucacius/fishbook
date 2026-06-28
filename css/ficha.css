@@ -1,0 +1,433 @@
+/* =====================================================
+   FICHA
+===================================================== */
+
+.ficha{
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:24px;
+
+}
+
+.ficha-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-bottom:32px;
+
+    padding-bottom:24px;
+
+    border-bottom:1px solid #374151;
+
+}
+
+.ficha-codigo{
+
+    font-size:1rem;
+
+    color:#22c55e;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.ficha-header h1{
+
+    margin:0;
+
+    font-size:2.8rem;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+}
+
+.ficha-photo{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:28px;
+
+}
+
+.foto-isca{
+
+    width:360px;
+
+    height:360px;
+
+    object-fit:contain;
+
+    background:#111827;
+
+    border-radius:18px;
+
+    border:2px solid #374151;
+
+    padding:18px;
+
+    box-shadow:
+
+        0 8px 25px rgba(0,0,0,.35);
+
+}
+
+.ficha-section{
+
+    background:#202938;
+
+    border:1px solid #374151;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    margin-bottom:22px;
+
+    box-shadow:
+
+        0 8px 18px rgba(0,0,0,.18);
+
+}
+
+.ficha-section h2{
+
+    margin:0 0 18px;
+
+    font-size:1.30rem;
+
+}
+
+.ficha-info-row{
+
+    display:grid;
+
+    grid-template-columns:200px 1fr;
+
+    align-items:center;
+
+    gap:24px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.ficha-info-row:last-child{
+
+    border:none;
+
+}
+
+.ficha-info-label{
+
+    color:#9ca3af;
+
+    font-weight:600;
+
+}
+
+.ficha-info-value{
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+.ficha-rating-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.ficha-rating-row .badge{
+
+    min-width:92px;
+
+    text-align:center;
+
+}
+
+.ficha-rating-row:last-child{
+
+    border:none;
+
+}
+
+.ficha-tags .chip{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+}
+
+.ficha-actions .button{
+
+    width:100%;
+
+    padding:14px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+.ficha-photo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.ficha-hero{
+
+    display:grid;
+
+    grid-template-columns:
+
+        380px
+
+        1fr;
+
+    gap:24px;
+
+    margin-bottom:24px;
+
+}
+
+.ficha-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.ficha-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.ficha-photo{
+
+    margin:0;
+
+}
+
+.ficha-photo .ficha-section{
+
+    height:100%;
+
+}
+
+.ficha-info-row{
+
+    grid-template-columns:
+
+        170px
+
+        1fr;
+
+}
+
+@media(max-width:900px){
+
+    .ficha-hero{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ==========================================
+   CARTÃO TÉCNICO
+========================================== */
+
+.ficha-card{
+
+    display:grid;
+
+    grid-template-columns:
+
+        380px
+
+        1fr;
+
+    gap:30px;
+
+    background:#202938;
+
+    border:1px solid #374151;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    margin-bottom:24px;
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.18);
+
+}
+
+.ficha-card .ficha-photo{
+
+    margin:0;
+
+}
+
+.ficha-card .ficha-section{
+
+    margin:0;
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    box-shadow:none;
+
+}
+
+@media(max-width:900px){
+
+    .ficha-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ==========================================
+   TABELA DO ESTOQUE
+========================================== */
+
+.ficha-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:18px;
+
+    table-layout:fixed;
+
+}
+
+.ficha-table thead{
+
+    border-bottom:2px solid #374151;
+
+}
+
+.ficha-table th:last-child,
+.ficha-table td:last-child{
+
+    width:36px;
+
+    text-align:center;
+
+}
+
+.ficha-table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+.ficha-table tbody tr:hover{
+
+    background:rgba(255,255,255,.04);
+
+}
+
+/* Centraliza e estreita a coluna Status */
+
+.ficha-table th:last-child,
+.ficha-table td:last-child{
+
+    width:70px;
+
+    text-align:center;
+
+}
+
+/* Status */
+
+.status-dot{
+
+    display:inline-block;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.status-ativa{
+
+    background:#22c55e;
+
+}
+
+.status-reserva{
+
+    background:#3b82f6;
+
+}
+
+.status-manutencao{
+
+    background:#f59e0b;
+
+}
+
+.status-baixada{
+
+    background:#ef4444;
+
+}

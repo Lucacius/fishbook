@@ -1,0 +1,284 @@
+/*
+=========================================================
+FishBook
+Catálogo
+=========================================================
+*/
+
+.catalogo{
+
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+
+}
+
+/* ===================================================== */
+
+.catalogo-header{
+
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+
+}
+
+.catalogo-header h1{
+
+    margin:0;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.catalogo-header p{
+
+    margin:0;
+
+    opacity:.75;
+
+}
+
+/* ===================================================== */
+
+.catalogo-filters{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+.catalogo-filters .input{
+
+    flex:1;
+
+    min-width:220px;
+
+}
+
+/* ===================================================== */
+
+#catalogo-list{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fill,minmax(340px,1fr));
+
+    gap:20px;
+
+}
+
+/* ===================================================== */
+
+.lure-card{
+
+    display:flex;
+
+    gap:18px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:var(--surface,#20242d);
+
+    cursor:pointer;
+
+    transition:.20s;
+
+    border:1px solid transparent;
+
+}
+
+.lure-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#3b82f6;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.20);
+
+}
+
+.lure-card:focus{
+
+    outline:none;
+
+    border-color:#22c55e;
+
+}
+
+/* ===================================================== */
+
+.lure-card__image{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:14px;
+
+    object-fit:cover;
+
+    flex-shrink:0;
+
+    background:#111827;
+
+}
+
+/* ===================================================== */
+
+.lure-card__content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.lure-card__code{
+
+    color:#22c55e;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+}
+
+.lure-card__title{
+
+    margin:0;
+
+    font-size:1.35rem;
+
+}
+
+.lure-card__details{
+
+    display:grid;
+
+    gap:6px;
+
+    font-size:.95rem;
+
+    opacity:.92;
+
+}
+
+.lure-card__stock{
+
+    margin-top:auto;
+
+    font-weight:700;
+
+    color:#22c55e;
+
+}
+
+/* ===================================================== */
+/* Badges                                                */
+/* ===================================================== */
+
+.badge{
+
+    width:max-content;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+}
+
+.badge-5{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+.badge-4{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+.badge-3{
+
+    background:#ca8a04;
+
+    color:#fff;
+
+}
+
+.badge-2{
+
+    background:#ea580c;
+
+    color:#fff;
+
+}
+
+.badge-1{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+/* ===================================================== */
+
+@media (max-width:900px){
+
+    #catalogo-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .catalogo-filters{
+
+        flex-direction:column;
+
+    }
+
+    .lure-card{
+
+        flex-direction:column;
+
+    }
+
+    .lure-card__image{
+
+        width:100%;
+
+        height:220px;
+
+    }
+
+}

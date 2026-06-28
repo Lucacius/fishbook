@@ -1,0 +1,57 @@
+{
+  "versao": "1.0",
+  "horarios": [
+    {
+      "id": "amanhecer",
+      "nome": "Amanhecer"
+    },
+    {
+      "id": "manha",
+      "nome": "Manhã"
+    },
+    {
+      "id": "tarde",
+      "nome": "Tarde"
+    },
+    {
+      "id": "noite",
+      "nome": "Noite"
+    }
+  ],
+  "aguas": [
+    {
+      "id": "limpa",
+      "nome": "Água Limpa"
+    },
+    {
+      "id": "turva-leve",
+      "nome": "Água Turva-Leve"
+    },
+    {
+      "id": "turva",
+      "nome": "Água Turva"
+    }
+  ],
+  "climas": [
+    {
+      "id": "ensolarado",
+      "nome": "Ensolarado"
+    },
+    {
+      "id": "nublado",
+      "nome": "Nublado"
+    },
+    {
+      "id": "chuva-fraca",
+      "nome": "Chuva fraca"
+    },
+    {
+      "id": "chuva",
+      "nome": "Chuva"
+    },
+    {
+      "id": "vento",
+      "nome": "Vento"
+    }
+  ]
+}

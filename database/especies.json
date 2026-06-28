@@ -1,0 +1,315 @@
+{
+  "versao": "1.0",
+  "especies": [
+    {
+      "id": "TUC",
+      "nome": "Tucunaré",
+      "cientifico": "Cichla spp.",
+      "categoria": "Predador",
+      "ambiente": [
+        "Represa",
+        "Rio"
+      ],
+      "alimentacao": [
+        "Peixes",
+        "Camarões"
+      ],
+      "iscaArtificial": true,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 5,
+        "manha": 4,
+        "tarde": 5,
+        "noite": 2
+      },
+      "agua": {
+        "limpa": 5,
+        "turvaLeve": 4,
+        "turva": 3
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "TRA",
+      "nome": "Traíra",
+      "cientifico": "Hoplias malabaricus",
+      "categoria": "Predador",
+      "ambiente": [
+        "Lagoa",
+        "Represa",
+        "Rio"
+      ],
+      "alimentacao": [
+        "Peixes",
+        "Anfíbios"
+      ],
+      "iscaArtificial": true,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 4,
+        "manha": 3,
+        "tarde": 4,
+        "noite": 5
+      },
+      "agua": {
+        "limpa": 4,
+        "turvaLeve": 5,
+        "turva": 5
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "TIL",
+      "nome": "Tilápia",
+      "cientifico": "Oreochromis niloticus",
+      "categoria": "Onívoro",
+      "ambiente": [
+        "Represa",
+        "Lagoa"
+      ],
+      "alimentacao": [
+        "Insetos",
+        "Algas",
+        "Ração"
+      ],
+      "iscaArtificial": true,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 4,
+        "manha": 5,
+        "tarde": 4,
+        "noite": 1
+      },
+      "agua": {
+        "limpa": 5,
+        "turvaLeve": 3,
+        "turva": 2
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "LAM",
+      "nome": "Lambari",
+      "cientifico": "Astyanax spp.",
+      "categoria": "Onívoro",
+      "ambiente": [
+        "Rio",
+        "Represa",
+        "Lagoa"
+      ],
+      "alimentacao": [
+        "Insetos",
+        "Larvas"
+      ],
+      "iscaArtificial": true,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 4,
+        "manha": 5,
+        "tarde": 5,
+        "noite": 2
+      },
+      "agua": {
+        "limpa": 5,
+        "turvaLeve": 4,
+        "turva": 2
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "PIA",
+      "nome": "Piau",
+      "cientifico": "Leporinus spp.",
+      "categoria": "Onívoro",
+      "ambiente": [
+        "Rio",
+        "Represa"
+      ],
+      "alimentacao": [
+        "Frutos",
+        "Insetos"
+      ],
+      "iscaArtificial": false,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 4,
+        "manha": 4,
+        "tarde": 4,
+        "noite": 2
+      },
+      "agua": {
+        "limpa": 4,
+        "turvaLeve": 4,
+        "turva": 3
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "PAC",
+      "nome": "Pacu",
+      "cientifico": "Piaractus mesopotamicus",
+      "categoria": "Onívoro",
+      "ambiente": [
+        "Rio",
+        "Represa"
+      ],
+      "alimentacao": [
+        "Frutos",
+        "Sementes"
+      ],
+      "iscaArtificial": false,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 4,
+        "manha": 4,
+        "tarde": 5,
+        "noite": 2
+      },
+      "agua": {
+        "limpa": 4,
+        "turvaLeve": 4,
+        "turva": 3
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "CUR",
+      "nome": "Curimba",
+      "cientifico": "Prochilodus lineatus",
+      "categoria": "Detritívoro",
+      "ambiente": [
+        "Rio"
+      ],
+      "alimentacao": [
+        "Detritos"
+      ],
+      "iscaArtificial": false,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 3,
+        "manha": 4,
+        "tarde": 4,
+        "noite": 2
+      },
+      "agua": {
+        "limpa": 4,
+        "turvaLeve": 4,
+        "turva": 4
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "MAN",
+      "nome": "Mandi",
+      "cientifico": "Pimelodus spp.",
+      "categoria": "Peixe de couro",
+      "ambiente": [
+        "Rio",
+        "Represa"
+      ],
+      "alimentacao": [
+        "Peixes",
+        "Insetos"
+      ],
+      "iscaArtificial": false,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 2,
+        "manha": 2,
+        "tarde": 3,
+        "noite": 5
+      },
+      "agua": {
+        "limpa": 3,
+        "turvaLeve": 4,
+        "turva": 5
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "BAG",
+      "nome": "Bagre",
+      "cientifico": "Rhamdia spp.",
+      "categoria": "Peixe de couro",
+      "ambiente": [
+        "Rio",
+        "Represa"
+      ],
+      "alimentacao": [
+        "Peixes",
+        "Invertebrados"
+      ],
+      "iscaArtificial": false,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 2,
+        "manha": 2,
+        "tarde": 3,
+        "noite": 5
+      },
+      "agua": {
+        "limpa": 3,
+        "turvaLeve": 4,
+        "turva": 5
+      },
+      "observacoes": ""
+    },
+    {
+      "id": "CAS",
+      "nome": "Cascudo",
+      "cientifico": "Hypostomus spp.",
+      "categoria": "Detritívoro",
+      "ambiente": [
+        "Rio",
+        "Represa"
+      ],
+      "alimentacao": [
+        "Algas"
+      ],
+      "iscaArtificial": false,
+      "iscaNatural": true,
+      "atividade": {
+        "amanhecer": 2,
+        "manha": 3,
+        "tarde": 3,
+        "noite": 4
+      },
+      "agua": {
+        "limpa": 4,
+        "turvaLeve": 4,
+        "turva": 4
+      },
+      "observacoes": ""
+    },
+{
+  "id": "cara",
+  "nome": "Cará",
+  "cientifico": "Geophagus brasiliensis",
+  "categoria": "Onívoro",
+  "ambiente": [
+    "Represa",
+    "Rio",
+    "Lagoa"
+  ],
+  "alimentacao": [
+    "Insetos",
+    "Larvas",
+    "Crustáceos"
+  ],
+  "iscaArtificial": true,
+  "iscaNatural": true,
+  "atividade": {
+    "amanhecer": 4,
+    "manha": 5,
+    "tarde": 4,
+    "noite": 2
+  },
+  "agua": {
+    "limpa": 5,
+    "turvaLeve": 4,
+    "turva": 3
+  },
+  "observacoes": ""
+}
+  ]
+}

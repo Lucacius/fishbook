@@ -1,0 +1,45 @@
+{
+  "versao": "1.0",
+  "cores": [
+    {
+      "id": "natural",
+      "nome": "Natural"
+    },
+    {
+      "id": "osso",
+      "nome": "Osso"
+    },
+    {
+      "id": "branca",
+      "nome": "Branca"
+    },
+    {
+      "id": "verde-limao",
+      "nome": "Verde-limão"
+    },
+    {
+      "id": "fire-tiger",
+      "nome": "Fire Tiger"
+    },
+    {
+      "id": "prata",
+      "nome": "Prata"
+    },
+    {
+      "id": "dourada",
+      "nome": "Dourada"
+    },
+    {
+      "id": "preta",
+      "nome": "Preta"
+    },
+    {
+      "id": "rosa",
+      "nome": "Rosa"
+    },
+    {
+      "id": "transparente",
+      "nome": "Transparente"
+    }
+  ]
+}

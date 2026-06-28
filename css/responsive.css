@@ -1,0 +1,15 @@
+/*
+ * Ajustes responsivos e progressivos.
+ * A base foi pensada primeiro para celulares.
+ */
+
+@media (min-width: 48rem) {
+  :root {
+    --space-page: 1.5rem;
+  }
+
+  #app {
+    margin-inline: auto;
+    max-width: var(--content-max-width);
+  }
+}

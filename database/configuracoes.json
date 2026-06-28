@@ -1,0 +1,11 @@
+{
+  "versao": "1.0",
+  "tema": "escuro",
+  "idioma": "pt-BR",
+  "localPadrao": "varzea-das-flores",
+  "equipamentoPadrao": "power",
+  "mostrarDicas": true,
+  "mostrarNotas": true,
+  "usarIcones": true,
+  "primeiraExecucao": true
+}

@@ -1,0 +1,25 @@
+{
+  "versao": "1.0",
+  "profundidades": [
+    {
+      "id": "superficie",
+      "nome": "Superfície"
+    },
+    {
+      "id": "meia-agua-rasa",
+      "nome": "Meia água rasa"
+    },
+    {
+      "id": "meia-agua",
+      "nome": "Meia água"
+    },
+    {
+      "id": "meia-agua-profunda",
+      "nome": "Meia água profunda"
+    },
+    {
+      "id": "fundo",
+      "nome": "Fundo"
+    }
+  ]
+}

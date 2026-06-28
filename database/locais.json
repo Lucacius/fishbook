@@ -1,0 +1,56 @@
+{
+  "versao": "1.0",
+  "locais": [
+    {
+      "id": "varzea-das-flores",
+      "nome": "Várzea das Flores",
+      "tipo": "Represa",
+      "cidade": "Betim",
+      "estado": "MG",
+      "pais": "Brasil",
+      "especies": [
+        "tucunare",
+        "tilapia",
+        "traira",
+        "lambari",
+        "cara",
+        "acara"
+      ],
+      "equipamentosIndicados": [
+        "power",
+        "ultralight",
+        "vara-mao"
+      ],
+      "ativo": true,
+      "observacoes": ""
+    },
+    {
+      "id": "rio-paraopeba",
+      "nome": "Rio Paraopeba",
+      "tipo": "Rio",
+      "cidade": "Betim",
+      "estado": "MG",
+      "pais": "Brasil",
+      "especies": [
+        "tucunare",
+        "traira",
+        "tilapia",
+        "lambari",
+        "piau",
+        "pacu",
+        "curimba",
+        "mandi",
+        "bagre",
+        "cascudo"
+      ],
+      "equipamentosIndicados": [
+        "power",
+        "ultralight",
+        "vara-mao",
+        "pesado"
+      ],
+      "ativo": true,
+      "observacoes": "Verificar sempre as regras e restrições de pesca vigentes para o trecho escolhido."
+    }
+  ]
+}

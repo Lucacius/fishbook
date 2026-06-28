@@ -1,0 +1,17 @@
+/*
+ * Regras estruturais compartilhadas por toda a aplicação.
+ * O espaço seguro protege o conteúdo em iPhones com recorte de tela.
+ */
+
+body {
+  min-width: 20rem;
+}
+
+#app {
+  min-height: 100dvh;
+  padding:
+    max(var(--space-page), env(safe-area-inset-top))
+    max(var(--space-page), env(safe-area-inset-right))
+    max(var(--space-page), env(safe-area-inset-bottom))
+    max(var(--space-page), env(safe-area-inset-left));
+}

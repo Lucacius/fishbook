@@ -1,0 +1,13 @@
+{
+  "app": {
+    "nome": "FishBook",
+    "versao": "1.0.0"
+  },
+  "database": {
+    "versao": "1.0.0",
+    "ultimaAtualizacao": "2026-06-27"
+  },
+  "compatibilidade": {
+    "minApp": "1.0.0"
+  }
+}

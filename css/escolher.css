@@ -1,0 +1,262 @@
+/*
+=========================================================
+FishBook
+Página Escolher Isca
+=========================================================
+*/
+
+.escolher-page{
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.escolher-page h1{
+
+    margin:0;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.escolher-page h2{
+
+    margin:0;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+}
+
+/*=========================================================
+Filtros
+=========================================================*/
+
+.filter-group{
+
+    background:var(--card,#1f2937);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    padding:18px;
+
+}
+
+.filter-title{
+
+    margin:0 0 14px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+.filter-options{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.filter-option{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.filter-option input{
+
+    position:absolute;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.filter-option span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:#2b3442;
+
+    transition:.2s;
+
+    user-select:none;
+
+}
+
+.filter-option:hover span{
+
+    background:#374151;
+
+}
+
+.filter-option input:checked + span{
+
+    background:#2563eb;
+
+    border-color:#2563eb;
+
+    color:#fff;
+
+}
+
+/*=========================================================
+Resultados
+=========================================================*/
+
+.suggestion-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+/*=========================================================
+Card
+=========================================================*/
+
+.suggestion-card{
+
+    background:var(--card,#1f2937);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    padding:18px;
+
+}
+
+.suggestion-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:14px;
+
+}
+
+.suggestion-title{
+
+    margin:0;
+
+    font-size:1.1rem;
+
+}
+
+.suggestion-codes{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+.suggestion-code{
+
+    border:none;
+
+    background:#374151;
+
+    color:#fff;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    font-size:.9rem;
+
+}
+
+.suggestion-code:hover{
+
+    background:#2563eb;
+
+}
+
+/*=========================================================
+Desktop
+=========================================================*/
+
+@media(min-width:900px){
+
+    .escolher-page{
+
+        display:grid;
+
+        grid-template-columns:340px 1fr;
+
+        gap:28px;
+
+        align-items:start;
+
+    }
+
+    .escolher-page>h1{
+
+        grid-column:1/-1;
+
+    }
+
+    .escolher-page>h2{
+
+        grid-column:2;
+
+        margin-top:8px;
+
+    }
+
+    .suggestion-list{
+
+        grid-column:2;
+
+        grid-row:2 / span 20;
+
+    }
+
+}

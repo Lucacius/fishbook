@@ -1,0 +1,128 @@
+{
+  "versao": "1.0",
+  "equipamentos": [
+    {
+      "id": "power",
+      "nome": "Power",
+      "categoria": "Artificial",
+      "vara": {
+        "modelo": "",
+        "tamanho_m": null,
+        "libragem": ""
+      },
+      "molinete": {
+        "modelo": ""
+      },
+      "linha": {
+        "tipo": "Multifilamento X4",
+        "diametro_mm": 0.28
+      },
+      "leader": {
+        "tipo": "Fluorcarbono",
+        "diametro_mm": 0.6,
+        "comprimento_cm": 80
+      },
+      "iscas": {
+        "peso_min_g": 10,
+        "peso_max_g": 30
+      },
+      "uso": [
+        "Tucunaré",
+        "Traíra",
+        "Estruturas",
+        "Iscas médias e grandes"
+      ],
+      "ativo": true,
+      "observacoes": ""
+    },
+    {
+      "id": "ultralight",
+      "nome": "Ultralight",
+      "categoria": "Artificial",
+      "vara": {
+        "modelo": "Deyu",
+        "tamanho_m": 1.8,
+        "libragem": "4-6 lb"
+      },
+      "molinete": {
+        "modelo": ""
+      },
+      "linha": {
+        "tipo": "Multifilamento X4",
+        "diametro_mm": 0.14
+      },
+      "leader": {
+        "tipo": "Fluorcarbono",
+        "diametro_mm": 0.23,
+        "comprimento_cm": 60
+      },
+      "iscas": {
+        "peso_min_g": 2,
+        "peso_max_g": 9
+      },
+      "uso": [
+        "Tucunaré",
+        "Tilápia",
+        "Lambari",
+        "Iscas leves"
+      ],
+      "ativo": true,
+      "observacoes": ""
+    },
+    {
+      "id": "vara-mao",
+      "nome": "Vara de Mão",
+      "categoria": "Natural",
+      "vara": {
+        "modelo": "Albatroz Bamboo Carbon",
+        "tamanho_m": 4.0,
+        "libragem": ""
+      },
+      "molinete": null,
+      "linha": {
+        "tipo": "Monofilamento Sougayilang",
+        "diametro_mm": 0.16
+      },
+      "leader": null,
+      "iscas": null,
+      "uso": [
+        "Lambari",
+        "Tilápia",
+        "Piau pequeno"
+      ],
+      "ativo": true,
+      "observacoes": ""
+    },
+    {
+      "id": "pesado",
+      "nome": "Pesado",
+      "categoria": "Espera",
+      "vara": {
+        "modelo": "Sport Fishing Sensation",
+        "tamanho_m": null,
+        "libragem": "15-30 lb"
+      },
+      "molinete": {
+        "modelo": "Montana DF50F"
+      },
+      "linha": {
+        "tipo": "Monofilamento",
+        "diametro_mm": 0.4
+      },
+      "leader": {
+        "tipo": "Fluorcarbono",
+        "diametro_mm": 0.6,
+        "comprimento_cm": 60
+      },
+      "iscas": null,
+      "uso": [
+        "Pesca de espera",
+        "Tuvira",
+        "Sarapó",
+        "Rios"
+      ],
+      "ativo": true,
+      "observacoes": ""
+    }
+  ]
+}
