@@ -8,7 +8,7 @@ Versão 1.0
 
 "use strict";
 
-const CACHE_NAME = "fishbook-v1.0.0";
+const CACHE_NAME = "fishbook-v2.0.0";
 
 const APP_FILES = [
 
