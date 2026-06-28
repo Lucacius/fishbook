@@ -2,19 +2,18 @@
 =========================================================
 FishBook
 Service Worker
+Versão 1.0
 =========================================================
 */
 
 "use strict";
 
-const CACHE_NAME = "fishbook-v1";
+const CACHE_NAME = "fishbook-v1.0.0";
 
-const FILES = [
+const APP_FILES = [
 
     "./",
-
     "./index.html",
-
     "./manifest.webmanifest",
 
     "./css/reset.css",
@@ -34,121 +33,160 @@ const FILES = [
     "./js/utils.js",
     "./js/validator.js",
 
+    "./js/config/constantes.js",
+    "./js/config/pesos.js",
+    "./js/config/dicionario.js",
+    "./js/config/filtros.js",
+
+    "./js/components/index.js",
+    "./js/components/button.js",
+    "./js/components/card.js",
+    "./js/components/badge.js",
+    "./js/components/chip.js",
+    "./js/components/section.js",
+    "./js/components/filter-group.js",
+    "./js/components/suggestion-card.js",
+    "./js/components/lure-card.js",
+
+    "./js/services/index.js",
+    "./js/services/catalogo.service.js",
+    "./js/services/escolher.service.js",
+
+    "./js/pages/home.js",
+    "./js/pages/catalogo.js",
+    "./js/pages/ficha.js",
+    "./js/pages/escolher.js",
+
+    "./database/manifest.json",
+    "./database/iscas.json",
+    "./database/estoque.json",
+    "./database/categorias.json",
+    "./database/especies.json",
+
     "./assets/icons/favicon.ico",
     "./assets/icons/apple-touch-icon.png",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png"
-
 ];
 
-self.addEventListener(
+/*=========================================================
+INSTALL
+=========================================================*/
 
-    "install",
+self.addEventListener("install", event=>{
 
-    event=>{
+    self.skipWaiting();
 
-        event.waitUntil(
+    event.waitUntil(
 
-            caches.open(
+        caches.open(CACHE_NAME)
 
-                CACHE_NAME
+        .then(cache=>cache.addAll(APP_FILES))
+
+    );
+
+});
+
+/*=========================================================
+ACTIVATE
+=========================================================*/
+
+self.addEventListener("activate",event=>{
+
+    event.waitUntil(
+
+        caches.keys()
+
+        .then(keys=>
+
+            Promise.all(
+
+                keys.map(key=>{
+
+                    if(key!==CACHE_NAME){
+
+                        return caches.delete(key);
+
+                    }
+
+                })
 
             )
 
-            .then(cache=>{
+        )
 
-                return cache.addAll(
+    );
 
-                    FILES
+    self.clients.claim();
 
-                );
+});
 
-            })
+/*=========================================================
+FETCH
+=========================================================*/
 
-        );
+self.addEventListener("fetch",event=>{
 
-        self.skipWaiting();
+    if(event.request.method!=="GET"){
+
+        return;
 
     }
 
-);
+    event.respondWith(
 
-self.addEventListener(
+        caches.match(event.request)
 
-    "activate",
+        .then(cache=>{
 
-    event=>{
+            if(cache){
 
-        event.waitUntil(
+                return cache;
 
-            caches.keys()
+            }
 
-            .then(keys=>{
-
-                return Promise.all(
-
-                    keys.map(key=>{
-
-                        if(
-
-                            key!==CACHE_NAME
-
-                        ){
-
-                            return caches.delete(
-
-                                key
-
-                            );
-
-                        }
-
-                    })
-
-                );
-
-            })
-
-        );
-
-        self.clients.claim();
-
-    }
-
-);
-
-self.addEventListener(
-
-    "fetch",
-
-    event=>{
-
-        event.respondWith(
-
-            caches.match(
-
-                event.request
-
-            )
+            return fetch(event.request)
 
             .then(response=>{
 
-                return (
+                if(
 
-                    response ||
+                    !response ||
 
-                    fetch(
+                    response.status!==200 ||
 
-                        event.request
+                    response.type!=="basic"
 
-                    )
+                ){
 
-                );
+                    return response;
 
-            })
+                }
 
-        );
+                const clone=
 
-    }
+                    response.clone();
 
-);
+                caches.open(CACHE_NAME)
+
+                .then(cache=>{
+
+                    cache.put(
+
+                        event.request,
+
+                        clone
+
+                    );
+
+                });
+
+                return response;
+
+            });
+
+        })
+
+    );
+
+});
