@@ -15,13 +15,31 @@ let lure = null;
 Carrega a isca
 =========================================================*/
 
-const loadLure = id=>{
+const loadLure = id => {
 
-    lure =
+    lure = null;
 
-        window.Database
+    if (!id) {
 
-            .getLure(id);
+        return;
+
+    }
+
+    if (!window.Database) {
+
+        console.error("Database não carregado.");
+
+        return;
+
+    }
+
+    lure = window.Database.getLure(id);
+
+    if (!lure) {
+
+        console.warn(`Isca "${id}" não encontrada.`);
+
+    }
 
 };
 
@@ -49,7 +67,7 @@ const createSection = titulo => {
 
 };
 
-const createInfoRow = (label,value)=>{
+const createInfoRow = (label, value) => {
 
     const row =
         document.createElement("div");
@@ -76,11 +94,8 @@ const createInfoRow = (label,value)=>{
         value ?? "-";
 
     row.append(
-
         left,
-
         right
-
     );
 
     return row;
@@ -93,16 +108,40 @@ const createBadge = value =>
         .Components
         .Badge
         .create({
-
             value
-
         });
 
+const createChip = texto => {
+
+    const chip =
+        document.createElement("span");
+
+    chip.className =
+        "chip";
+
+    chip.textContent =
+        texto;
+
+    return chip;
+
+};
+
+const createStars = valor => {
+
+    const nota =
+
+        Number(valor) || 0;
+
+    return "★★★★★"
+        .slice(0, nota)
+        .padEnd(5, "☆");
+
+};
 /*=========================================================
 Cabeçalho
 =========================================================*/
 
-const renderHeader = ()=>{
+const renderHeader = () => {
 
     const header =
         document.createElement("header");
@@ -119,11 +158,17 @@ const renderHeader = ()=>{
     voltar.textContent =
         "← Catálogo";
 
-    voltar.onclick=()=>{
+    voltar.onclick = () => {
 
         window.Router.open("catalogo");
 
     };
+
+    const info =
+        document.createElement("div");
+
+    info.className =
+        "ficha-header-info";
 
     const codigo =
         document.createElement("div");
@@ -140,29 +185,49 @@ const renderHeader = ()=>{
     nome.textContent =
         lure.nome;
 
+    const subtitulo =
+        document.createElement("div");
+
+    subtitulo.className =
+        "ficha-subtitulo";
+
+    subtitulo.textContent = [
+
+        lure.categoria,
+        lure.subcategoria,
+        lure.tipo
+
+    ]
+
+    .filter(Boolean)
+
+    .join(" • ");
+
+    info.append(
+
+        codigo,
+        nome,
+        subtitulo
+
+    );
+
     header.append(
 
         voltar,
-
-        codigo,
-
-        nome,
-
+        info,
         createBadge(
-            lure.eficiencia
+            lure.eficiencia ?? 0
         )
 
     );
 
     return header;
 
-};
-
-/*=========================================================
+};/*=========================================================
 Foto
 =========================================================*/
 
-const renderPhoto = ()=>{
+const renderPhoto = () => {
 
     const container =
         document.createElement("div");
@@ -176,13 +241,21 @@ const renderPhoto = ()=>{
     img.className =
         "foto-isca";
 
-    img.src =
-        `assets/img/iscas/${lure.foto}`;
-
     img.alt =
         lure.nome;
 
-    img.onerror = ()=>{
+    img.loading =
+        "lazy";
+
+    img.src =
+
+        lure.foto
+
+            ? `assets/img/iscas/${lure.foto}`
+
+            : "assets/img/iscas/semfoto.png";
+
+    img.onerror = () => {
 
         img.onerror = null;
 
@@ -262,11 +335,43 @@ const renderInfo = ()=>{
     return container;
 
 };
+
+
+/*=========================================================
+Montagens
+=========================================================*/
+const renderMontagens = () => {
+
+    const section =
+        createSection("Montagens");
+
+    const area =
+        document.createElement("div");
+
+    area.className =
+        "ficha-tags";
+
+    (lure.montagens ?? []).forEach(item => {
+
+        area.append(
+
+            createChip(item)
+
+        );
+
+    });
+
+    section.append(area);
+
+    return section;
+
+};
+
 /*=========================================================
 Horários
 =========================================================*/
 
-const createRatingRow = (label,value)=>{
+const createRatingRow = (label, value) => {
 
     const row =
         document.createElement("div");
@@ -287,7 +392,9 @@ const createRatingRow = (label,value)=>{
 
         left,
 
-        createBadge(value)
+        createBadge(
+            value ?? 0
+        )
 
     );
 
@@ -295,34 +402,35 @@ const createRatingRow = (label,value)=>{
 
 };
 
-const renderHorario = ()=>{
+const renderHorario = () => {
 
     const section =
         createSection("Horários");
 
-    section.append(
+    const horarios = [
 
-        createRatingRow(
-            "🌅 Amanhecer",
-            lure.horario?.amanhecer ?? 0
-        ),
+        ["🌅 Amanhecer", "amanhecer"],
+        ["☀️ Manhã", "manha"],
+        ["🌤️ Tarde", "tarde"],
+        ["🌙 Noite", "noite"]
 
-        createRatingRow(
-            "☀️ Manhã",
-            lure.horario?.manha ?? 0
-        ),
+    ];
 
-        createRatingRow(
-            "🌤️ Tarde",
-            lure.horario?.tarde ?? 0
-        ),
+    horarios.forEach(([titulo, chave]) => {
 
-        createRatingRow(
-            "🌙 Noite",
-            lure.horario?.noite ?? 0
-        )
+        section.append(
 
-    );
+            createRatingRow(
+
+                titulo,
+
+                lure.horario?.[chave]
+
+            )
+
+        );
+
+    });
 
     return section;
 
@@ -332,29 +440,34 @@ const renderHorario = ()=>{
 Água
 =========================================================*/
 
-const renderAgua = ()=>{
+const renderAgua = () => {
 
     const section =
         createSection("Condição da Água");
 
-    section.append(
+    const tipos = [
 
-        createRatingRow(
-            "Água Limpa",
-            lure.agua?.limpa ?? 0
-        ),
+        ["💧 Água Limpa", "limpa"],
+        ["🌤 Turva Leve", "turvaLeve"],
+        ["🌊 Turva", "turva"]
 
-        createRatingRow(
-            "Turva Leve",
-            lure.agua?.turvaLeve ?? 0
-        ),
+    ];
 
-        createRatingRow(
-            "Turva",
-            lure.agua?.turva ?? 0
-        )
+    tipos.forEach(([titulo, chave]) => {
 
-    );
+        section.append(
+
+            createRatingRow(
+
+                titulo,
+
+                lure.agua?.[chave]
+
+            )
+
+        );
+
+    });
 
     return section;
 
@@ -364,22 +477,7 @@ const renderAgua = ()=>{
 Estruturas
 =========================================================*/
 
-const createChip = texto=>{
-
-    const chip =
-        document.createElement("span");
-
-    chip.className =
-        "chip";
-
-    chip.textContent =
-        texto;
-
-    return chip;
-
-};
-
-const renderEstruturas = ()=>{
+const renderEstruturas = () => {
 
     const section =
         createSection("Estruturas");
@@ -390,7 +488,7 @@ const renderEstruturas = ()=>{
     area.className =
         "ficha-tags";
 
-    (lure.estrutura ?? []).forEach(item=>{
+    (lure.estruturas ?? []).forEach(item => {
 
         area.append(
 
@@ -410,7 +508,7 @@ const renderEstruturas = ()=>{
 Trabalhos
 =========================================================*/
 
-const renderTrabalhos = ()=>{
+const renderTrabalhos = () => {
 
     const section =
         createSection("Trabalhos");
@@ -421,7 +519,7 @@ const renderTrabalhos = ()=>{
     area.className =
         "ficha-tags";
 
-    (lure.trabalho ?? []).forEach(item=>{
+    (lure.trabalhos ?? []).forEach(item => {
 
         area.append(
 
@@ -436,12 +534,11 @@ const renderTrabalhos = ()=>{
     return section;
 
 };
-
 /*=========================================================
 Espécies
 =========================================================*/
 
-const renderEspecies = ()=>{
+const renderEspecies = () => {
 
     const section =
         createSection("Espécies");
@@ -450,13 +547,21 @@ const renderEspecies = ()=>{
         document.createElement("div");
 
     area.className =
-        "ficha-tags";
+        "ficha-info";
 
-    (lure.alvos ?? []).forEach(item=>{
+    (lure.especies ?? []).forEach(especie => {
 
         area.append(
 
-            createChip(item)
+            createInfoRow(
+
+                especie.nome,
+
+                createStars(
+                    especie.afinidade
+                )
+
+            )
 
         );
 
@@ -472,20 +577,22 @@ const renderEspecies = ()=>{
 Estoque
 =========================================================*/
 
-const renderEstoque = ()=>{
+const renderEstoque = () => {
 
     const section =
         createSection("Estoque");
 
-const estoque =
+    const estoque =
 
-    window.Database
+        window.Database
 
-        .getStockByLure(
+            .getStockByLure(lure.id)
 
-            lure.id
+            .filter(item =>
 
-        );
+                item.status !== "Baixada"
+
+            );
 
     section.append(
 
@@ -499,125 +606,111 @@ const estoque =
 
     );
 
-    if(estoque.length){
+    if (!estoque.length) {
 
-        const table =
-            document.createElement("table");
-
-        table.className =
-            "ficha-table";
-
-        const thead =
-            document.createElement("thead");
-
-        thead.innerHTML = `
-
-            <tr>
-
-                <th>Caixa</th>
-
-                <th>Cor</th>
-
-                <th></th>
-
-            </tr>
-
-        `;
-
-        table.append(thead);
-
-        const tbody =
-            document.createElement("tbody");
-
-estoque.forEach(item=>{
-
-    const tr =
-        document.createElement("tr");
-
-    const caixa =
-        document.createElement("td");
-
-    caixa.textContent =
-        item.caixa;
-
-    const cor =
-        document.createElement("td");
-
-    cor.textContent =
-        item.cor;
-
-    const status =
-        document.createElement("td");
-
-    status.style.textAlign =
-        "center";
-
-    const dot =
-        document.createElement("span");
-
-    dot.className =
-        "status-dot";
-
-    switch(item.status){
-
-        case "Ativa":
-
-            dot.classList.add(
-                "status-ativa"
-            );
-
-            break;
-
-        case "Reserva":
-
-            dot.classList.add(
-                "status-reserva"
-            );
-
-            break;
-
-        case "Manutenção":
-
-            dot.classList.add(
-                "status-manutencao"
-            );
-
-            break;
-
-        case "Baixada":
-
-            dot.classList.add(
-                "status-baixada"
-            );
-
-            break;
+        return section;
 
     }
 
-    dot.title =
-        item.status;
+    const table =
+        document.createElement("table");
 
-    status.append(dot);
+    table.className =
+        "ficha-table";
 
-    tr.append(
+    const thead =
+        document.createElement("thead");
 
-        caixa,
+    thead.innerHTML = `
 
-        cor,
+        <tr>
 
-        status
+            <th>Caixa</th>
 
-    );
+            <th>Cor</th>
 
-    tbody.append(tr);
+            <th>Status</th>
 
-});
+        </tr>
 
-        table.append(tbody);
+    `;
 
-        section.append(table);
+    table.append(thead);
 
-    }
+    const tbody =
+        document.createElement("tbody");
+
+    estoque.forEach(item => {
+
+        const tr =
+            document.createElement("tr");
+
+        const caixa =
+            document.createElement("td");
+
+        caixa.textContent =
+            item.caixa ?? "-";
+
+        const cor =
+            document.createElement("td");
+
+        cor.textContent =
+            item.cor ?? "-";
+
+        const status =
+            document.createElement("td");
+
+        status.style.textAlign =
+            "center";
+
+        const dot =
+            document.createElement("span");
+
+        dot.className =
+            "status-dot";
+
+        switch (item.status) {
+
+            case "Ativa":
+                dot.classList.add("status-ativa");
+                break;
+
+            case "Reserva":
+                dot.classList.add("status-reserva");
+                break;
+
+            case "Manutenção":
+                dot.classList.add("status-manutencao");
+                break;
+
+            case "Baixada":
+                dot.classList.add("status-baixada");
+                break;
+
+        }
+
+        dot.title =
+            item.status;
+
+        status.append(dot);
+
+        tr.append(
+
+            caixa,
+
+            cor,
+
+            status
+
+        );
+
+        tbody.append(tr);
+
+    });
+
+    table.append(tbody);
+
+    section.append(table);
 
     return section;
 
@@ -627,7 +720,7 @@ estoque.forEach(item=>{
 Observações
 =========================================================*/
 
-const renderObservacoes = ()=>{
+const renderObservacoes = () => {
 
     const section =
         createSection("Observações");
@@ -662,7 +755,7 @@ const createActionButton = (
 
     callback
 
-)=>{
+) => {
 
     const button =
         document.createElement("button");
@@ -680,7 +773,7 @@ const createActionButton = (
 
 };
 
-const renderActions = ()=>{
+const renderActions = () => {
 
     const section =
         createSection("Ações");
@@ -693,58 +786,14 @@ const renderActions = ()=>{
 
         createActionButton(
 
-            "✏️ Editar",
+            "⬅ Voltar ao Catálogo",
 
             "button",
 
-            ()=>{
+            () => {
 
-                console.log(
-
-                    "Editar",
-
-                    lure.id
-
-                );
-
-            }
-
-        ),
-
-        createActionButton(
-
-            "📄 Duplicar",
-
-            "button",
-
-            ()=>{
-
-                console.log(
-
-                    "Duplicar",
-
-                    lure.id
-
-                );
-
-            }
-
-        ),
-
-        createActionButton(
-
-            "🗑 Excluir",
-
-            "button button-danger",
-
-            ()=>{
-
-                console.log(
-
-                    "Excluir",
-
-                    lure.id
-
+                window.Router.open(
+                    "catalogo"
                 );
 
             }
@@ -756,7 +805,6 @@ const renderActions = ()=>{
     return section;
 
 };
-
 /*=========================================================
 Render da página
 =========================================================*/
@@ -838,6 +886,8 @@ page.append(
 
     heroCard,
 
+    renderMontagens(),
+
     renderHorario(),
 
     renderAgua(),
@@ -898,4 +948,3 @@ window.Router.register(
 );
 
 })();
-
