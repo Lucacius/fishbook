@@ -2,13 +2,21 @@
 =========================================================
 FishBook
 Service Worker
-Versão 1.0
+Versão 2.0
 =========================================================
 */
 
 "use strict";
 
+/*=========================================================
+VERSÃO DO CACHE
+=========================================================*/
+
 const CACHE_NAME = "fishbook-v2.0.0";
+
+/*=========================================================
+ARQUIVOS DA APLICAÇÃO
+=========================================================*/
 
 const APP_FILES = [
 
@@ -67,21 +75,58 @@ const APP_FILES = [
     "./assets/icons/apple-touch-icon.png",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png"
+
 ];
+
+/*=========================================================
+ARQUIVOS SEMPRE ATUALIZADOS PELA INTERNET
+=========================================================*/
+
+const NETWORK_FIRST = [
+
+    "/database/manifest.json",
+    "/database/iscas.json",
+    "/database/estoque.json",
+    "/database/categorias.json",
+    "/database/especies.json"
+
+];
+
+/*=========================================================
+UTILIDADES
+=========================================================*/
+
+const isNetworkFirst = request => {
+
+    const url = new URL(request.url);
+
+    return NETWORK_FIRST.some(path =>
+
+        url.pathname.endsWith(path)
+
+    );
+
+};
 
 /*=========================================================
 INSTALL
 =========================================================*/
 
-self.addEventListener("install", event=>{
+self.addEventListener("install", event => {
 
     self.skipWaiting();
 
     event.waitUntil(
 
-        caches.open(CACHE_NAME)
+        caches
 
-        .then(cache=>cache.addAll(APP_FILES))
+            .open(CACHE_NAME)
+
+            .then(cache =>
+
+                cache.addAll(APP_FILES)
+
+            )
 
     );
 
@@ -91,33 +136,71 @@ self.addEventListener("install", event=>{
 ACTIVATE
 =========================================================*/
 
-self.addEventListener("activate",event=>{
+self.addEventListener("activate", event => {
 
     event.waitUntil(
 
-        caches.keys()
+        (async () => {
 
-        .then(keys=>
+            const keys =
 
-            Promise.all(
+                await caches.keys();
 
-                keys.map(key=>{
+            await Promise.all(
 
-                    if(key!==CACHE_NAME){
+                keys
 
-                        return caches.delete(key);
+                    .filter(key =>
 
-                    }
+                        key !== CACHE_NAME
 
-                })
+                    )
 
-            )
+                    .map(key =>
 
-        )
+                        caches.delete(key)
+
+                    )
+
+            );
+
+            if (
+
+                self.registration.navigationPreload
+
+            ) {
+
+                await self.registration
+
+                    .navigationPreload
+
+                    .enable();
+
+            }
+
+            await self.clients.claim();
+
+        })()
 
     );
 
-    self.clients.claim();
+});
+
+/*=========================================================
+ATUALIZAÇÃO IMEDIATA
+=========================================================*/
+
+self.addEventListener("message", event => {
+
+    if (
+
+        event.data === "SKIP_WAITING"
+
+    ) {
+
+        self.skipWaiting();
+
+    }
 
 });
 
@@ -125,9 +208,61 @@ self.addEventListener("activate",event=>{
 FETCH
 =========================================================*/
 
-self.addEventListener("fetch",event=>{
+self.addEventListener("fetch", event => {
 
-    if(event.request.method!=="GET"){
+    if (event.request.method !== "GET") {
+
+        return;
+
+    }
+
+    if (isNetworkFirst(event.request)) {
+
+        event.respondWith(
+
+            (async () => {
+
+                try {
+
+                    const response =
+
+                        await fetch(event.request);
+
+                    const cache =
+
+                        await caches.open(CACHE_NAME);
+
+                    cache.put(
+
+                        event.request,
+
+                        response.clone()
+
+                    );
+
+                    return response;
+
+                }
+
+                catch (error) {
+
+                    const cached =
+
+                        await caches.match(event.request);
+
+                    if (cached) {
+
+                        return cached;
+
+                    }
+
+                    throw error;
+
+                }
+
+            })()
+
+        );
 
         return;
 
@@ -135,57 +270,109 @@ self.addEventListener("fetch",event=>{
 
     event.respondWith(
 
-        caches.match(event.request)
+        (async () => {
 
-        .then(cache=>{
+            const cached =
 
-            if(cache){
+                await caches.match(event.request);
 
-                return cache;
+            if (cached) {
+
+                fetch(event.request)
+
+                    .then(async response => {
+
+                        if (
+
+                            response.ok &&
+
+                            (
+
+                                response.type === "basic" ||
+
+                                response.type === "cors"
+
+                            )
+
+                        ) {
+
+                            const cache =
+
+                                await caches.open(CACHE_NAME);
+
+                            cache.put(
+
+                                event.request,
+
+                                response.clone()
+
+                            );
+
+                        }
+
+                    })
+
+                    .catch(() => {});
+
+                return cached;
 
             }
 
-            return fetch(event.request)
+            try {
 
-            .then(response=>{
+                const response =
 
-                if(
+                    await fetch(event.request);
 
-                    !response ||
+                if (
 
-                    response.status!==200 ||
+                    response.ok &&
 
-                    response.type!=="basic"
+                    (
 
-                ){
+                        response.type === "basic" ||
 
-                    return response;
+                        response.type === "cors"
 
-                }
+                    )
 
-                const clone=
+                ) {
 
-                    response.clone();
+                    const cache =
 
-                caches.open(CACHE_NAME)
-
-                .then(cache=>{
+                        await caches.open(CACHE_NAME);
 
                     cache.put(
 
                         event.request,
 
-                        clone
+                        response.clone()
 
                     );
 
-                });
+                }
 
                 return response;
 
-            });
+            }
 
-        })
+            catch (error) {
+
+                if (
+
+                    event.request.mode === "navigate"
+
+                ) {
+
+                    return caches.match("./index.html");
+
+                }
+
+                throw error;
+
+            }
+
+        })()
 
     );
 
