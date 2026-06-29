@@ -143,7 +143,6 @@ self.addEventListener("activate", event => {
         (async () => {
 
             const keys =
-
                 await caches.keys();
 
             await Promise.all(
@@ -163,20 +162,6 @@ self.addEventListener("activate", event => {
                     )
 
             );
-
-            if (
-
-                self.registration.navigationPreload
-
-            ) {
-
-                await self.registration
-
-                    .navigationPreload
-
-                    .enable();
-
-            }
 
             await self.clients.claim();
 
