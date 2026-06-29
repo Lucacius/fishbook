@@ -116,13 +116,15 @@ details.innerHTML = `
     // Estoque
     const stock = document.createElement("div");
     stock.className = "lure-card__stock";
-  const quantidade =
+ const quantidade =
 
     window.Database
 
-        .getStockByLure(lure.id)
+        .getStock()
 
         .filter(item =>
+
+            item.isca === lure.id &&
 
             item.status !== "Baixada"
 
