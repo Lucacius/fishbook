@@ -29,8 +29,19 @@
     const image = document.createElement("img");
 
     image.className = "lure-card__image";
-    image.alt = lure.nome;
-    image.src = `assets/img/iscas/${lure.id}.jpg`;
+    image.alt =
+
+    lure.nome ??
+
+    "Isca";
+
+image.src =
+
+    lure.foto
+
+        ? `assets/img/iscas/${lure.foto}`
+
+        : "assets/img/iscas/semfoto.png";
 
     image.onerror = () => {
       image.onerror = null;
@@ -54,23 +65,77 @@
 // Badge
 const badge =
   window.FishBook.Components.Badge.create({
-    value: lure.eficiencia
+value: lure.eficiencia ?? 0
   });
 
     // Informações
     const details = document.createElement("div");
     details.className = "lure-card__details";
 
-    details.innerHTML = `
-      <div><strong>Kit:</strong> ${lure.kit}</div>
-      <div><strong>Família:</strong> ${lure.familia}</div>
-      <div><strong>Peso:</strong> ${lure.peso} g</div>
-    `;
+   const montagens =
+
+    Array.isArray(lure.montagens)
+
+        ? lure.montagens.join(" • ")
+
+        : "-";
+
+const peso =
+
+    lure.peso
+
+        ? `${lure.peso} g`
+
+        : "-";
+
+details.innerHTML = `
+
+    <div>
+
+        <strong>${lure.categoria}</strong>
+
+    </div>
+
+    <div>
+
+        ${lure.subcategoria ?? "-"}
+
+    </div>
+
+    <div>
+
+        ${peso}
+
+    </div>
+
+    <div>
+
+        ${montagens}
+
+    </div>
+
+`;
 
     // Estoque
     const stock = document.createElement("div");
     stock.className = "lure-card__stock";
-    stock.textContent = `📦 ${lure.estoque} unidade(s)`;
+  const quantidade =
+
+    window.Database
+
+        .getStockByLure(lure.id)
+
+        .filter(item =>
+
+            item.status !== "Baixada"
+
+        )
+
+        .length;
+
+stock.textContent =
+
+    `📦 ${quantidade} unidade(s)`;
 
     content.append(
       code,
