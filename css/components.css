@@ -123,6 +123,39 @@
   transform: scale(0.98);
 }
 
+/*=========================================================
+Navbar
+=========================================================*/
+
+.navbar{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.navbar-button{
+
+    flex:1;
+
+}
+
+.navbar-active{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-color:var(--primary);
+
+}
+
+
 @media (hover: hover) and (pointer: fine) {
   .fb-card:hover {
     border-color: color-mix(in srgb, var(--color-accent) 48%, var(--color-border));

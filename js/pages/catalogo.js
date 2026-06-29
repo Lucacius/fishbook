@@ -224,6 +224,17 @@ const renderHeader = () => {
 
   });
 
+page.append(
+
+    window.FishBook
+        .Components
+        .Navbar
+        .create("catalogo"),
+
+    ...
+
+);
+
   window.FishBook =
     window.FishBook ?? {};
 

@@ -10,4 +10,6 @@
   window.FishBook.Services =
     window.FishBook.Services ?? {};
 
+import "./navbar.js";
+
 })();

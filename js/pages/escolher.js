@@ -51,6 +51,8 @@ const createFilter = (
 
     });
 
+Navbar.create("escolher");
+
 /*=========================================================
 Filtros
 =========================================================*/
@@ -409,6 +411,17 @@ const EscolherPage = Object.freeze({
     }
 
 });
+
+page.append(
+
+    window.FishBook
+        .Components
+        .Navbar
+        .create("escolher"),
+
+    ...
+
+);
 
 window.FishBook.Pages =
     window.FishBook.Pages ?? {};

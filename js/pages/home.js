@@ -90,6 +90,7 @@ brand.append(
     return header;
   };
 
+
   /* Cria os cards sem acoplar funcionalidades futuras ao Dashboard. */
  const createCards = () => {
   const { Card } = window.FishBook.Components;
@@ -143,6 +144,16 @@ brand.append(
     },
   });
 
+page.append(
+
+    window.FishBook
+        .Components
+        .Navbar
+        .create("home"),
+
+    ...
+
+);
   window.FishBook = window.FishBook ?? {};
   window.FishBook.Pages = window.FishBook.Pages ?? {};
   window.FishBook.Pages.Home = Home;
