@@ -25,63 +25,115 @@ window.FishBook.Pages = window.FishBook.Pages ?? {};
       window.Router.start();
       await window.Router.open("home");
 
-      console.info("FishBook v1.0 iniciado com sucesso.");
+      console.info("FishBook v2.0 iniciado com sucesso.");
       console.info("Banco carregado.");
       window.Validator.report(validationErrors);
     } catch (error) {
       console.error(
-        "FishBook v1.0 encontrou uma falha inesperada na inicialização.",
+        "FishBook v2.0 encontrou uma falha inesperada na inicialização.",
         error,
       );
     }
   };
-if(
+if ("serviceWorker" in navigator) {
 
-    "serviceWorker"
+    window.addEventListener("load", async () => {
 
-    in navigator
+        try {
 
-){
+            const registration =
 
-    window.addEventListener(
-
-        "load",
-
-        ()=>{
-
-            navigator
-
-                .serviceWorker
-
-                .register(
+                await navigator.serviceWorker.register(
 
                     "./service-worker.js"
 
-                )
+                );
 
-                .then(()=>{
+            console.info(
 
-                    console.info(
+                "Service Worker registrado."
 
-                        "Service Worker registrado."
+            );
+
+            await registration.update();
+
+            if (registration.waiting) {
+
+                registration.waiting.postMessage(
+
+                    "SKIP_WAITING"
+
+                );
+
+            }
+
+            registration.addEventListener(
+
+                "updatefound",
+
+                () => {
+
+                    const worker =
+
+                        registration.installing;
+
+                    if (!worker) {
+
+                        return;
+
+                    }
+
+                    worker.addEventListener(
+
+                        "statechange",
+
+                        () => {
+
+                            if (
+
+                                worker.state === "installed" &&
+
+                                navigator.serviceWorker.controller
+
+                            ) {
+
+                                worker.postMessage(
+
+                                    "SKIP_WAITING"
+
+                                );
+
+                            }
+
+                        }
 
                     );
 
-                })
+                }
 
-                .catch(error=>{
+            );
 
-                    console.error(
+            navigator.serviceWorker.addEventListener(
 
-                        error
+                "controllerchange",
 
-                    );
+                () => {
 
-                });
+                    window.location.reload();
+
+                }
+
+            );
 
         }
 
-    );
+        catch (error) {
+
+            console.error(error);
+
+        }
+
+    });
 
 }
 
