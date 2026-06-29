@@ -117,13 +117,7 @@ const montagem =
 
 .toLowerCase();
 
-                .filter(Boolean)
-
-                .join(" ")
-
-                .toLowerCase();
-
-                const okTexto =
+                               const okTexto =
 
                     !texto ||
 
