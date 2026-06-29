@@ -19,7 +19,13 @@ Catálogo
 
     display:flex;
     flex-direction:column;
-    gap:6px;
+    gap:12px;
+
+}
+
+.catalogo-header .button{
+
+    align-self:flex-start;
 
 }
 
