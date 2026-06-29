@@ -79,7 +79,7 @@ const APP_FILES = [
     "./assets/icons/apple-touch-icon.png",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png",
-"./assets/img/iscas/semfoto.png",
+"./assets/iscas/semfoto.png",
 
 ];
 
