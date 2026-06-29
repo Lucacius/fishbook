@@ -35,18 +35,15 @@
 
     "Isca";
 
-image.src =
+image.src = `assets/iscas/${lure.id}.png`;
 
-    lure.foto
+image.onerror = () => {
 
-        ? `assets/iscas/${lure.foto}`
+    image.onerror = null;
 
-        : "assets/iscas/semfoto.png";
+    image.src = "assets/iscas/semfoto.png";
 
-    image.onerror = () => {
-      image.onerror = null;
-      image.src = "assets/iscas/semfoto.png";
-    };
+};
 
     // Conteúdo
     const content = document.createElement("div");
