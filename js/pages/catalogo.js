@@ -15,22 +15,55 @@
 
   /* ========================= */
 
-  const renderHeader = () => {
+const renderHeader = () => {
 
-    const header = document.createElement("header");
-    header.className = "catalogo-header";
+    const header =
+        document.createElement("header");
 
-    const title = document.createElement("h1");
-    title.textContent = "📖 Catálogo";
+    header.className =
+        "catalogo-header";
 
-    const subtitle = document.createElement("p");
+    const voltar =
+        document.createElement("button");
+
+    voltar.className =
+        "button button-secondary";
+
+    voltar.textContent =
+        "← Início";
+
+    voltar.onclick = () => {
+
+        window.Router.open("home");
+
+    };
+
+    const title =
+        document.createElement("h1");
+
+    title.textContent =
+        "📖 Catálogo";
+
+    const subtitle =
+        document.createElement("p");
+
     subtitle.textContent =
-`${window.Database.getLures().length} iscas cadastradas`;
-    header.append(title, subtitle);
+
+        `${window.Database.getLures().length} iscas cadastradas`;
+
+    header.append(
+
+        voltar,
+
+        title,
+
+        subtitle
+
+    );
 
     return header;
 
-  };
+};
 
   /* ========================= */
 
