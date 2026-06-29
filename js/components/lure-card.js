@@ -39,13 +39,13 @@ image.src =
 
     lure.foto
 
-        ? `assets/img/iscas/${lure.foto}`
+        ? `assets/iscas/${lure.foto}`
 
-        : "assets/img/iscas/semfoto.png";
+        : "assets/iscas/semfoto.png";
 
     image.onerror = () => {
       image.onerror = null;
-      image.src = "assets/img/iscas/semfoto.png";
+      image.src = "assets/iscas/semfoto.png";
     };
 
     // Conteúdo
