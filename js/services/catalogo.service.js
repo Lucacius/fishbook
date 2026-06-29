@@ -117,7 +117,8 @@ const montagem =
 
 .toLowerCase();
 
-                               const okTexto =
+               
+                const okTexto =
 
                     !texto ||
 
