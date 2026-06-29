@@ -43,8 +43,6 @@ const loadLure = id => {
 
 };
 
-Navbar.create("ficha");
-
 /*=========================================================
 Utilidades
 =========================================================*/
@@ -276,7 +274,7 @@ const renderPhoto = () => {
 Informações
 =========================================================*/
 
-const renderInfo = ()=>{
+const renderInfo = () => {
 
     const container =
         document.createElement("div");
@@ -284,17 +282,43 @@ const renderInfo = ()=>{
     container.className =
         "ficha-info";
 
+    const montagens =
+
+        Array.isArray(lure.montagens)
+
+            ? lure.montagens.join(", ")
+
+            : "-";
+
+    const profundidade =
+
+        lure.profundidade
+
+            ? lure.profundidade.descricao
+            : "-";
+
     [
+
+        ["Origem", lure.origem],
 
         ["Categoria", lure.categoria],
 
-        ["Kit", lure.kit],
+        ["Subcategoria", lure.subcategoria],
 
-        ["Família", lure.familia],
+        ["Tipo", lure.tipo],
 
-        ["Subtipo", lure.subtipo || "-"],
+        ["Montagens", montagens],
 
-        ["Peso", `${lure.peso} g`],
+        [
+
+            "Peso",
+
+            lure.peso
+
+                ? `${lure.peso} g`
+                : "-"
+
+        ],
 
         [
 
@@ -303,8 +327,15 @@ const renderInfo = ()=>{
             lure.comprimento
 
                 ? `${lure.comprimento} cm`
-
                 : "-"
+
+        ],
+
+        [
+
+            "Flutuação",
+
+            lure.flutuacao ?? "-"
 
         ],
 
@@ -312,21 +343,21 @@ const renderInfo = ()=>{
 
             "Profundidade",
 
-            lure.profundidade?.tipo ?? "-"
+            profundidade
 
         ]
 
     ]
 
-    .forEach(item=>{
+    .forEach(([label, value]) => {
 
         container.append(
 
             createInfoRow(
 
-                item[0],
+                label,
 
-                item[1]
+                value
 
             )
 
@@ -337,7 +368,6 @@ const renderInfo = ()=>{
     return container;
 
 };
-
 
 /*=========================================================
 Montagens
@@ -883,6 +913,11 @@ heroCard.append(
 );
 
 page.append(
+
+    window.FishBook
+        .Components
+        .Navbar
+        .create("catalogo"),
 
     renderHeader(),
 

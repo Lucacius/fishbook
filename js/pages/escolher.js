@@ -51,8 +51,6 @@ const createFilter = (
 
     });
 
-Navbar.create("escolher");
-
 /*=========================================================
 Filtros
 =========================================================*/
@@ -201,7 +199,16 @@ const render = () => {
     title.textContent =
         "🎯 Escolher Isca";
 
-    page.append(title);
+page.append(
+
+    window.FishBook
+        .Components
+        .Navbar
+        .create("escolher"),
+
+    title
+
+);
 
     /* Espécie */
 
@@ -411,17 +418,6 @@ const EscolherPage = Object.freeze({
     }
 
 });
-
-page.append(
-
-    window.FishBook
-        .Components
-        .Navbar
-        .create("escolher"),
-
-    ...
-
-);
 
 window.FishBook.Pages =
     window.FishBook.Pages ?? {};

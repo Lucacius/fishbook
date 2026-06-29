@@ -175,13 +175,18 @@ const renderHeader = () => {
 
     page.className = "catalogo";
 
-    page.append(
+   page.append(
 
-      renderHeader(),
+    window.FishBook
+        .Components
+        .Navbar
+        .create("catalogo"),
 
-      renderFilters()
+    renderHeader(),
 
-    );
+    renderFilters()
+
+);
 
     listContainer =
       document.createElement("div");
@@ -223,17 +228,6 @@ const renderHeader = () => {
     }
 
   });
-
-page.append(
-
-    window.FishBook
-        .Components
-        .Navbar
-        .create("catalogo"),
-
-    ...
-
-);
 
   window.FishBook =
     window.FishBook ?? {};

@@ -129,7 +129,18 @@ brand.append(
       children: createCards(),
     });
 
-    dashboard.append(createHeader(), modulesSection);
+dashboard.append(
+
+    window.FishBook
+        .Components
+        .Navbar
+        .create("home"),
+
+    createHeader(),
+
+    modulesSection
+
+);
     root.replaceChildren(dashboard);
     return true;
   };
@@ -144,16 +155,6 @@ brand.append(
     },
   });
 
-page.append(
-
-    window.FishBook
-        .Components
-        .Navbar
-        .create("home"),
-
-    ...
-
-);
   window.FishBook = window.FishBook ?? {};
   window.FishBook.Pages = window.FishBook.Pages ?? {};
   window.FishBook.Pages.Home = Home;
