@@ -251,16 +251,16 @@ const renderPhoto = () => {
 
         lure.foto
 
-            ? `assets/img/iscas/${lure.foto}`
+            ? `assets/iscas/${lure.foto}`
 
-            : "assets/img/iscas/semfoto.png";
+            : "assets/iscas/semfoto.png";
 
     img.onerror = () => {
 
         img.onerror = null;
 
         img.src =
-            "assets/img/iscas/semfoto.png";
+            "assets/iscas/semfoto.png";
 
     };
 
