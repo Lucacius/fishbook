@@ -1,4 +1,4 @@
-# FishBook v1.0.0
+# FishBook v2.0.0
 
 Aplicação web responsiva construída com HTML5, CSS3, JavaScript ES6 e JSON,
 sem frameworks ou bibliotecas de interface.
