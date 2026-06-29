@@ -247,13 +247,8 @@ const renderPhoto = () => {
     img.loading =
         "lazy";
 
-    img.src =
-
-        lure.foto
-
-            ? `assets/iscas/${lure.foto}`
-
-            : "assets/iscas/semfoto.png";
+    img.src = 
+            "assets/iscas/${lure.id}.png";
 
     img.onerror = () => {
 
