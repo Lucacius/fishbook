@@ -45,9 +45,21 @@ const listar = (filters = {})=>{
 
         .toLowerCase();
 
-    const categoria =
+const origem =
 
-        filters.categoria ?? "";
+    filters.origem ?? "";
+
+const categoria =
+
+    filters.categoria ?? "";
+
+const subcategoria =
+
+    filters.subcategoria ?? "";
+
+const montagem =
+
+    filters.montagem ?? "";
 
     return sortById(
 
@@ -115,21 +127,43 @@ const listar = (filters = {})=>{
 
                     );
 
-                const okCategoria =
+                const okOrigem =
 
-                    !categoria ||
+    !origem ||
 
-                    lure.categoria===
+    lure.origem === origem;
 
-                    categoria;
+const okCategoria =
 
-                return (
+    !categoria ||
 
-                    okTexto &&
+    lure.categoria === categoria;
 
-                    okCategoria
+const okSubcategoria =
 
-                );
+    !subcategoria ||
+
+    lure.subcategoria === subcategoria;
+
+const okMontagem =
+
+    !montagem ||
+
+    (lure.montagens ?? []).includes(montagem);
+
+return (
+
+    okTexto &&
+
+    okOrigem &&
+
+    okCategoria &&
+
+    okSubcategoria &&
+
+    okMontagem
+
+);
 
             })
 

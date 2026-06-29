@@ -6,10 +6,19 @@
 (() => {
   "use strict";
 
-  let filters = {
+let filters = {
+
     texto: "",
+
+    origem: "",
+
     categoria: "",
-  };
+
+    subcategoria: "",
+
+    montagem: ""
+
+};
 
   let listContainer;
 
@@ -67,62 +76,151 @@ const renderHeader = () => {
 
   /* ========================= */
 
-  const renderFilters = () => {
+const renderFilters = () => {
 
-    const wrapper = document.createElement("section");
-    wrapper.className = "catalogo-filters";
+    const wrapper =
+        document.createElement("section");
 
-    const input = document.createElement("input");
+    wrapper.className =
+        "catalogo-filters";
 
-    input.type = "search";
-    input.className = "input";
-    input.placeholder = "Pesquisar...";
+    const createSelect = (
 
-    input.addEventListener("input", e => {
+        placeholder,
 
-      filters.texto = e.target.value;
+        values,
 
-      updateList();
+        field
 
-    });
+    ) => {
 
-    const select = document.createElement("select");
+        const select =
+            document.createElement("select");
 
-    select.className = "input";
+        select.className =
+            "input";
 
-    select.innerHTML =
-      `<option value="">Todas categorias</option>`;
+        const first =
+            document.createElement("option");
 
-    window.FishBook.Services.CatalogoService
-    .categorias()
-      .forEach(cat => {
+        first.value = "";
 
-        const option = document.createElement("option");
+        first.textContent =
+            placeholder;
 
-        option.value = cat.id;
-        option.textContent = cat.nome;
+        select.append(first);
 
-        select.append(option);
+        values.forEach(value => {
 
-      });
+            const option =
+                document.createElement("option");
 
-    select.addEventListener("change", e => {
+            option.value =
+                value;
 
-      filters.categoria = e.target.value;
+            option.textContent =
+                value;
 
-      updateList();
+            select.append(option);
 
-    });
+        });
+
+        select.addEventListener(
+
+            "change",
+
+            e => {
+
+                filters[field] =
+                    e.target.value;
+
+                updateList();
+
+            }
+
+        );
+
+        return select;
+
+    };
+
+    const input =
+        document.createElement("input");
+
+    input.type =
+        "search";
+
+    input.className =
+        "input";
+
+    input.placeholder =
+        "Pesquisar...";
+
+    input.addEventListener(
+
+        "input",
+
+        e => {
+
+            filters.texto =
+                e.target.value;
+
+            updateList();
+
+        }
+
+    );
 
     wrapper.append(
-      input,
-      select
+
+        input,
+
+        createSelect(
+
+            "Todas as origens",
+
+            window.Database.getOrigins(),
+
+            "origem"
+
+        ),
+
+        createSelect(
+
+            "Todas as categorias",
+
+            window.Database.getCategoriesList(),
+
+            "categoria"
+
+        ),
+
+        createSelect(
+
+            "Todas as subcategorias",
+
+            window.Database.getSubcategories(),
+
+            "subcategoria"
+
+        ),
+
+        createSelect(
+
+            "Todas as montagens",
+
+            window.Database.getMontagens(),
+
+            "montagem"
+
+        )
+
     );
 
     return wrapper;
 
-  };
-
+};
+ 
   /* ========================= */
 
   const updateList = () => {
@@ -209,11 +307,17 @@ const renderHeader = () => {
 
       filters = {
 
-        texto: "",
+    texto: "",
 
-        categoria: ""
+    origem: "",
 
-      };
+    categoria: "",
+
+    subcategoria: "",
+
+    montagem: ""
+
+};
 
       render();
 

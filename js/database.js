@@ -301,6 +301,64 @@ const getLuresByCategory = category=>{
 
 };
 
+const getOrigins = () =>
+
+    [...new Set(
+
+        getLures()
+
+            .map(lure => lure.origem)
+
+            .filter(Boolean)
+
+    )]
+
+    .sort();
+
+const getCategoriesList = () =>
+
+    [...new Set(
+
+        getLures()
+
+            .map(lure => lure.categoria)
+
+            .filter(Boolean)
+
+    )]
+
+    .sort();
+
+const getSubcategories = () =>
+
+    [...new Set(
+
+        getLures()
+
+            .map(lure => lure.subcategoria)
+
+            .filter(Boolean)
+
+    )]
+
+    .sort();
+
+const getMontagens = () =>
+
+    [...new Set(
+
+        getLures()
+
+            .flatMap(
+
+                lure => lure.montagens ?? []
+
+            )
+
+    )]
+
+    .sort();
+
 /*=========================================================
 API
 =========================================================*/
@@ -442,23 +500,23 @@ const Database = {
 
     },
 
-    collection,
+   collection,
 
-    getLures,
+getLures,
 
-    getLure,
+getLure,
 
-    getCategories,
+getCategories,
 
-    getStock,
+getCategoriesList,
 
-    getStockByLure,
+getOrigins,
 
-    getSpecies,
+getSubcategories,
 
-    searchLures,
+getMontagens,
 
-    getLuresByCategory,
+getStock,
 
     /* Compatibilidade */
 
