@@ -12,7 +12,7 @@ Versão 2.0
 VERSÃO DO CACHE
 =========================================================*/
 
-const CACHE_NAME = "fishbook-v2.0.0";
+const CACHE_NAME = "fishbook-v2.0.1";
 
 /*=========================================================
 ARQUIVOS DA APLICAÇÃO
@@ -52,6 +52,7 @@ const APP_FILES = [
     "./js/components/badge.js",
     "./js/components/chip.js",
     "./js/components/section.js",
+"./js/components/navbar.js",
     "./js/components/filter-group.js",
     "./js/components/suggestion-card.js",
     "./js/components/lure-card.js",
@@ -64,6 +65,9 @@ const APP_FILES = [
     "./js/pages/catalogo.js",
     "./js/pages/ficha.js",
     "./js/pages/escolher.js",
+"./js/pages/estoque.js",
+"./js/pages/locais.js",
+"./js/pages/diario.js",
 
     "./database/manifest.json",
     "./database/iscas.json",
@@ -75,6 +79,7 @@ const APP_FILES = [
     "./assets/icons/apple-touch-icon.png",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png"
+"./assets/icons/icon-512.png"
 
 ];
 
