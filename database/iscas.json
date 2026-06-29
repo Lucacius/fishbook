@@ -1,4 +1,4 @@
-﻿{
+{
     "versao":  "1.0",
     "iscas":  [
                   {
@@ -7,7 +7,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superf�cie",
                       "subcategoria":  "Zara",
                       "nome":  "Zara (Stick)",
                       "peso":  16,
@@ -20,7 +20,7 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -269,7 +269,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Ãgua",
                       "subcategoria":  "Minnow",
                       "nome":  "Long Minnow",
                       "peso":  15.4,
@@ -341,7 +341,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Ãgua",
                       "subcategoria":  "Minnow",
                       "nome":  "Minnow Slow Sinking",
                       "peso":  14,
@@ -407,7 +407,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Ãgua",
                       "subcategoria":  "Minnow",
                       "nome":  "Long Minnow Floating",
                       "peso":  18.5,
@@ -478,7 +478,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Ãgua",
                       "subcategoria":  "Minnow",
                       "nome":  "Minnow Floating",
                       "peso":  13.4,
@@ -1621,7 +1621,7 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Ãgua",
                       "subcategoria":  "Micro Minnow Sinking",
                       "nome":  "Micro Minnow Sinking",
                       "peso":  4.5,
@@ -1690,7 +1690,7 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Ãgua",
                       "subcategoria":  "Light Minnow",
                       "nome":  "Light Minnow",
                       "peso":  8.5,
@@ -1755,7 +1755,7 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Ãgua",
                       "subcategoria":  "Minnow Sinking",
                       "nome":  "Minnow Sinking",
                       "peso":  7.4,
@@ -3035,7 +3035,7 @@
                       "comprimento":  null,
                       "flutuacao":  "Natural",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie / Meia Ãgua",
+                                           "descricao":  "SuperfÃ­cie / Meia Ãgua",
                                            "min":  0,
                                            "max":  2
                                        },
@@ -3769,7 +3769,7 @@
                       "comprimento":  null,
                       "flutuacao":  "Natural",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie / Meia Ãgua",
+                                           "descricao":  "SuperfÃ­cie / Meia Ãgua",
                                            "min":  0,
                                            "max":  2
                                        },
@@ -3811,7 +3811,7 @@
                                     ],
                       "estruturas":  [
                                          "Margem",
-                                         "Ãrvore caÃ­da",
+                                         "Ãrvore caÃ­da",
                                          "Praia"
                                      ],
                       "trabalhos":  [
