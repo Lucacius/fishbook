@@ -71,25 +71,21 @@ const montagem =
 
                 ...lure,
 
-                estoque:
+               estoque:
 
-                    window.Database
+    window.Database
 
-                        .getStockByLure(
+        .getStock()
 
-                            lure.id
+        .filter(item =>
 
-                        )
+            item.isca === lure.id &&
 
-                        .filter(item=>
+            item.status !== "Baixada"
 
-                            item.status !==
+        )
 
-                            "Baixada"
-
-                        )
-
-                        .length
+        .length
 
             }))
 
