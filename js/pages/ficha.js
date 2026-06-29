@@ -611,15 +611,12 @@ const renderEstoque = () => {
 
     const estoque =
 
-        window.Database
-
-            .getStockByLure(lure.id)
-
-            .filter(item =>
-
-                item.status !== "Baixada"
-
-            );
+       window.Database
+    .getStock()
+    .filter(item =>
+        item.isca === lure.id &&
+        item.status !== "Baixada"
+    );
 
     section.append(
 

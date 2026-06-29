@@ -225,20 +225,6 @@ const getStock = ()=>[
     ...collection("estoque")
 ];
 
-const getStockByLure = id=>
-
-    getStock()
-
-        .filter(item=>
-
-            item.isca.toLowerCase()===
-
-            String(id)
-
-            .toLowerCase()
-
-        );
-
 const getSpecies = ()=>[
     ...collection("especies")
 ];
