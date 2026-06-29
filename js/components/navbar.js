@@ -102,7 +102,7 @@ window.FishBook =
 window.FishBook.Components =
     window.FishBook.Components ?? {};
 
-window.FishBook.Components.Navbar =
+window.FishBook.Components.navbar =
     Object.freeze({
 
         create
