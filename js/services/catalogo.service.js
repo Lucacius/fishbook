@@ -95,21 +95,27 @@ const montagem =
 
             .filter(lure=>{
 
-                const pesquisa = [
+       const pesquisa = [
 
-                    lure.id,
+    lure.id,
 
-                    lure.nome,
+    lure.nome,
 
-                    lure.familia,
+    lure.origem,
 
-                    lure.categoria,
+    lure.categoria,
 
-                    lure.kit,
+    lure.subcategoria,
 
-                    lure.subtipo
+    ...(lure.montagens ?? [])
 
-                ]
+]
+
+.filter(Boolean)
+
+.join(" ")
+
+.toLowerCase();
 
                 .filter(Boolean)
 

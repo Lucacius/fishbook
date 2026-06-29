@@ -500,7 +500,7 @@ const Database = {
 
     },
 
-   collection,
+collection,
 
 getLures,
 
@@ -508,15 +508,17 @@ getLure,
 
 getCategories,
 
-getCategoriesList,
-
 getOrigins,
+
+getCategoriesList,
 
 getSubcategories,
 
 getMontagens,
 
 getStock,
+
+
 
     /* Compatibilidade */
 
