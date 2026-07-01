@@ -16,11 +16,13 @@ let filters = {
 
     subcategoria: "",
 
-    montagem: ""
+    montagem: "",
 
-};
+   };
 
   let listContainer;
+
+  let contadorElement;
 
   /* ========================= */
 
@@ -56,10 +58,9 @@ const renderHeader = () => {
     const subtitle =
         document.createElement("p");
 
-    subtitle.textContent =
+    contadorElement = subtitle;
 
-        `${window.Database.getLures().length} iscas cadastradas`;
-
+    
     header.append(
 
         voltar,
@@ -233,6 +234,12 @@ const renderFilters = () => {
         .CatalogoService
         .listar(filters);
 
+            const total =
+    window.Database.getLures().length;
+
+contadorElement.textContent =
+    `${list.length} de ${total} iscas encontradas`;
+
     list.forEach(lure => {
 
       listContainer.append(
@@ -296,6 +303,8 @@ const renderFilters = () => {
     root.replaceChildren(page);
 
     updateList();
+
+
 
   };
 
