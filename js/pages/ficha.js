@@ -602,6 +602,58 @@ const renderEspecies = () => {
 Estoque
 =========================================================*/
 
+const abrirModalNovaUnidade = async lure => {
+
+    const caixa = prompt("Caixa:", "");
+
+    if (caixa === null) {
+
+        return;
+
+    }
+
+    const cor = prompt("Cor:", "");
+
+    if (cor === null) {
+
+        return;
+
+    }
+
+    const status = prompt(
+
+        "Status (Ativa, Reserva ou Manutenção):",
+
+        "Ativa"
+
+    );
+
+    if (status === null) {
+
+        return;
+
+    }
+
+    await window.Database.addStock({
+
+        id: window.Database.nextStockId(),
+
+        isca: lure.id,
+
+        caixa,
+
+        ordem: 1,
+
+        cor,
+
+        status
+
+    });
+
+    render();
+
+};
+
 const renderEstoque = () => {
 
     const section =
@@ -616,17 +668,289 @@ const renderEstoque = () => {
         item.status !== "Baixada"
     );
 
-    section.append(
+ const quantidadeRow =
+    document.createElement("div");
 
-        createInfoRow(
+quantidadeRow.className =
+    "ficha-quantidade";
 
-            "Quantidade",
+const titulo =
+    document.createElement("span");
 
-            estoque.length
+titulo.textContent =
+    "Quantidade";
 
-        )
+const controles =
+    document.createElement("div");
+
+controles.className =
+    "ficha-controles";
+
+const btnMenos =
+    document.createElement("button");
+
+btnMenos.textContent =
+    "−";
+
+btnMenos.className =
+    "btn-estoque";
+
+    btnMenos.onclick = () => {
+
+    const ultima =
+
+        window.Database
+
+            .getStock()
+
+            .filter(item =>
+
+                item.isca === lure.id
+
+            )
+
+            .at(-1);
+
+    if (!ultima) {
+
+        return;
+
+    }
+
+    window.Database.removeStock(
+
+        ultima.id
 
     );
+
+    render();
+
+};
+
+const quantidade =
+    document.createElement("span");
+
+quantidade.className =
+    "quantidade-valor";
+
+quantidade.textContent =
+    estoque.length;
+
+const btnMais =
+    document.createElement("button");
+
+btnMais.textContent =
+    "+";
+
+btnMais.className =
+    "btn-estoque";
+
+btnMais.onclick = () => {
+
+    const form =
+        document.createElement("form");
+
+    form.className =
+        "fb-modal-form";
+
+    form.innerHTML = `
+
+<label>
+
+    Quantidade
+
+    <input
+        id="modal-quantidade"
+        type="number"
+        min="1"
+        value="1">
+
+</label>
+
+<label>
+
+    Caixa
+
+    <select 
+    
+        id="modal-caixa">
+        </select>
+
+</label>
+
+<label>
+
+    Cor
+
+    <input
+        id="modal-cor"
+        type="text"
+        placeholder="Fire Tiger">
+
+</label>
+
+<label>
+
+    Status
+
+    <select id="modal-status">
+
+        <option value="Ativa">Ativa</option>
+
+        <option value="Reserva">Reserva</option>
+
+        <option value="Manutenção">Manutenção</option>
+
+        <option value="Baixada">Baixada</option>
+
+    </select>
+
+</label>
+
+<div class="fb-modal-actions">
+
+    <button
+        type="button"
+        id="modal-cancelar">
+
+        Cancelar
+
+    </button>
+
+    <button
+        type="submit">
+
+        Salvar
+
+    </button>
+
+</div>
+
+`;
+
+    window.FishBook.Components.Modal.open({
+
+        title: "Nova unidade",
+
+        content: form
+
+    });
+
+    const selectCaixa =
+    document.getElementById(
+        "modal-caixa"
+    );
+
+window.Database
+    .getBoxes()
+    .forEach(caixa => {
+
+        const option =
+            document.createElement("option");
+
+        option.value =
+            caixa.id;
+
+        option.textContent =
+            caixa.nome;
+
+        selectCaixa.append(
+            option
+        );
+
+    });
+
+    document
+        .getElementById("modal-caixa")
+        .focus();
+
+    document
+        .getElementById("modal-cancelar")
+        .onclick = () =>
+
+            window.FishBook.Components.Modal.close();
+
+            form.onsubmit = async event => {
+
+    event.preventDefault();
+
+    const quantidade =
+        Number(
+            document.getElementById("modal-quantidade").value
+        );
+
+    const caixa =
+        document.getElementById("modal-caixa").value.trim();
+
+    const cor =
+        document.getElementById("modal-cor").value.trim();
+
+    const status =
+        document.getElementById("modal-status").value;
+
+    for (
+
+        let i = 0;
+
+        i < quantidade;
+
+        i++
+
+    ) {
+
+        await window.Database.addStock({
+
+            id:
+                window.Database.nextStockId(),
+
+            isca:
+                lure.id,
+
+            caixa,
+            
+            ordem: 0,
+
+            cor,
+
+            status
+
+        });
+
+    }
+
+    window.FishBook
+        .Components
+        .Modal
+        .close();
+
+    render();
+
+};
+};
+
+controles.append(
+
+    btnMenos,
+
+    quantidade,
+
+    btnMais
+
+);
+
+quantidadeRow.append(
+
+    titulo,
+
+    controles
+
+);
+
+section.append(
+
+    quantidadeRow
+
+);
 
     if (!estoque.length) {
 
@@ -653,6 +977,8 @@ const renderEstoque = () => {
 
             <th>Status</th>
 
+            <th>Ações</th>
+
         </tr>
 
     `;
@@ -678,57 +1004,206 @@ const renderEstoque = () => {
 
         cor.textContent =
             item.cor ?? "-";
+const status =
+    document.createElement("td");
 
-        const status =
-            document.createElement("td");
+const select =
+    document.createElement("select");
 
-        status.style.textAlign =
-            "center";
+[
+    "Ativa",
+    "Reserva",
+    "Manutenção",
+    "Baixada"
+].forEach(valor => {
 
-        const dot =
-            document.createElement("span");
+    const option =
+        document.createElement("option");
 
-        dot.className =
-            "status-dot";
+    option.value =
+        valor;
 
-        switch (item.status) {
+    option.textContent =
+        valor;
 
-            case "Ativa":
-                dot.classList.add("status-ativa");
-                break;
+    option.selected =
+        valor === item.status;
 
-            case "Reserva":
-                dot.classList.add("status-reserva");
-                break;
+    select.append(option);
 
-            case "Manutenção":
-                dot.classList.add("status-manutencao");
-                break;
+});
 
-            case "Baixada":
-                dot.classList.add("status-baixada");
-                break;
+select.onchange = async () => {
 
-        }
+    item.status =
+        select.value;
 
-        dot.title =
-            item.status;
+    await window.Database.addStock(item);
 
-        status.append(dot);
+    render();
 
-        tr.append(
+};
 
-            caixa,
+status.append(select);
 
-            cor,
+const acoes =
+    document.createElement("td");
 
-            status
+const btnEditar =
+    document.createElement("button");
 
-        );
+btnEditar.textContent =
+    "✏️";
 
-        tbody.append(tr);
+btnEditar.title =
+    "Editar";
+
+const btnExcluir =
+    document.createElement("button");
+
+btnExcluir.textContent =
+    "🗑";
+
+btnExcluir.title =
+    "Excluir";
+
+
+    btnEditar.onclick = () => {
+
+    const form =
+        document.createElement("form");
+
+    form.className =
+        "fb-modal-form";
+
+    window.FishBook
+    .Components
+    .Modal
+    .open({
+
+        title: "Editar unidade",
+
+        content: form
 
     });
+
+const selectCaixa =
+    document.getElementById(
+        "modal-caixa"
+    );
+
+window.Database
+    .getBoxes()
+    .forEach(caixa => {
+
+        const option =
+            document.createElement("option");
+
+        option.value =
+            caixa.id;
+
+        option.textContent =
+            caixa.nome;
+
+        option.selected =
+            caixa.id === item.caixa;
+
+        selectCaixa.append(
+            option
+        );
+
+    });
+
+    document
+        .getElementById("modal-status")
+        .value = item.status;
+
+    document
+        .getElementById("modal-cancelar")
+        .onclick = () =>
+
+            window.FishBook
+                .Components
+                .Modal
+                .close();
+
+    form.onsubmit = async event => {
+
+        event.preventDefault();
+
+        item.caixa =
+            document.getElementById("modal-caixa").value.trim();
+
+        item.cor =
+            document.getElementById("modal-cor").value.trim();
+
+        item.status =
+            document.getElementById("modal-status").value;
+
+        await window.Database.addStock(item);
+
+        window.FishBook
+            .Components
+            .Modal
+            .close();
+
+        render();
+
+    };
+
+};
+
+btnExcluir.onclick = async () => {
+
+    if (
+
+        !confirm(
+
+            "Excluir esta unidade?"
+
+        )
+
+    ) {
+
+        return;
+
+    }
+
+    await window.Database.removeStock(
+
+        item.id
+
+    );
+
+    render();
+
+};
+
+acoes.append(
+
+    btnEditar,
+
+    btnExcluir
+
+);
+
+tr.append(
+
+    caixa,
+
+    cor,
+
+    status,
+
+    acoes
+
+);
+
+tbody.append(
+    tr
+);
+
+        });
 
     table.append(tbody);
 

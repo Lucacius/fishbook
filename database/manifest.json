@@ -3,6 +3,7 @@
     "iscas.json",
     "categorias.json",
     "estoque.json",
-    "especies.json"
+    "especies.json",
+    "caixas.json"
   ]
 }

@@ -254,7 +254,8 @@ contadorElement.textContent =
             onClick() {
 
               window.Router.open(
-    "ficha",
+    
+                "ficha",
     lure.id
 );
 

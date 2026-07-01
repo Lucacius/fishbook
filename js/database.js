@@ -221,13 +221,126 @@ const getCategories = ()=>[
     ...collection("categorias")
 ];
 
+const getBoxes = ()=>[
+    ...collection("caixas")
+];
+
 const getStock = ()=>[
     ...collection("estoque")
 ];
 
+const addStock = async registro => {
+
+    const estoque =
+        collection("estoque");
+
+    const index =
+        estoque.findIndex(
+
+            item =>
+
+                item.id === registro.id
+
+        );
+
+    if (
+
+        index >= 0
+
+    ) {
+
+        estoque[index] =
+            registro;
+
+    }
+
+    else {
+
+        estoque.push(
+
+            registro
+
+        );
+
+    }
+
+    await window.FishBook
+        .Database
+        .IDB
+        .put(
+
+            "estoque",
+
+            registro
+
+        );
+
+    return registro;
+
+};
+
+const removeStock = async id => {
+
+    const estoque = collection("estoque");
+
+    const index = estoque.findIndex(
+
+        item => item.id === id
+
+    );
+
+    if (index === -1) {
+
+        return false;
+
+    }
+
+    estoque.splice(index, 1);
+
+    await window.FishBook.Database.IDB.delete(
+
+        "estoque",
+
+        id
+
+    );
+
+    return true;
+
+};
+
+const nextStockId = () => {
+
+    const estoque = getStock();
+
+    if (!estoque.length) {
+
+        return "est-0001";
+
+    }
+
+    const maior = Math.max(
+
+        ...estoque.map(item =>
+
+            Number(
+
+                item.id.replace("est-", "")
+
+            )
+
+        )
+
+    );
+
+    return `est-${String(maior + 1).padStart(4, "0")}`;
+
+};
+
 const getSpecies = ()=>[
     ...collection("especies")
 ];
+
 
 const searchLures = text=>{
 
@@ -349,9 +462,69 @@ const getMontagens = () =>
 API
 =========================================================*/
 
+const syncStore = async name => {
+
+    const idb =
+
+        window.FishBook.Database.IDB;
+
+    const registros =
+
+        await idb.getAll(name);
+
+    if (registros.length) {
+
+        data.set(
+
+            name,
+
+            {
+
+                [name]: registros
+
+            }
+
+        );
+
+        return;
+
+    }
+
+    const json =
+
+        await readJson(`${name}.json`);
+
+    data.set(
+
+        name,
+
+        json
+
+    );
+
+    const lista =
+
+        json[name] ?? [];
+
+    for (const item of lista) {
+
+        await idb.put(
+
+            name,
+
+            item
+
+        );
+
+    }
+
+};
+
 const Database = {
 
     async load(){
+
+        await window.FishBook.Database.IDB.open();
 
         data.clear();
 
@@ -426,49 +599,31 @@ const Database = {
 
         }
 
-        await Promise.all(
+for (const file of manifest.files) {
 
-            manifest.files.map(
+    try {
 
-                async file=>{
+        await syncStore(
 
-                    try{
-
-                        const json =
-
-                            await readJson(
-
-                                file
-
-                            );
-
-                        data.set(
-
-                            normalizeName(file),
-
-                            json
-
-                        );
-
-                    }
-
-                    catch(error){
-
-                        registerLoadError(
-
-                            error,
-
-                            file
-
-                        );
-
-                    }
-
-                }
-
-            )
+            normalizeName(file)
 
         );
+
+    }
+
+    catch (error) {
+
+        registerLoadError(
+
+            error,
+
+            file
+
+        );
+
+    }
+
+}
 
         loaded=true;
 
@@ -502,7 +657,15 @@ getSubcategories,
 
 getMontagens,
 
+getBoxes,
+
 getStock,
+
+addStock,
+
+removeStock,
+
+nextStockId,
 
 
 

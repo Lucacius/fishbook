@@ -11,7 +11,7 @@ IndexedDB
 
 const DB_NAME = "FishBookDB";
 
-const DB_VERSION = 1;
+const DB_VERSION = 3;
 
 const STORES = [
 
@@ -23,7 +23,10 @@ const STORES = [
 
     "especies",
 
-    "configuracoes"
+    "configuracoes",
+
+    "caixas"
+
 
 ];
 
@@ -33,77 +36,67 @@ let db = null;
 Abrir banco
 =========================================================*/
 
-const open = ()=>{
+const open = () => {
 
-    return new Promise(
+    if (db) {
 
-        (resolve,reject)=>{
+        return Promise.resolve(db);
 
-            const request =
+    }
 
-                indexedDB.open(
+    return new Promise((resolve, reject) => {
 
-                    DB_NAME,
+        const request = indexedDB.open(
 
-                    DB_VERSION
+            DB_NAME,
 
-                );
+            DB_VERSION
 
-            request.onerror=()=>
+        );
 
-                reject(
+        request.onerror = () =>
 
-                    request.error
+            reject(request.error);
 
-                );
+        request.onupgradeneeded = () => {
 
-            request.onupgradeneeded=()=>{
+            const database = request.result;
 
-                const database =
+            STORES.forEach(name => {
 
-                    request.result;
+                if (
 
-                STORES.forEach(store=>{
+                    !database.objectStoreNames.contains(name)
 
-                    if(
+                ) {
 
-                        !database.objectStoreNames.contains(
+                    database.createObjectStore(
 
-                            store
+                        name,
 
-                        )
+                        {
 
-                    ){
+                            keyPath: "id"
 
-                        database.createObjectStore(
+                        }
 
-                            store,
+                    );
 
-                            {
+                }
 
-                                keyPath:"id"
+            });
 
-                            }
+        };
 
-                        );
+        request.onsuccess = () => {
 
-                    }
+            db = request.result;
 
-                });
+            resolve(db);
 
-            };
+        };
 
-            request.onsuccess=()=>{
-
-                db=request.result;
-
-                resolve(db);
-
-            };
-
-        }
-
-    );
+    });
 
 };
 
@@ -115,9 +108,9 @@ const store = (
 
     name,
 
-    mode="readonly"
+    mode = "readonly"
 
-)=>{
+) => {
 
     return db
 
@@ -129,11 +122,205 @@ const store = (
 
         )
 
-        .objectStore(
+        .objectStore(name);
 
-            name
+};
 
-        );
+/*=========================================================
+Get
+=========================================================*/
+
+const get = async (
+
+    name,
+
+    id
+
+) => {
+
+    await open();
+
+    return new Promise((resolve, reject) => {
+
+        const request =
+
+            store(name).get(id);
+
+        request.onsuccess = () =>
+
+            resolve(request.result);
+
+        request.onerror = () =>
+
+            reject(request.error);
+
+    });
+
+};
+
+/*=========================================================
+Get All
+=========================================================*/
+
+const getAll = async name => {
+
+    await open();
+
+    return new Promise((resolve, reject) => {
+
+        const request =
+
+            store(name).getAll();
+
+        request.onsuccess = () =>
+
+            resolve(request.result);
+
+        request.onerror = () =>
+
+            reject(request.error);
+
+    });
+
+};
+
+/*=========================================================
+Put
+=========================================================*/
+
+const put = async (
+
+    name,
+
+    value
+
+) => {
+
+    await open();
+
+    return new Promise((resolve, reject) => {
+
+        const request =
+
+            store(
+
+                name,
+
+                "readwrite"
+
+            )
+
+            .put(value);
+
+        request.onsuccess = () =>
+
+            resolve(value);
+
+        request.onerror = () =>
+
+            reject(request.error);
+
+    });
+
+};
+
+/*=========================================================
+Delete
+=========================================================*/
+
+const remove = async (
+
+    name,
+
+    id
+
+) => {
+
+    await open();
+
+    return new Promise((resolve, reject) => {
+
+        const request =
+
+            store(
+
+                name,
+
+                "readwrite"
+
+            )
+
+            .delete(id);
+
+        request.onsuccess = () =>
+
+            resolve(true);
+
+        request.onerror = () =>
+
+            reject(request.error);
+
+    });
+
+};
+
+/*=========================================================
+Clear
+=========================================================*/
+
+const clear = async name => {
+
+    await open();
+
+    return new Promise((resolve, reject) => {
+
+        const request =
+
+            store(
+
+                name,
+
+                "readwrite"
+
+            )
+
+            .clear();
+
+        request.onsuccess = () =>
+
+            resolve(true);
+
+        request.onerror = () =>
+
+            reject(request.error);
+
+    });
+
+};
+
+/*=========================================================
+Count
+=========================================================*/
+
+const count = async name => {
+
+    await open();
+
+    return new Promise((resolve, reject) => {
+
+        const request =
+
+            store(name).count();
+
+        request.onsuccess = () =>
+
+            resolve(request.result);
+
+        request.onerror = () =>
+
+            reject(request.error);
+
+    });
 
 };
 
@@ -141,15 +328,15 @@ const store = (
 API
 =========================================================*/
 
-window.FishBook=
+window.FishBook =
 
     window.FishBook ?? {};
 
-window.FishBook.Database=
+window.FishBook.Database =
 
     window.FishBook.Database ?? {};
 
-window.FishBook.Database.IDB=
+window.FishBook.Database.IDB =
 
     Object.freeze({
 
@@ -157,7 +344,19 @@ window.FishBook.Database.IDB=
 
         store,
 
-        stores:STORES
+        get,
+
+        getAll,
+
+        put,
+
+        delete: remove,
+
+        clear,
+
+        count,
+
+        stores: STORES
 
     });
 

@@ -1,0 +1,28 @@
+{
+    "caixas": [
+        {
+            "id": "POWER-01",
+            "nome": "POWER-01"
+        },
+        {
+            "id": "POWER-02",
+            "nome": "POWER-02"
+        },
+        {
+            "id": "ULTRA-01",
+            "nome": "ULTRA-01"
+        },
+         {
+            "id": "ULTRA-02",
+            "nome": "ULTRA-02"
+        },
+         {
+            "id": "NATURAL-01",
+            "nome": "NATURAL-01"
+        },
+         {
+            "id": "ACESSORIOS-01",
+            "nome": "ACESSORIOS-01"
+        }
+    ]
+}
