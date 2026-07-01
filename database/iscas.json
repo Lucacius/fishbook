@@ -7,14 +7,14 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Superf�cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Zara",
                       "nome":  "Zara (Stick)",
                       "peso":  16,
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
@@ -24,7 +24,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -78,24 +78,24 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Popper",
                       "nome":  "Popper",
                       "peso":  12,
                       "comprimento":  6.5,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -144,24 +144,24 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Popper",
                       "nome":  "Popper",
                       "peso":  12,
                       "comprimento":  8,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -206,24 +206,24 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Frog",
                       "nome":  "Hollow Body Frog",
                       "peso":  9,
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
@@ -246,10 +246,10 @@
 
                                     ],
                       "estruturas":  [
-                                         "VegetaÃ§Ã£o pesada",
+                                         "Vegetação pesada",
                                          "Capim",
                                          "Taboa",
-                                         "AguapÃ©"
+                                         "Aguapé"
                                      ],
                       "trabalhos":  [
                                         "Toques",
@@ -269,7 +269,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Água",
                       "subcategoria":  "Minnow",
                       "nome":  "Long Minnow",
                       "peso":  15.4,
@@ -282,11 +282,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -341,7 +341,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Água",
                       "subcategoria":  "Minnow",
                       "nome":  "Minnow Slow Sinking",
                       "peso":  14,
@@ -354,11 +354,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -407,7 +407,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Água",
                       "subcategoria":  "Minnow",
                       "nome":  "Long Minnow Floating",
                       "peso":  18.5,
@@ -420,11 +420,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -478,7 +478,7 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Água",
                       "subcategoria":  "Minnow",
                       "nome":  "Minnow Floating",
                       "peso":  13.4,
@@ -491,11 +491,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -552,17 +552,17 @@
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua profunda",
+                                           "descricao":  "Meia Água profunda",
                                            "min":  2.0,
                                            "max":  4.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -597,7 +597,7 @@
                                          "Barranco"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo"
+                                        "Recolhimento contí­nuo"
                                     ],
                       "eficiencia":  4,
                       "foto":  "P-CRK-001.png",
@@ -620,17 +620,17 @@
                       "comprimento":  10,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  1.0,
                                            "max":  2.5
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -665,7 +665,7 @@
                                          "Galhada"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo"
+                                        "Recolhimento contí­nuo"
                                     ],
                       "eficiencia":  4,
                       "foto":  "P-CRK-002.png",
@@ -673,7 +673,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Ã“tima para cobrir grandes Ã¡reas."
+                      "observacoes":  "ítima para cobrir grandes áreas."
                   },
                   {
                       "id":  "P-CRK-003",
@@ -688,17 +688,17 @@
                       "comprimento":  7.5,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.8,
                                            "max":  2.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -733,7 +733,7 @@
                                          "Madeira"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo"
+                                        "Recolhimento contí­nuo"
                                     ],
                       "eficiencia":  4,
                       "foto":  "P-CRK-003.png",
@@ -741,7 +741,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Excelente para procurar peixes ativos em meia Ã¡gua."
+                      "observacoes":  "Excelente para procurar peixes ativos em meia Água."
                   },
                   {
                       "id":  "P-VIB-001",
@@ -749,24 +749,24 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "VibraÃ§Ã£o",
+                      "categoria":  "Vibração",
                       "subcategoria":  "Chatterbait",
                       "nome":  "Chatterbait",
                       "peso":  14,
                       "comprimento":  null,
                       "flutuacao":  "Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua / Fundo",
+                                           "descricao":  "Meia Água / Fundo",
                                            "min":  0.5,
                                            "max":  3.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -793,11 +793,11 @@
 
                                     ],
                       "estruturas":  [
-                                         "VegetaÃ§Ã£o pesada",
+                                         "Vegetação pesada",
                                          "Barranco"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo",
+                                        "Recolhimento contí­nuo",
                                         "Pausas"
                                     ],
                       "eficiencia":  5,
@@ -806,7 +806,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Excelente em Ã¡gua turva e vegetaÃ§Ã£o."
+                      "observacoes":  "Excelente em Água turva e Vegetação."
                   },
                   {
                       "id":  "P-VIB-002",
@@ -814,24 +814,24 @@
                       "montagens":  [
                                         "Power"
                                     ],
-                      "categoria":  "VibraÃ§Ã£o",
+                      "categoria":  "Vibração",
                       "subcategoria":  "Lipless Crankbait",
                       "nome":  "Lipless Crankbait",
                       "peso":  12,
                       "comprimento":  null,
                       "flutuacao":  "Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  2.5
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -866,7 +866,7 @@
                                          "Pedras"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo",
+                                        "Recolhimento contí­nuo",
                                         "Stop \u0026 Go"
                                     ],
                       "eficiencia":  4,
@@ -875,7 +875,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Excelente para localizar peixes ativos em meia Ã¡gua."
+                      "observacoes":  "Excelente para localizar peixes ativos em meia Água."
                   },
                   {
                       "id":  "P-FND-001",
@@ -890,13 +890,13 @@
                       "comprimento":  null,
                       "flutuacao":  "Sinking",
                       "profundidade":  {
-                                           "descricao":  "Fundo / Meia Ã¡gua",
+                                           "descricao":  "Fundo / Meia Água",
                                            "min":  1.0,
                                            "max":  8.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -912,7 +912,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        }
                                    ],
@@ -944,7 +944,7 @@
 
                                 ],
                       "estoque":  2,
-                      "observacoes":  "Excelente para peixes caÃ§ando em profundidade."
+                      "observacoes":  "Excelente para peixes caçando em profundidade."
                   },
                   {
                       "id":  "P-FND-002",
@@ -959,13 +959,13 @@
                       "comprimento":  9,
                       "flutuacao":  "Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua profunda",
+                                           "descricao":  "Meia Água profunda",
                                            "min":  1.5,
                                            "max":  3.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -973,7 +973,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -1013,7 +1013,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Ideal para trabalhar prÃ³ximo ao fundo com toques curtos."
+                      "observacoes":  "Ideal para trabalhar prí³ximo ao fundo com toques curtos."
                   },
                   {
                       "id":  "P-SWB-001",
@@ -1028,17 +1028,17 @@
                       "comprimento":  13.5,
                       "flutuacao":  "Slow Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  2.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -1096,17 +1096,17 @@
                       "comprimento":  13.5,
                       "flutuacao":  "Slow Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  2.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -1149,7 +1149,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Imita perfeitamente um peixe forrageiro de mÃ©dio porte."
+                      "observacoes":  "Imita perfeitamente um peixe forrageiro de médio porte."
                   },
                   {
                       "id":  "P-SWB-003",
@@ -1164,17 +1164,17 @@
                       "comprimento":  10,
                       "flutuacao":  "Slow Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  2.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -1233,17 +1233,17 @@
                       "comprimento":  13,
                       "flutuacao":  "Soft",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua / Fundo",
+                                           "descricao":  "Meia Água / Fundo",
                                            "min":  0.5,
                                            "max":  5.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -1271,7 +1271,7 @@
                                     ],
                       "estruturas":  [
                                          "Galhada",
-                                         "VegetaÃ§Ã£o pesada"
+                                         "Vegetação pesada"
                                      ],
                       "trabalhos":  [
                                         "Jig Head",
@@ -1283,7 +1283,7 @@
 
                                 ],
                       "estoque":  2,
-                      "observacoes":  "Ideal para apresentaÃ§Ãµes discretas em estruturas fechadas."
+                      "observacoes":  "Ideal para Apresentações discretas em estruturas fechadas."
                   },
                   {
                       "id":  "P-SFT-002",
@@ -1298,17 +1298,17 @@
                       "comprimento":  9,
                       "flutuacao":  "Soft",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  2.5
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -1360,24 +1360,24 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Stick",
                       "nome":  "Stick",
                       "peso":  4,
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -1389,7 +1389,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  2
                                        }
                                    ],
@@ -1420,7 +1420,7 @@
 
                                 ],
                       "estoque":  4,
-                      "observacoes":  "Excelente para predadores de pequeno e mÃ©dio porte em Ã¡gua calma."
+                      "observacoes":  "Excelente para predadores de pequeno e médio porte em Água calma."
                   },
                   {
                       "id":  "U-SUP-002",
@@ -1428,24 +1428,24 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Prop Bait",
                       "nome":  "Prop Bait",
                       "peso":  6,
                       "comprimento":  7.5,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -1476,7 +1476,7 @@
                                          "Galhada"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo"
+                                        "Recolhimento contí­nuo"
                                     ],
                       "eficiencia":  4,
                       "foto":  "U-SUP-002.png",
@@ -1484,7 +1484,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "O ruÃ­do da hÃ©lice desperta ataques por reaÃ§Ã£o."
+                      "observacoes":  "O ruí­do da hélice desperta ataques por reação."
                   },
                   {
                       "id":  "U-SUP-003",
@@ -1492,24 +1492,24 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Popper",
                       "nome":  "Popper",
                       "peso":  7,
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -1549,7 +1549,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Muito eficiente em ataques visuais na superfÃ­cie."
+                      "observacoes":  "Muito eficiente em ataques visuais na Superfície."
                   },
                   {
                       "id":  "U-SUP-004",
@@ -1557,24 +1557,24 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "SuperfÃ­cie",
+                      "categoria":  "Superfície",
                       "subcategoria":  "Stick Bait",
                       "nome":  "Stick Bait (Pencil)",
                       "peso":  8,
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie",
+                                           "descricao":  "Superfície",
                                            "min":  0,
                                            "max":  0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -1613,7 +1613,7 @@
 
                                 ],
                       "estoque":  1,
-                      "observacoes":  "Excelente para peixes ativos em Ã¡gua limpa."
+                      "observacoes":  "Excelente para peixes ativos em Água limpa."
                   },
                   {
                       "id":  "U-MIN-001",
@@ -1621,14 +1621,14 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Água",
                       "subcategoria":  "Micro Minnow Sinking",
                       "nome":  "Micro Minnow Sinking",
                       "peso":  4.5,
                       "comprimento":  5.2,
                       "flutuacao":  "Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua rasa",
+                                           "descricao":  "Meia Água rasa",
                                            "min":  0.2,
                                            "max":  0.8
                                        },
@@ -1642,15 +1642,15 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  3
                                        },
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  2
                                        }
                                    ],
@@ -1690,20 +1690,20 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Água",
                       "subcategoria":  "Light Minnow",
                       "nome":  "Light Minnow",
                       "peso":  8.5,
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  1.5
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -1715,7 +1715,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        }
                                    ],
@@ -1755,20 +1755,20 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "Meia Ãgua",
+                      "categoria":  "Meia Água",
                       "subcategoria":  "Minnow Sinking",
                       "nome":  "Minnow Sinking",
                       "peso":  7.4,
                       "comprimento":  7.9,
                       "flutuacao":  "Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  1.5
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -1780,7 +1780,7 @@
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        }
                                    ],
@@ -1827,13 +1827,13 @@
                       "comprimento":  null,
                       "flutuacao":  "Floating",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua rasa",
+                                           "descricao":  "Meia Água rasa",
                                            "min":  0.3,
                                            "max":  1.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -1845,7 +1845,7 @@
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        }
                                    ],
@@ -1868,7 +1868,7 @@
                                          "Pedras"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo"
+                                        "Recolhimento contí­nuo"
                                     ],
                       "eficiencia":  5,
                       "foto":  "U-CRK-001.png",
@@ -1897,7 +1897,7 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
@@ -1909,7 +1909,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        }
                                    ],
@@ -1933,7 +1933,7 @@
                                          "Galhada"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo"
+                                        "Recolhimento contí­nuo"
                                     ],
                       "eficiencia":  5,
                       "foto":  "U-CRK-002.png",
@@ -1962,11 +1962,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -1997,7 +1997,7 @@
                                          "Barranco"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo"
+                                        "Recolhimento contí­nuo"
                                     ],
                       "eficiencia":  4,
                       "foto":  "U-CRK-003.png",
@@ -2013,24 +2013,24 @@
                       "montagens":  [
                                         "Ultralight"
                                     ],
-                      "categoria":  "VibraÃ§Ã£o",
+                      "categoria":  "Vibração",
                       "subcategoria":  "Micro Vibration",
                       "nome":  "Micro Vibration",
                       "peso":  5,
                       "comprimento":  4.5,
                       "flutuacao":  "Sinking",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  2.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -2062,7 +2062,7 @@
                                          "Pedras"
                                      ],
                       "trabalhos":  [
-                                        "Recolhimento contÃ­nuo",
+                                        "Recolhimento contí­nuo",
                                         "Stop \u0026 Go"
                                     ],
                       "eficiencia":  5,
@@ -2092,19 +2092,19 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -2162,19 +2162,19 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  3
                                        },
                                        {
@@ -2232,19 +2232,19 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
@@ -2268,7 +2268,7 @@
                                     ],
                       "estruturas":  [
                                          "Galhada",
-                                         "VegetaÃ§Ã£o pesada",
+                                         "Vegetação pesada",
                                          "Pedras"
                                      ],
                       "trabalhos":  [
@@ -2296,25 +2296,25 @@
                       "comprimento":  5,
                       "flutuacao":  "Soft",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua / Fundo",
+                                           "descricao":  "Meia Água / Fundo",
                                            "min":  0.5,
                                            "max":  3.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -2366,17 +2366,17 @@
                       "comprimento":  6,
                       "flutuacao":  "Soft",
                       "profundidade":  {
-                                           "descricao":  "Meia Ã¡gua",
+                                           "descricao":  "Meia Água",
                                            "min":  0.5,
                                            "max":  2.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -2388,7 +2388,7 @@
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  2
                                        }
                                    ],
@@ -2436,25 +2436,25 @@
                       "comprimento":  7,
                       "flutuacao":  "Soft",
                       "profundidade":  {
-                                           "descricao":  "Fundo / Meia Ã¡gua",
+                                           "descricao":  "Fundo / Meia Água",
                                            "min":  0.5,
                                            "max":  4.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  3
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  3
                                        }
                                    ],
@@ -2474,7 +2474,7 @@
                                     ],
                       "estruturas":  [
                                          "Galhada",
-                                         "VegetaÃ§Ã£o pesada",
+                                         "Vegetação pesada",
                                          "Pedras"
                                      ],
                       "trabalhos":  [
@@ -2509,19 +2509,19 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  3
                                        }
                                    ],
@@ -2564,31 +2564,31 @@
                                         "Ultralight"
                                     ],
                       "categoria":  "Soft",
-                      "subcategoria":  "CamarÃ£o",
-                      "nome":  "CamarÃ£o Soft",
+                      "subcategoria":  "Camarão",
+                      "nome":  "Camarão Soft",
                       "peso":  null,
                       "comprimento":  6,
                       "flutuacao":  "Soft",
                       "profundidade":  {
-                                           "descricao":  "Fundo / Meia Ã¡gua",
+                                           "descricao":  "Fundo / Meia Água",
                                            "min":  0.5,
                                            "max":  3.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -2647,11 +2647,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
@@ -2698,9 +2698,9 @@
                   {
                       "id":  "NAT-001",
                       "origem":  "Natural",
-                      "tipo":  "AnelÃ­deo",
+                      "tipo":  "Anelí­deo",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado",
                                         "Ultralight"
                                     ],
@@ -2717,11 +2717,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
@@ -2729,7 +2729,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
@@ -2782,14 +2782,14 @@
 
                                 ],
                       "estoque":  0,
-                      "observacoes":  "Uma das iscas naturais mais versÃ¡teis."
+                      "observacoes":  "Uma das iscas naturais mais versáteis."
                   },
                   {
                       "id":  "NAT-002",
                       "origem":  "Natural",
                       "tipo":  "Processada",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado",
                                         "Ultralight"
                                     ],
@@ -2806,7 +2806,7 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  4
                                        },
                                        {
@@ -2818,7 +2818,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  4
                                        },
                                        {
@@ -2864,7 +2864,7 @@
                       "origem":  "Natural",
                       "tipo":  "Massa",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado",
                                         "Ultralight"
                                     ],
@@ -2881,11 +2881,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
@@ -2905,7 +2905,7 @@
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "CurimatÃ£",
+                                           "nome":  "Curimatã",
                                            "afinidade":  4
                                        }
                                    ],
@@ -2942,9 +2942,9 @@
                   {
                       "id":  "NAT-004",
                       "origem":  "Natural",
-                      "tipo":  "GrÃ£o",
+                      "tipo":  "Grão",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado",
                                         "Ultralight"
                                     ],
@@ -2961,7 +2961,7 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
@@ -2973,7 +2973,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  4
                                        },
                                        {
@@ -2981,7 +2981,7 @@
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "CurimatÃ£",
+                                           "nome":  "Curimatã",
                                            "afinidade":  4
                                        },
                                        {
@@ -3024,24 +3024,24 @@
                       "origem":  "Natural",
                       "tipo":  "Industrial",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado",
                                         "Ultralight"
                                     ],
                       "categoria":  "Natural",
-                      "subcategoria":  "RaÃ§Ã£o",
-                      "nome":  "RaÃ§Ã£o",
+                      "subcategoria":  "Ração",
+                      "nome":  "Ração",
                       "peso":  null,
                       "comprimento":  null,
                       "flutuacao":  "Natural",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie / Meia Ãgua",
+                                           "descricao":  "Superfície / Meia Água",
                                            "min":  0,
                                            "max":  2
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
@@ -3053,7 +3053,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
@@ -3094,14 +3094,14 @@
                   {
                       "id":  "NAT-006",
                       "origem":  "Natural",
-                      "tipo":  "AnelÃ­deo",
+                      "tipo":  "Anelí­deo",
                       "montagens":  [
                                         "Pesado",
-                                        "MÃ£o"
+                                        "Mão"
                                     ],
                       "categoria":  "Natural",
-                      "subcategoria":  "MinhocuÃ§u",
-                      "nome":  "MinhocuÃ§u",
+                      "subcategoria":  "Minhocuçu",
+                      "nome":  "Minhocuçu",
                       "peso":  null,
                       "comprimento":  null,
                       "flutuacao":  "Natural",
@@ -3112,7 +3112,7 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "JaÃº",
+                                           "nome":  "Jaú",
                                            "afinidade":  5
                                        },
                                        {
@@ -3132,7 +3132,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        }
                                    ],
@@ -3172,7 +3172,7 @@
                       "tipo":  "Peixe vivo",
                       "montagens":  [
                                         "Pesado",
-                                        "MÃ£o"
+                                        "Mão"
                                     ],
                       "categoria":  "Natural",
                       "subcategoria":  "Lambari Vivo",
@@ -3187,11 +3187,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  5
                                        },
                                        {
@@ -3269,7 +3269,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "JaÃº",
+                                           "nome":  "Jaú",
                                            "afinidade":  5
                                        },
                                        {
@@ -3281,11 +3281,11 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  3
                                        }
                                    ],
@@ -3327,8 +3327,8 @@
                                         "Pesado"
                                     ],
                       "categoria":  "Natural",
-                      "subcategoria":  "SarapÃ³",
-                      "nome":  "SarapÃ³",
+                      "subcategoria":  "Sarapó",
+                      "nome":  "Sarapó",
                       "peso":  null,
                       "comprimento":  null,
                       "flutuacao":  "Natural",
@@ -3343,7 +3343,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "JaÃº",
+                                           "nome":  "Jaú",
                                            "afinidade":  5
                                        },
                                        {
@@ -3355,7 +3355,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        }
                                    ],
@@ -3392,14 +3392,14 @@
                   {
                       "id":  "NAT-010",
                       "origem":  "Natural",
-                      "tipo":  "VÃ­scera",
+                      "tipo":  "Ví­scera",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado"
                                     ],
                       "categoria":  "Natural",
-                      "subcategoria":  "CoraÃ§Ã£o de Frango",
-                      "nome":  "CoraÃ§Ã£o de Frango",
+                      "subcategoria":  "Coração de Frango",
+                      "nome":  "Coração de Frango",
                       "peso":  null,
                       "comprimento":  null,
                       "flutuacao":  "Natural",
@@ -3418,7 +3418,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "JaÃº",
+                                           "nome":  "Jaú",
                                            "afinidade":  4
                                        },
                                        {
@@ -3463,15 +3463,15 @@
                   {
                       "id":  "NAT-011",
                       "origem":  "Natural",
-                      "tipo":  "CrustÃ¡ceo",
+                      "tipo":  "Crustáceo",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado",
                                         "Ultralight"
                                     ],
                       "categoria":  "Natural",
-                      "subcategoria":  "CamarÃ£o",
-                      "nome":  "CamarÃ£o",
+                      "subcategoria":  "Camarão",
+                      "nome":  "Camarão",
                       "peso":  null,
                       "comprimento":  null,
                       "flutuacao":  "Natural",
@@ -3482,19 +3482,19 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TucunarÃ©",
+                                           "nome":  "Tucunaré",
                                            "afinidade":  4
                                        },
                                        {
@@ -3535,9 +3535,9 @@
                   {
                       "id":  "NAT-012",
                       "origem":  "Natural",
-                      "tipo":  "LaticÃ­nio",
+                      "tipo":  "Laticí­nio",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Ultralight"
                                     ],
                       "categoria":  "Natural",
@@ -3553,7 +3553,7 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
@@ -3565,7 +3565,7 @@
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  4
                                        },
                                        {
@@ -3601,19 +3601,19 @@
 
                                 ],
                       "estoque":  0,
-                      "observacoes":  "Muito utilizada em pesqueiros e para peixes onÃ­voros."
+                      "observacoes":  "Muito utilizada em pesqueiros e para peixes oní­voros."
                   },
                   {
                       "id":  "NAT-013",
                       "origem":  "Natural",
-                      "tipo":  "VÃ­scera",
+                      "tipo":  "Ví­scera",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado"
                                     ],
                       "categoria":  "Natural",
-                      "subcategoria":  "FÃ­gado",
-                      "nome":  "FÃ­gado",
+                      "subcategoria":  "Fí­gado",
+                      "nome":  "Fí­gado",
                       "peso":  null,
                       "comprimento":  null,
                       "flutuacao":  "Natural",
@@ -3632,7 +3632,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "JaÃº",
+                                           "nome":  "Jaú",
                                            "afinidade":  5
                                        },
                                        {
@@ -3644,7 +3644,7 @@
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "TraÃ­ra",
+                                           "nome":  "Traíra",
                                            "afinidade":  2
                                        }
                                    ],
@@ -3666,7 +3666,7 @@
                                          "Canal",
                                          "Pedras",
                                          "Barranco",
-                                         "PoÃ§o"
+                                         "Poço"
                                      ],
                       "trabalhos":  [
                                         "Natural"
@@ -3684,12 +3684,12 @@
                       "origem":  "Natural",
                       "tipo":  "Massa",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Ultralight"
                                     ],
                       "categoria":  "Natural",
-                      "subcategoria":  "Massa de PÃ£o",
-                      "nome":  "Massa de PÃ£o",
+                      "subcategoria":  "Massa de Pão",
+                      "nome":  "Massa de Pão",
                       "peso":  null,
                       "comprimento":  null,
                       "flutuacao":  "Natural",
@@ -3700,11 +3700,11 @@
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  5
                                        },
                                        {
@@ -3759,7 +3759,7 @@
                       "origem":  "Natural",
                       "tipo":  "Fruta",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado"
                                     ],
                       "categoria":  "Natural",
@@ -3769,7 +3769,7 @@
                       "comprimento":  null,
                       "flutuacao":  "Natural",
                       "profundidade":  {
-                                           "descricao":  "SuperfÃ­cie / Meia Ãgua",
+                                           "descricao":  "Superfície / Meia Água",
                                            "min":  0,
                                            "max":  2
                                        },
@@ -3783,11 +3783,11 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "TilÃ¡pia",
+                                           "nome":  "Tilápia",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "CarÃ¡",
+                                           "nome":  "Cará",
                                            "afinidade":  3
                                        },
                                        {
@@ -3811,7 +3811,7 @@
                                     ],
                       "estruturas":  [
                                          "Margem",
-                                         "Ãrvore caÃ­da",
+                                         "í?rvore caí­da",
                                          "Praia"
                                      ],
                       "trabalhos":  [
@@ -3823,14 +3823,14 @@
 
                                 ],
                       "estoque":  0,
-                      "observacoes":  "Muito eficiente durante Ã©pocas de queda natural de frutos."
+                      "observacoes":  "Muito eficiente durante épocas de queda natural de frutos."
                   },
                   {
                       "id":  "NAT-016",
                       "origem":  "Natural",
-                      "tipo":  "VÃ­scera",
+                      "tipo":  "Ví­scera",
                       "montagens":  [
-                                        "MÃ£o",
+                                        "Mão",
                                         "Pesado"
                                     ],
                       "categoria":  "Natural",
@@ -3854,7 +3854,7 @@
                                            "afinidade":  5
                                        },
                                        {
-                                           "nome":  "JaÃº",
+                                           "nome":  "Jaú",
                                            "afinidade":  5
                                        },
                                        {
@@ -3884,7 +3884,7 @@
                                          "Canal",
                                          "Pedras",
                                          "Barranco",
-                                         "PoÃ§o"
+                                         "Poço"
                                      ],
                       "trabalhos":  [
                                         "Natural"
