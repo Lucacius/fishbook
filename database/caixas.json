@@ -2,27 +2,28 @@
     "caixas": [
         {
             "id": "POWER-01",
-            "nome": "POWER-01"
+            "nome": "POWER 1",
+            "tipo": "Power"
         },
         {
             "id": "POWER-02",
-            "nome": "POWER-02"
+            "nome": "POWER 2",
+            "tipo": "Power"
         },
         {
             "id": "ULTRA-01",
-            "nome": "ULTRA-01"
+            "nome": "ULTRALIGHT 1",
+            "tipo": "Ultralight"
         },
          {
             "id": "ULTRA-02",
-            "nome": "ULTRA-02"
-        },
-         {
-            "id": "NATURAL-01",
-            "nome": "NATURAL-01"
+            "nome": "ULTRALIGHT 2",
+            "tipo": "Ultralight"
         },
          {
             "id": "ACESSORIOS-01",
-            "nome": "ACESSORIOS-01"
+            "nome": "ACESSORIOS 1",
+            "tipo": "Acessorio"
         }
     ]
 }

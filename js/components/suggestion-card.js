@@ -9,7 +9,11 @@ Suggestion Card
 
 "use strict";
 
-const criarEstrelas = nota=>{
+/*=========================================================
+Estrelas
+=========================================================*/
+
+const createStars = value => {
 
     const stars =
         document.createElement("div");
@@ -17,11 +21,22 @@ const criarEstrelas = nota=>{
     stars.className =
         "suggestion-stars";
 
-    for(let i=1;i<=5;i++){
+    const nota =
+        Number(value ?? 0);
+
+    for (
+
+        let i = 1;
+
+        i <= 5;
+
+        i++
+
+    ) {
 
         stars.textContent +=
 
-            i<=nota
+            i <= nota
 
                 ? "★"
 
@@ -33,7 +48,11 @@ const criarEstrelas = nota=>{
 
 };
 
-const create = suggestion=>{
+/*=========================================================
+Card
+=========================================================*/
+
+const create = suggestion => {
 
     const card =
         document.createElement("article");
@@ -41,9 +60,9 @@ const create = suggestion=>{
     card.className =
         "suggestion-card";
 
-    /*=====================================
+    /*-------------------------
     Cabeçalho
-    =====================================*/
+    -------------------------*/
 
     const header =
         document.createElement("div");
@@ -58,19 +77,19 @@ const create = suggestion=>{
         "suggestion-title";
 
     title.textContent =
-        suggestion.nome;
+        suggestion.nome ?? "Sem nome";
 
     header.append(title);
 
     card.append(header);
 
-    /*=====================================
+    /*-------------------------
     Estrelas
-    =====================================*/
+    -------------------------*/
 
     card.append(
 
-        criarEstrelas(
+        createStars(
 
             suggestion.eficiencia
 
@@ -78,23 +97,35 @@ const create = suggestion=>{
 
     );
 
-    /*=====================================
+    /*-------------------------
     Motivos
-    =====================================*/
+    -------------------------*/
 
-    if(
+    const motivos =
 
-        suggestion.motivos?.length
+        Array.isArray(
 
-    ){
+            suggestion.motivos
 
-        const motivos =
+        )
+
+            ? suggestion.motivos
+
+            : [];
+
+    if (
+
+        motivos.length
+
+    ) {
+
+        const container =
             document.createElement("div");
 
-        motivos.className =
+        container.className =
             "suggestion-motivos";
 
-        suggestion.motivos.forEach(item=>{
+        motivos.forEach(item => {
 
             const tag =
                 document.createElement("span");
@@ -105,79 +136,121 @@ const create = suggestion=>{
             tag.textContent =
                 "✔ " + item;
 
-            motivos.append(tag);
+            container.append(tag);
 
         });
 
-        card.append(motivos);
+        card.append(container);
 
     }
 
-    /*=====================================
+    /*-------------------------
     Quantidade
-    =====================================*/
+    -------------------------*/
 
     const quantidade =
+
+        suggestion.quantidade ??
+
+        suggestion.estoque ??
+
+        0;
+
+    const texto =
         document.createElement("p");
 
-    quantidade.className =
+    texto.className =
         "suggestion-quantity";
 
-    quantidade.textContent =
+    texto.textContent =
 
-        `${suggestion.quantidade} código(s) disponível(is)`;
+        `${quantidade} unidade(s) disponível(is)`;
 
-    card.append(
+    card.append(texto);
 
-        quantidade
-
-    );
-
-    /*=====================================
+    /*-------------------------
     Códigos
-    =====================================*/
+    -------------------------*/
 
-    const codes =
-        document.createElement("div");
+    const codigos =
 
-    codes.className =
-        "suggestion-codes";
+        Array.isArray(
 
-    suggestion.codigos.forEach(codigo=>{
+            suggestion.codigos
 
-        const button =
-            document.createElement("button");
+        )
 
-        button.type =
-            "button";
+            ? suggestion.codigos
 
-        button.className =
-            "suggestion-code";
+            : [
 
-        button.textContent =
-            codigo;
+                suggestion.id
 
-        button.onclick=()=>{
+            ];
 
-            window.Router.open(
+    if (
 
-                "ficha",
+        codigos.length
 
-                codigo
+    ) {
 
-            );
+        const codes =
+            document.createElement("div");
 
-        };
+        codes.className =
+            "suggestion-codes";
 
-        codes.append(button);
+        codigos.forEach(codigo => {
 
-    });
+            if (
 
-    card.append(codes);
+                !codigo
+
+            ) {
+
+                return;
+
+            }
+
+            const button =
+                document.createElement("button");
+
+            button.type =
+                "button";
+
+            button.className =
+                "suggestion-code";
+
+            button.textContent =
+                codigo;
+
+            button.onclick = () => {
+
+                window.Router.open(
+
+                    "ficha",
+
+                    codigo
+
+                );
+
+            };
+
+            codes.append(button);
+
+        });
+
+        card.append(codes);
+
+    }
 
     return card;
 
 };
+
+/*=========================================================
+Exportação
+=========================================================*/
 
 window.FishBook =
     window.FishBook ?? {};

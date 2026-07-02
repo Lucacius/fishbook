@@ -198,8 +198,166 @@ const collection = name=>{
 };
 
 /*=========================================================
+Leitura genérica
+=========================================================*/
+
+const get = name => [
+
+    ...collection(
+
+        name
+
+    )
+
+];
+
+/*=========================================================
 Consultas
 =========================================================*/
+
+const uniqueValues = (field) => {
+
+    return [
+
+        ...new Set(
+
+            collection("iscas")
+                .map(item => item[field])
+                .filter(Boolean)
+
+        )
+
+    ].sort();
+
+};
+
+const uniqueArrayValues = (field) => {
+
+    return [
+
+        ...new Set(
+
+            collection("iscas")
+                .flatMap(
+
+                    item => item[field] ?? []
+
+                )
+
+        )
+
+    ].sort();
+
+};
+
+const getDynamicFilters = () => {
+
+    const iscas =
+        collection("iscas");
+
+    return {
+
+       especies:
+
+    collection("especies")
+
+        .map(
+
+            especie =>
+
+                especie.nome
+
+        )
+
+        .sort(),
+
+        estruturas: [
+
+            ...new Set(
+
+                iscas.flatMap(
+
+                    isca =>
+
+                        isca.estruturas ?? []
+
+                )
+
+            )
+
+        ].sort(),
+
+        trabalhos: [
+
+            ...new Set(
+
+                iscas.flatMap(
+
+                    isca =>
+
+                        isca.trabalhos ?? []
+
+                )
+
+            )
+
+        ].sort(),
+
+        montagens: [
+
+            ...new Set(
+
+                iscas.flatMap(
+
+                    isca =>
+
+                        isca.montagens ?? []
+
+                )
+
+            )
+
+        ].sort(),
+
+        pesos: [
+
+            ...new Set(
+
+                iscas
+
+                    .map(
+
+                        isca => isca.peso
+
+                    )
+
+                    .filter(Boolean)
+
+            )
+
+        ].sort(),
+
+        flutuacoes: [
+
+            ...new Set(
+
+                iscas
+
+                    .map(
+
+                        isca => isca.flutuacao
+
+                    )
+
+                    .filter(Boolean)
+
+            )
+
+        ].sort()
+
+    };
+
+};
 
 const getLures = ()=>[
     ...collection("iscas")
@@ -337,8 +495,12 @@ const nextStockId = () => {
 
 };
 
-const getSpecies = ()=>[
-    ...collection("especies")
+const getSpecies = () => [
+
+    ...collection(
+        "especies"
+    )
+
 ];
 
 
@@ -643,9 +805,13 @@ for (const file of manifest.files) {
 
 collection,
 
+get,
+
 getLures,
 
 getLure,
+
+getSpecies,
 
 getCategories,
 
@@ -656,6 +822,8 @@ getCategoriesList,
 getSubcategories,
 
 getMontagens,
+
+getDynamicFilters,
 
 getBoxes,
 

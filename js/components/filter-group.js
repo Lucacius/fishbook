@@ -2,6 +2,7 @@
 =========================================================
 FishBook
 Filter Group
+Parte 1/3
 =========================================================
 */
 
@@ -9,13 +10,83 @@ Filter Group
 
 "use strict";
 
+/*=========================================================
+Helpers
+=========================================================*/
+
+const createOption = (
+
+    name,
+
+    type,
+
+    value,
+
+    onChange
+
+)=>{
+
+    const label =
+        document.createElement(
+            "label"
+        );
+
+    label.className =
+        "filter-option";
+
+    const input =
+        document.createElement(
+            "input"
+        );
+
+    input.type =
+        type;
+
+    input.name =
+        name;
+
+    input.value =
+        value;
+
+    input.addEventListener(
+
+        "change",
+
+        onChange
+
+    );
+
+    const text =
+        document.createElement(
+            "span"
+        );
+
+    text.textContent =
+        value;
+
+    label.append(
+
+        input,
+
+        text
+
+    );
+
+    return label;
+
+};
+
+/*=========================================================
+Criação
+=========================================================*/
+
 const create = ({
 
     title,
 
     name,
 
-    options = [],
+    options,
 
     type = "radio",
 
@@ -23,14 +94,18 @@ const create = ({
 
 })=>{
 
-    const section =
-        document.createElement("section");
+    const card =
+        document.createElement(
+            "section"
+        );
 
-    section.className =
+    card.className =
         "filter-group";
 
     const heading =
-        document.createElement("h2");
+        document.createElement(
+            "h3"
+        );
 
     heading.className =
         "filter-title";
@@ -38,82 +113,114 @@ const create = ({
     heading.textContent =
         title;
 
-    section.append(heading);
+    const container =
+        document.createElement(
+            "div"
+        );
 
-    const content =
-        document.createElement("div");
-
-    content.className =
+    container.className =
         "filter-options";
 
-    options.forEach(option=>{
+  options.forEach(item => {
 
-        const label =
-            document.createElement("label");
+    if (
 
-        label.className =
-            "filter-option";
+        typeof item === "string"
 
-        const input =
-            document.createElement("input");
+    ) {
 
-        input.type =
-            type;
+        container.append(
 
-        input.name =
-            name;
+            createOption(
 
-        input.value =
-            option.value ?? "";
+                name,
 
-        input.checked =
-            option.checked ?? false;
+                type,
 
-        input.addEventListener(
+                item,
 
-            "change",
+                onChange
 
-            ()=>{
-
-                if(
-
-                    typeof onChange ===
-
-                    "function"
-
-                ){
-
-                    onChange();
-
-                }
-
-            }
+            )
 
         );
 
-        const span =
-            document.createElement("span");
+        return;
 
-        span.textContent =
-            option.label;
+    }
 
-        label.append(
+    const group =
+        document.createElement("div");
 
-            input,
+    group.className =
+        "filter-group-section";
 
-            span
+    const title =
+        document.createElement("h4");
+
+    title.className =
+        "filter-group-subtitle";
+
+    title.textContent =
+        item.title;
+
+    const list =
+        document.createElement("div");
+
+    list.className =
+        "filter-options";
+
+    item.options.forEach(option => {
+
+        list.append(
+
+            createOption(
+
+                name,
+
+                type,
+
+                option,
+
+                onChange
+
+            )
 
         );
-
-        content.append(label);
 
     });
 
-    section.append(content);
+    group.append(
 
-    return section;
+        title,
+
+        list
+
+    );
+
+    container.append(
+
+        group
+
+    );
+
+});
+
+    card.append(
+
+        heading,
+
+        container
+
+    );
+
+    return card;
 
 };
+
+/*=========================================================
+Leitura
+=========================================================*/
 
 const getValue = name=>{
 
@@ -125,23 +232,17 @@ const getValue = name=>{
 
         );
 
-    if(!input){
+    return input
 
-        return null;
+        ? input.value
 
-    }
-
-    return input.value === ""
-
-        ? null
-
-        : input.value;
+        : null;
 
 };
 
-const getValues = name=>{
+const getValues = name=>
 
-    return [
+    [
 
         ...document.querySelectorAll(
 
@@ -153,13 +254,15 @@ const getValues = name=>{
 
     .map(
 
-        item=>item.value
+        input=>
 
-    )
+            input.value
 
-    .filter(Boolean);
+    );
 
-};
+/*=========================================================
+Exportação
+=========================================================*/
 
 window.FishBook =
     window.FishBook ?? {};
@@ -168,6 +271,7 @@ window.FishBook.Components =
     window.FishBook.Components ?? {};
 
 window.FishBook.Components.FilterGroup =
+
     Object.freeze({
 
         create,

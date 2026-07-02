@@ -2635,34 +2635,26 @@
                                         "Ultralight"
                                     ],
                       "categoria":  "Soft",
-                      "subcategoria":  "Larva",
-                      "nome":  "Larva Soft",
+                      "subcategoria":  "Frog",
+                      "nome":  "Frog Soft",
                       "peso":  null,
                       "comprimento":  5,
                       "flutuacao":  "Soft",
                       "profundidade":  {
-                                           "descricao":  "Fundo",
-                                           "min":  0.3,
-                                           "max":  2.0
+                                           "descricao":  "Superfície",
+                                           "min":  0.0,
+                                           "max":  0.0
                                        },
                       "especies":  [
                                        {
-                                           "nome":  "Tilápia",
-                                           "afinidade":  5
-                                       },
-                                       {
-                                           "nome":  "Cará",
-                                           "afinidade":  5
-                                       },
-                                       {
-                                           "nome":  "Lambari",
+                                           "nome":  "Traíra",
                                            "afinidade":  4
                                        },
                                        {
-                                           "nome":  "Saicanga",
-                                           "afinidade":  2
+                                           "nome":  "Tucunaré",
+                                           "afinidade":  3
                                        }
-                                   ],
+                                                                          ],
                       "horario":  {
                                       "amanhecer":  4,
                                       "manha":  5,
@@ -2683,10 +2675,8 @@
                                          "Canal"
                                      ],
                       "trabalhos":  [
-                                        "Bottom",
-                                        "Queda livre",
-                                        "Jig Head"
-                                    ],
+                                        "Bottom"
+                                                                            ],
                       "eficiencia":  5,
                       "foto":  "U-SFT-006.png",
                       "cores":  [

@@ -19,6 +19,11 @@ const DASHBOARD_MODULES = Object.freeze([
     route: "catalogo",
   },
   {
+    icon: "🐟",
+    title: "Espécies",
+    route: "especies",
+  },
+  {
     icon: "🎒",
     title: "Estoque",
     route: "estoque",

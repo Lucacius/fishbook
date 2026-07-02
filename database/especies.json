@@ -1,315 +1,1190 @@
 {
-  "versao": "1.0",
+  "versao": "2.0",
   "especies": [
-    {
-      "id": "TUC",
-      "nome": "Tucunaré",
-      "cientifico": "Cichla spp.",
-      "categoria": "Predador",
-      "ambiente": [
-        "Represa",
-        "Rio"
-      ],
-      "alimentacao": [
-        "Peixes",
-        "Camarões"
-      ],
-      "iscaArtificial": true,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 5,
-        "manha": 4,
-        "tarde": 5,
-        "noite": 2
-      },
-      "agua": {
-        "limpa": 5,
-        "turvaLeve": 4,
-        "turva": 3
-      },
-      "observacoes": ""
+        
+  {
+    "id": "black-bass",
+    "nome": "Black Bass",
+    "cientifico": "Micropterus salmoides",
+    "categoria": "Predador",
+    "ambiente": [
+      "Represa",
+      "Lago",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Camarões",
+      "Insetos",
+      "Anfíbios"
+    ],
+    "iscasArtificiais": [
+      "Crank",
+      "Spinnerbait",
+      "Soft Bait",
+      "Jig",
+      "Popper",
+      "Zara"
+    ],
+    "iscasNaturais": [
+      "Lambari",
+      "Minhoca",
+      "Tuvira"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 4,
+      "noite": 2
     },
-    {
-      "id": "TRA",
-      "nome": "Traíra",
-      "cientifico": "Hoplias malabaricus",
-      "categoria": "Predador",
-      "ambiente": [
-        "Lagoa",
-        "Represa",
-        "Rio"
-      ],
-      "alimentacao": [
-        "Peixes",
-        "Anfíbios"
-      ],
-      "iscaArtificial": true,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 4,
-        "manha": 3,
-        "tarde": 4,
-        "noite": 5
-      },
-      "agua": {
-        "limpa": 4,
-        "turvaLeve": 5,
-        "turva": 5
-      },
-      "observacoes": ""
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
     },
-    {
-      "id": "TIL",
-      "nome": "Tilápia",
-      "cientifico": "Oreochromis niloticus",
-      "categoria": "Onívoro",
-      "ambiente": [
-        "Represa",
-        "Lagoa"
-      ],
-      "alimentacao": [
-        "Insetos",
-        "Algas",
-        "Ração"
-      ],
-      "iscaArtificial": true,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 4,
-        "manha": 5,
-        "tarde": 4,
-        "noite": 1
-      },
-      "agua": {
-        "limpa": 5,
-        "turvaLeve": 3,
-        "turva": 2
-      },
-      "observacoes": ""
-    },
-    {
-      "id": "LAM",
-      "nome": "Lambari",
-      "cientifico": "Astyanax spp.",
-      "categoria": "Onívoro",
-      "ambiente": [
-        "Rio",
-        "Represa",
-        "Lagoa"
-      ],
-      "alimentacao": [
-        "Insetos",
-        "Larvas"
-      ],
-      "iscaArtificial": true,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 4,
-        "manha": 5,
-        "tarde": 5,
-        "noite": 2
-      },
-      "agua": {
-        "limpa": 5,
-        "turvaLeve": 4,
-        "turva": 2
-      },
-      "observacoes": ""
-    },
-    {
-      "id": "PIA",
-      "nome": "Piau",
-      "cientifico": "Leporinus spp.",
-      "categoria": "Onívoro",
-      "ambiente": [
-        "Rio",
-        "Represa"
-      ],
-      "alimentacao": [
-        "Frutos",
-        "Insetos"
-      ],
-      "iscaArtificial": false,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 4,
-        "manha": 4,
-        "tarde": 4,
-        "noite": 2
-      },
-      "agua": {
-        "limpa": 4,
-        "turvaLeve": 4,
-        "turva": 3
-      },
-      "observacoes": ""
-    },
-    {
-      "id": "PAC",
-      "nome": "Pacu",
-      "cientifico": "Piaractus mesopotamicus",
-      "categoria": "Onívoro",
-      "ambiente": [
-        "Rio",
-        "Represa"
-      ],
-      "alimentacao": [
-        "Frutos",
-        "Sementes"
-      ],
-      "iscaArtificial": false,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 4,
-        "manha": 4,
-        "tarde": 5,
-        "noite": 2
-      },
-      "agua": {
-        "limpa": 4,
-        "turvaLeve": 4,
-        "turva": 3
-      },
-      "observacoes": ""
-    },
-    {
-      "id": "CUR",
-      "nome": "Curimba",
-      "cientifico": "Prochilodus lineatus",
-      "categoria": "Detritívoro",
-      "ambiente": [
-        "Rio"
-      ],
-      "alimentacao": [
-        "Detritos"
-      ],
-      "iscaArtificial": false,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 3,
-        "manha": 4,
-        "tarde": 4,
-        "noite": 2
-      },
-      "agua": {
-        "limpa": 4,
-        "turvaLeve": 4,
-        "turva": 4
-      },
-      "observacoes": ""
-    },
-    {
-      "id": "MAN",
-      "nome": "Mandi",
-      "cientifico": "Pimelodus spp.",
-      "categoria": "Peixe de couro",
-      "ambiente": [
-        "Rio",
-        "Represa"
-      ],
-      "alimentacao": [
-        "Peixes",
-        "Insetos"
-      ],
-      "iscaArtificial": false,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 2,
-        "manha": 2,
-        "tarde": 3,
-        "noite": 5
-      },
-      "agua": {
-        "limpa": 3,
-        "turvaLeve": 4,
-        "turva": 5
-      },
-      "observacoes": ""
-    },
-    {
-      "id": "BAG",
-      "nome": "Bagre",
-      "cientifico": "Rhamdia spp.",
-      "categoria": "Peixe de couro",
-      "ambiente": [
-        "Rio",
-        "Represa"
-      ],
-      "alimentacao": [
-        "Peixes",
-        "Invertebrados"
-      ],
-      "iscaArtificial": false,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 2,
-        "manha": 2,
-        "tarde": 3,
-        "noite": 5
-      },
-      "agua": {
-        "limpa": 3,
-        "turvaLeve": 4,
-        "turva": 5
-      },
-      "observacoes": ""
-    },
-    {
-      "id": "CAS",
-      "nome": "Cascudo",
-      "cientifico": "Hypostomus spp.",
-      "categoria": "Detritívoro",
-      "ambiente": [
-        "Rio",
-        "Represa"
-      ],
-      "alimentacao": [
-        "Algas"
-      ],
-      "iscaArtificial": false,
-      "iscaNatural": true,
-      "atividade": {
-        "amanhecer": 2,
-        "manha": 3,
-        "tarde": 3,
-        "noite": 4
-      },
-      "agua": {
-        "limpa": 4,
-        "turvaLeve": 4,
-        "turva": 4
-      },
-      "observacoes": ""
-    },
-{
-  "id": "cara",
-  "nome": "Cará",
-  "cientifico": "Geophagus brasiliensis",
-  "categoria": "Onívoro",
-  "ambiente": [
-    "Represa",
-    "Rio",
-    "Lagoa"
-  ],
-  "alimentacao": [
-    "Insetos",
-    "Larvas",
-    "Crustáceos"
-  ],
-  "iscaArtificial": true,
-  "iscaNatural": true,
-  "atividade": {
-    "amanhecer": 4,
-    "manha": 5,
-    "tarde": 4,
-    "noite": 2
+    "observacoes": "Prefere estruturas, galhadas e pedras."
   },
-  "agua": {
-    "limpa": 5,
-    "turvaLeve": 4,
-    "turva": 3
+  {
+    "id": "cachorra",
+    "nome": "Cachorra",
+    "cientifico": "Acestrorhynchus lacustris",
+    "categoria": "Predador",
+    "ambiente": [
+      "Rio",
+      "Represa"
+    ],
+    "alimentacao": [
+      "Peixes"
+    ],
+    "iscasArtificiais": [
+      "Meia Água",
+      "Spinner",
+      "Colher",
+      "Jig"
+    ],
+    "iscasNaturais": [
+      "Lambari",
+      "Tuvira"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 1
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+    "observacoes": "Ataques rápidos em meia água."
   },
-  "observacoes": ""
-}
-  ]
+  {
+    "id": "dourado",
+    "nome": "Dourado",
+    "cientifico": "Salminus brasiliensis",
+    "categoria": "Predador",
+    "ambiente": [
+      "Rio"
+    ],
+    "alimentacao": [
+      "Peixes"
+    ],
+    "iscasArtificiais": [
+      "Hélice",
+      "Zara",
+      "Meia Água",
+      "Jig",
+      "Spinner"
+    ],
+    "iscasNaturais": [
+      "Lambari",
+      "Tuvira"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 1
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+    "observacoes": "Espécie extremamente esportiva, comum em rios de correnteza."
+  },
+  {
+    "id": "pirambeba",
+    "nome": "Pirambeba",
+    "cientifico": "Serrasalmus brandtii",
+    "categoria": "Predador",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Insetos",
+      "Crustáceos"
+    ],
+    "iscasArtificiais": [
+      "Spinner",
+      "Colher",
+      "Jig",
+      "Pequena Meia Água"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Peixe",
+      "Carne"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 4
+    },
+    "observacoes": "Muito comum na bacia do São Francisco."
+  },
+  {
+    "id": "traira",
+    "nome": "Traíra",
+    "cientifico": "Hoplias malabaricus",
+    "categoria": "Predador",
+    "ambiente": [
+      "Represa",
+      "Rio",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Anfíbios",
+      "Insetos"
+    ],
+    "iscasArtificiais": [
+      "Frog",
+      "Spinnerbait",
+      "Soft Bait",
+      "Jig",
+      "Zara",
+      "Meia Água"
+    ],
+    "iscasNaturais": [
+      "Lambari",
+      "Tuvira",
+      "Minhoca"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 5,
+      "turva": 4
+    },
+    "observacoes": "Prefere vegetação, galhadas e locais com pouca correnteza."
+  },
+  {
+    "id": "trairao",
+    "nome": "Trairão",
+    "cientifico": "Hoplias lacerdae",
+    "categoria": "Predador",
+    "ambiente": [
+      "Rio",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Peixes"
+    ],
+    "iscasArtificiais": [
+      "Frog",
+      "Hélice",
+      "Jig",
+      "Soft Bait",
+      "Spinnerbait"
+    ],
+    "iscasNaturais": [
+      "Tuvira",
+      "Lambari"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Mais agressivo e maior que a traíra comum."
+  },
+  {
+    "id": "tucunare",
+    "nome": "Tucunaré",
+    "cientifico": "Cichla spp.",
+    "categoria": "Predador",
+    "ambiente": [
+      "Represa",
+      "Lago",
+      "Rio"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Camarões"
+    ],
+    "iscasArtificiais": [
+      "Zara",
+      "Popper",
+      "Hélice",
+      "Meia Água",
+      "Jig",
+      "Spinnerbait",
+      "Soft Bait"
+    ],
+    "iscasNaturais": [
+      "Lambari",
+      "Tuvira"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 1
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+    "observacoes": "Principal predador das represas da região, especialmente Várzea das Flores e Três Marias."
+  },
+  {
+    "id": "pacu",
+    "nome": "Pacu",
+    "cientifico": "Piaractus mesopotamicus",
+    "categoria": "Redondo",
+    "ambiente": [
+      "Represa",
+      "Rio",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Frutos",
+      "Sementes",
+      "Insetos",
+      "Moluscos"
+    ],
+    "iscasArtificiais": [
+      "Spinner",
+      "Micro Jig",
+      "Pequeno Crank",
+      "Soft Bait"
+    ],
+    "iscasNaturais": [
+      "Milho",
+      "Massa",
+      "Minhoca",
+      "Banana",
+      "Goiaba",
+      "Ração",
+      "Queijo"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Muito comum em pesqueiros e encontrado em rios e represas da região."
+  },
+  {
+    "id": "piraputanga",
+    "nome": "Piraputanga",
+    "cientifico": "Brycon hilarii",
+    "categoria": "Redondo",
+    "ambiente": [
+      "Rio",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Frutos",
+      "Insetos",
+      "Pequenos Peixes"
+    ],
+    "iscasArtificiais": [
+      "Spinner",
+      "Zara",
+      "Pequena Meia Água",
+      "Micro Jig"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Frutas",
+      "Insetos"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 1
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+    "observacoes": "Espécie extremamente esportiva, presente principalmente em pesqueiros."
+  },
+  {
+    "id": "tambacu",
+    "nome": "Tambacu",
+    "cientifico": "Híbrido (Tambaqui × Pacu)",
+    "categoria": "Redondo",
+    "ambiente": [
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Frutos",
+      "Ração",
+      "Insetos"
+    ],
+    "iscasArtificiais": [
+      "Spinner",
+      "Micro Jig"
+    ],
+    "iscasNaturais": [
+      "Ração",
+      "Massa",
+      "Milho",
+      "Banana",
+      "Queijo"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 5,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Espécie híbrida muito comum em pesqueiros."
+  },
+  {
+    "id": "tambaqui",
+    "nome": "Tambaqui",
+    "cientifico": "Colossoma macropomum",
+    "categoria": "Redondo",
+    "ambiente": [
+      "Pesqueiro",
+      "Represa"
+    ],
+    "alimentacao": [
+      "Frutos",
+      "Sementes",
+      "Insetos"
+    ],
+    "iscasArtificiais": [
+      "Spinner",
+      "Micro Jig"
+    ],
+    "iscasNaturais": [
+      "Massa",
+      "Milho",
+      "Ração",
+      "Banana",
+      "Goiaba"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Muito comum em pesqueiros e algumas represas."
+  },
+  {
+    "id": "tambatinga",
+    "nome": "Tambatinga",
+    "cientifico": "Híbrido (Tambaqui × Pirapitinga)",
+    "categoria": "Redondo",
+    "ambiente": [
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Frutos",
+      "Insetos",
+      "Ração"
+    ],
+    "iscasArtificiais": [
+      "Spinner",
+      "Micro Jig"
+    ],
+    "iscasNaturais": [
+      "Ração",
+      "Massa",
+      "Milho",
+      "Banana"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 5,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Híbrido muito popular em pesqueiros."
+  },
+  {
+    "id": "cara",
+    "nome": "Cará",
+    "cientifico": "Geophagus brasiliensis",
+    "categoria": "Escamado",
+    "ambiente": [
+      "Represa",
+      "Rio",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Insetos",
+      "Larvas",
+      "Crustáceos"
+    ],
+    "iscasArtificiais": [
+      "Micro Jig",
+      "Micro Spinner",
+      "Micro Crank",
+      "Micro Soft"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Larvas",
+      "Massa",
+      "Milho"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Comum em lagoas, represas e margens com vegetação."
+  },
+  {
+    "id": "curimba",
+    "nome": "Curimba",
+    "cientifico": "Prochilodus lineatus",
+    "categoria": "Escamado",
+    "ambiente": [
+      "Rio",
+      "Represa"
+    ],
+    "alimentacao": [
+      "Algas",
+      "Detritos",
+      "Matéria Orgânica"
+    ],
+    "iscasArtificiais": [],
+    "iscasNaturais": [
+      "Massa",
+      "Milho",
+      "Minhoca",
+      "Minhocuçu"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 3,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 4
+    },
+    "observacoes": "Raramente capturada com iscas artificiais."
+  },
+  {
+    "id": "matrinxa",
+    "nome": "Matrinxã",
+    "cientifico": "Brycon amazonicus",
+    "categoria": "Escamado",
+    "ambiente": [
+      "Rio",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Insetos",
+      "Frutos",
+      "Peixes"
+    ],
+    "iscasArtificiais": [
+      "Spinner",
+      "Zara",
+      "Popper",
+      "Pequena Meia Água",
+      "Micro Jig"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Lambari",
+      "Frutas"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 1
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+    "observacoes": "Muito esportiva e extremamente ativa na superfície."
+  },
+  {
+    "id": "piapara",
+    "nome": "Piapara",
+    "cientifico": "Megaleporinus obtusidens",
+    "categoria": "Escamado",
+    "ambiente": [
+      "Rio",
+      "Represa"
+    ],
+    "alimentacao": [
+      "Frutos",
+      "Sementes",
+      "Insetos"
+    ],
+    "iscasArtificiais": [
+      "Micro Spinner",
+      "Micro Jig"
+    ],
+    "iscasNaturais": [
+      "Milho",
+      "Massa",
+      "Minhoca",
+      "Frutas"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Muito encontrada na bacia do São Francisco."
+  },
+  {
+    "id": "piau",
+    "nome": "Piau",
+    "cientifico": "Leporinus friderici",
+    "categoria": "Escamado",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Insetos",
+      "Algas",
+      "Frutos",
+      "Larvas"
+    ],
+    "iscasArtificiais": [
+      "Micro Spinner",
+      "Micro Jig",
+      "Micro Soft"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Milho",
+      "Massa",
+      "Larvas"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Uma das espécies mais comuns da região do Médio Paraopeba."
+  },
+  {
+    "id": "tilapia",
+    "nome": "Tilápia",
+    "cientifico": "Oreochromis niloticus",
+    "categoria": "Escamado",
+    "ambiente": [
+      "Represa",
+      "Lago",
+      "Lagoa",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Algas",
+      "Insetos",
+      "Larvas",
+      "Ração"
+    ],
+    "iscasArtificiais": [
+      "Micro Jig",
+      "Micro Soft",
+      "Micro Spinner",
+      "Pequeno Crank"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Massa",
+      "Milho",
+      "Ração",
+      "Pão"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 5,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Muito comum em Várzea das Flores, Três Marias e pesqueiros."
+  },
+  {
+    "id": "bagre",
+    "nome": "Bagre",
+    "cientifico": "Pimelodus maculatus",
+    "categoria": "Couro",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Insetos",
+      "Larvas",
+      "Crustáceos",
+      "Matéria Orgânica"
+    ],
+    "iscasArtificiais": [
+      "Soft Bait",
+      "Jig",
+      "Jump Jig"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Minhocuçu",
+      "Coração",
+      "Fígado",
+      "Peixe",
+      "Salsicha"
+    ],
+    "atividade": {
+      "amanhecer": 3,
+      "manha": 2,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 3,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Mais ativo à noite e em águas turvas."
+  },
+  {
+    "id": "cachara",
+    "nome": "Cachara",
+    "cientifico": "Pseudoplatystoma reticulatum",
+    "categoria": "Couro",
+    "ambiente": [
+      "Rio",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Peixes"
+    ],
+    "iscasArtificiais": [
+      "Soft Bait",
+      "Jig",
+      "Meia Água"
+    ],
+    "iscasNaturais": [
+      "Tuvira",
+      "Lambari",
+      "Peixe"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 3,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Encontrada principalmente em pesqueiros e grandes rios."
+  },
+  {
+    "id": "jundia",
+    "nome": "Jundiá",
+    "cientifico": "Rhamdia quelen",
+    "categoria": "Couro",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Insetos",
+      "Larvas",
+      "Peixes",
+      "Crustáceos"
+    ],
+    "iscasArtificiais": [
+      "Soft Bait",
+      "Jig"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Minhocuçu",
+      "Peixe",
+      "Fígado"
+    ],
+    "atividade": {
+      "amanhecer": 3,
+      "manha": 2,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Espécie de hábito predominantemente noturno."
+  },
+  {
+    "id": "mandi",
+    "nome": "Mandi",
+    "cientifico": "Pimelodus maculatus",
+    "categoria": "Couro",
+    "ambiente": [
+      "Rio",
+      "Represa"
+    ],
+    "alimentacao": [
+      "Insetos",
+      "Larvas",
+      "Peixes",
+      "Crustáceos"
+    ],
+    "iscasArtificiais": [
+      "Micro Jig",
+      "Soft Bait"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Larvas",
+      "Peixe"
+    ],
+    "atividade": {
+      "amanhecer": 3,
+      "manha": 3,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Muito comum na bacia do São Francisco."
+  },
+  {
+    "id": "pintado",
+    "nome": "Pintado",
+    "cientifico": "Pseudoplatystoma corruscans",
+    "categoria": "Couro",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Peixes"
+    ],
+    "iscasArtificiais": [
+      "Soft Bait",
+      "Jig",
+      "Meia Água"
+    ],
+    "iscasNaturais": [
+      "Tuvira",
+      "Lambari",
+      "Peixe"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 3,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Grande predador de fundo."
+  },
+  {
+    "id": "pirarara",
+    "nome": "Pirarara",
+    "cientifico": "Phractocephalus hemioliopterus",
+    "categoria": "Couro",
+    "ambiente": [
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Frutos",
+      "Crustáceos"
+    ],
+    "iscasArtificiais": [],
+    "iscasNaturais": [
+      "Peixe",
+      "Tuvira",
+      "Filé de Peixe",
+      "Coração",
+      "Salsicha"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 3,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Espécie presente principalmente em pesqueiros."
+  },
+  {
+    "id": "surubim",
+    "nome": "Surubim",
+    "cientifico": "Pseudoplatystoma corruscans",
+    "categoria": "Couro",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Peixes"
+    ],
+    "iscasArtificiais": [
+      "Soft Bait",
+      "Jig",
+      "Meia Água"
+    ],
+    "iscasNaturais": [
+      "Tuvira",
+      "Lambari",
+      "Peixe"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 3,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Muito procurado na bacia do Rio São Francisco."
+  },
+    {
+    "id": "apaiari",
+    "nome": "Apaiari",
+    "cientifico": "Astronotus ocellatus",
+    "categoria": "Outros",
+    "ambiente": [
+      "Lago",
+      "Represa",
+      "Pesqueiro"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Insetos",
+      "Crustáceos"
+    ],
+    "iscasArtificiais": [
+      "Micro Crank",
+      "Micro Jig",
+      "Spinner",
+      "Soft Bait"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Lambari",
+      "Larvas"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Espécie exótica encontrada em alguns lagos e pesqueiros."
+  },
+  {
+    "id": "carpa",
+    "nome": "Carpa",
+    "cientifico": "Cyprinus carpio",
+    "categoria": "Outros",
+    "ambiente": [
+      "Pesqueiro",
+      "Lago",
+      "Represa"
+    ],
+    "alimentacao": [
+      "Algas",
+      "Insetos",
+      "Larvas",
+      "Grãos"
+    ],
+    "iscasArtificiais": [],
+    "iscasNaturais": [
+      "Milho",
+      "Massa",
+      "Ração",
+      "Pão",
+      "Minhoca"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 5,
+      "noite": 3
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 4
+    },
+    "observacoes": "Muito comum em pesqueiros."
+  },
+  {
+    "id": "jeju",
+    "nome": "Jeju",
+    "cientifico": "Hoplerythrinus unitaeniatus",
+    "categoria": "Pequenos",
+    "ambiente": [
+      "Lagoa",
+      "Represa",
+      "Rio"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Insetos",
+      "Anfíbios"
+    ],
+    "iscasArtificiais": [
+      "Micro Spinner",
+      "Micro Jig",
+      "Soft Bait"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Lambari"
+    ],
+    "atividade": {
+      "amanhecer": 4,
+      "manha": 4,
+      "tarde": 3,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 4,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+    "observacoes": "Predador de pequeno porte, muito resistente."
+  },
+  {
+    "id": "lambari",
+    "nome": "Lambari",
+    "cientifico": "Astyanax spp.",
+    "categoria": "Pequenos",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Insetos",
+      "Larvas",
+      "Algas"
+    ],
+    "iscasArtificiais": [
+      "Micro Jig",
+      "Micro Spinner",
+      "Micro Crank"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Massa",
+      "Larvas",
+      "Pão"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 5,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Excelente espécie para equipamentos ultralight."
+  },
+  {
+    "id": "piaba",
+    "nome": "Piaba",
+    "cientifico": "Astyanax bimaculatus",
+    "categoria": "Pequenos",
+    "ambiente": [
+      "Rio",
+      "Represa",
+      "Lagoa"
+    ],
+    "alimentacao": [
+      "Insetos",
+      "Larvas",
+      "Algas"
+    ],
+    "iscasArtificiais": [
+      "Micro Jig",
+      "Micro Spinner",
+      "Micro Soft"
+    ],
+    "iscasNaturais": [
+      "Minhoca",
+      "Massa",
+      "Larvas"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "noite": 2
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Muito abundante em rios e lagoas da região."
+  },
+  {
+    "id": "robalo",
+    "nome": "Robalo",
+    "cientifico": "Centropomus undecimalis",
+    "categoria": "Outros",
+    "ambiente": [
+      "Estuário",
+      "Mangue",
+      "Praia"
+    ],
+    "alimentacao": [
+      "Peixes",
+      "Camarões",
+      "Crustáceos"
+    ],
+    "iscasArtificiais": [
+      "Soft Bait",
+      "Jig Head",
+      "Meia Água",
+      "Stick",
+      "Zara"
+    ],
+    "iscasNaturais": [
+      "Camarão",
+      "Lambari",
+      "Manjuba"
+    ],
+    "atividade": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 4,
+      "noite": 5
+    },
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+    "observacoes": "Mantido no cadastro para viagens ao litoral."
+  }
+]
 }
