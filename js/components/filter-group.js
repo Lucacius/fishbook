@@ -48,13 +48,44 @@ const createOption = (
     input.value =
         value;
 
-    input.addEventListener(
+        
 
-        "change",
+input.addEventListener("mousedown", event => {
 
-        onChange
 
-    );
+
+    if(
+
+        input.checked
+
+    ){
+
+        event.preventDefault();
+
+        input.checked = false;
+
+        input.dispatchEvent(
+
+            new Event(
+
+                "change",
+
+                { bubbles:false }
+
+            )
+
+        );
+
+    }
+
+});
+
+input.addEventListener("change", () => {
+
+    onChange();
+
+});
+
 
     const text =
         document.createElement(

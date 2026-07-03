@@ -76,7 +76,7 @@ const createFilter = (
 
     options,
 
-    type = "radio"
+    type = "checkbox"
 
 ) =>
 
