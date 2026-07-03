@@ -1,6 +1,6 @@
 /*
  * Dashboard principal do FishBook.
- * Os cards são somente pontos de entrada e ainda não realizam navegação.
+ * Alguns cards são somente pontos de entrada e ainda não realizam navegação.
  */
 
 (() => {
@@ -76,15 +76,19 @@ title.textContent =
 
         .nomeSistema;
     brand.append(fishIcon, title);
+    
+const versao =
+    document.createElement("span");
+
+versao.className =
+    "badge badge-0";
+
+versao.textContent =
+    `v${window.FishBook.Config.Constantes.versao}`;
+
 brand.append(
 
-    Badge.create({
-
-        label:
-
-            `v${window.FishBook.Config.Constantes.versao}`
-
-    })
+    versao
 
 );
     const subtitle = document.createElement("p");
