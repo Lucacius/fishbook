@@ -34,21 +34,6 @@ const renderHeader = () => {
     header.className =
         "catalogo-header";
 
-    const voltar =
-        document.createElement("button");
-
-    voltar.className =
-        "button button-secondary";
-
-    voltar.textContent =
-        "← Início";
-
-    voltar.onclick = () => {
-
-        window.Router.open("home");
-
-    };
-
     const title =
         document.createElement("h1");
 
@@ -58,12 +43,10 @@ const renderHeader = () => {
     const subtitle =
         document.createElement("p");
 
-    contadorElement = subtitle;
+    contadorElement =
+        subtitle;
 
-    
     header.append(
-
-        voltar,
 
         title,
 

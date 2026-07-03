@@ -149,21 +149,6 @@ const renderHeader = () => {
     header.className =
         "ficha-header";
 
-    const voltar =
-        document.createElement("button");
-
-    voltar.className =
-        "button button-secondary";
-
-    voltar.textContent =
-        "← Catálogo";
-
-    voltar.onclick = () => {
-
-        window.Router.open("catalogo");
-
-    };
-
     const info =
         document.createElement("div");
 
@@ -213,8 +198,7 @@ const renderHeader = () => {
 
     header.append(
 
-        voltar,
-        info,
+       info,
         createBadge(
             lure.eficiencia ?? 0
         )
@@ -223,7 +207,9 @@ const renderHeader = () => {
 
     return header;
 
-};/*=========================================================
+};
+
+/*=========================================================
 Foto
 =========================================================*/
 

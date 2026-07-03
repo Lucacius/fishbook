@@ -124,24 +124,66 @@
 }
 
 /*=========================================================
-Navbar
+Bottom Navbar
 =========================================================*/
 
 .navbar{
 
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:68px;
+
     display:flex;
 
-    gap:12px;
+    justify-content:space-evenly;
 
-    margin-bottom:20px;
+    align-items:center;
 
-    flex-wrap:wrap;
+    background:#111827;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
 
 }
 
 .navbar-button{
 
-    flex:1;
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    background:transparent;
+
+    color:#9ca3af;
+
+    border-radius:12px;
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.navbar-button:hover{
+
+    color:#fff;
 
 }
 
@@ -151,9 +193,8 @@ Navbar
 
     color:#fff;
 
-    border-color:var(--primary);
-
 }
+
 
 
 @media (hover: hover) and (pointer: fine) {
@@ -168,4 +209,10 @@ Navbar
   .fb-card {
     transition: none;
   }
+}
+
+#app{
+
+    padding-bottom:90px;
+
 }

@@ -155,48 +155,60 @@ const create = ({
     group.className =
         "filter-group-section";
 
-    const title =
+    const list =
+    document.createElement("div");
+
+list.className =
+    "filter-options";
+
+item.options.forEach(option => {
+
+    list.append(
+
+        createOption(
+
+            name,
+
+            type,
+
+            option,
+
+            onChange
+
+        )
+
+    );
+
+});
+
+if(item.title !== "Todas"){
+
+    const subtitle =
         document.createElement("h4");
 
-    title.className =
+    subtitle.className =
         "filter-group-subtitle";
 
-    title.textContent =
+    subtitle.textContent =
         item.title;
-
-    const list =
-        document.createElement("div");
-
-    list.className =
-        "filter-options";
-
-    item.options.forEach(option => {
-
-        list.append(
-
-            createOption(
-
-                name,
-
-                type,
-
-                option,
-
-                onChange
-
-            )
-
-        );
-
-    });
 
     group.append(
 
-        title,
+        subtitle,
 
         list
 
     );
+
+}else{
+
+    group.append(
+
+        list
+
+    );
+
+}
 
     container.append(
 

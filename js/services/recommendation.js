@@ -1,8 +1,7 @@
 /*
 =========================================================
 FishBook
-Recommendation Service
-Parte 1/4
+Recommendation Service V2
 =========================================================
 */
 
@@ -11,32 +10,30 @@ Parte 1/4
 "use strict";
 
 /*=========================================================
-Constantes
+Pesos
 =========================================================*/
 
-const SCORE = Object.freeze({
+const WEIGHTS = Object.freeze({
 
-    SPECIES: 50,
+    especie:50,
 
-    WATER: 15,
+    agua:15,
 
-    TIME: 10,
+    horario:10,
 
-    STRUCTURE: 10,
+    local:10,
 
-    DEPTH: 8,
+    estrutura:8,
 
-    WORK: 8,
+    trabalho:8,
 
-    WEIGHT: 5,
+    profundidade:6,
 
-    FLOAT: 5,
+    montagem:6,
 
-    ASSEMBLY: 5,
+    flutuacao:5,
 
-    TYPE: 100,
-
-    PLACE: 10
+    peso:5
 
 });
 
@@ -54,41 +51,17 @@ const normalize = value =>
 
     .normalize("NFD")
 
-    .replace(/[\u0300-\u036f]/g,"")
+    .replace(
+
+        /[\u0300-\u036f]/g,
+
+        ""
+
+    )
 
     .toLowerCase()
 
     .trim();
-
-const hasFilter = filters =>
-
-    Boolean(
-
-        filters.especie ||
-
-        filters.local ||
-
-        filters.horario ||
-
-        filters.agua ||
-
-        filters.profundidade ||
-
-        filters.tipo ||
-
-        filters.montagem ||
-
-        filters.peso ||
-
-        filters.flutuacao ||
-
-        filters.prioridade ||
-
-        filters.estrutura.length ||
-
-        filters.trabalho.length
-
-    );
 
 const contains = (
 
@@ -100,7 +73,11 @@ const contains = (
 
     (list ?? [])
 
-        .map(normalize)
+        .map(
+
+            normalize
+
+        )
 
         .includes(
 
@@ -112,11 +89,85 @@ const contains = (
 
         );
 
-/*=========================================================
-Pontuação
+const clone = lure => ({
+
+    ...lure,
+
+    pontos:0,
+
+    maximo:0,
+
+    score:0,
+
+    motivos:[]
+
+});
+
+const addScore = (
+
+    lure,
+
+    peso,
+
+    valor,
+
+    motivo
+
+)=>{
+
+    lure.maximo += peso;
+
+    lure.pontos +=
+
+        peso * valor;
+
+    if(
+
+        motivo
+
+    ){
+
+        lure.motivos.push(
+
+            motivo
+
+        );
+
+    }
+
+};
+
+const hasFilter = filters =>
+
+    Object.values(
+
+        filters
+
+    ).some(
+
+        value=>
+
+            Array.isArray(
+
+                value
+
+            )
+
+                ? value.length
+
+                : Boolean(
+
+                    value
+
+                )
+
+    );
+
+    /*=========================================================
+Espécie
 =========================================================*/
 
-const scoreSpecies = (
+const applySpecies = (
 
     lure,
 
@@ -132,7 +183,7 @@ const scoreSpecies = (
 
     ){
 
-        return 0;
+        return;
 
     }
 
@@ -140,19 +191,21 @@ const scoreSpecies = (
 
         (lure.especies ?? [])
 
-        .find(item=>
+        .find(
 
-            normalize(
+            item=>
 
-                item.nome
+                normalize(
 
-            )===
+                    item.nome
 
-            normalize(
+                )===
 
-                filters.especie
+                normalize(
 
-            )
+                    filters.especie
+
+                )
 
         );
 
@@ -162,85 +215,39 @@ const scoreSpecies = (
 
     ){
 
-        return -9999;
+        lure.score =
+
+            -1;
+
+        return;
 
     }
 
-    return (
+    addScore(
 
-        especie.afinidade ??
+        lure,
 
-        0
+        WEIGHTS.especie,
 
-    ) * 10;
+        (
+
+            especie.afinidade ??
+
+            0
+
+        ) / 5,
+
+        `Espécie: ${filters.especie}`
+
+    );
 
 };
 
-const scoreTime = (
+/*=========================================================
+Água
+=========================================================*/
 
-    lure,
-
-    filters
-
-)=>{
-
-    if(
-
-        !filters.horario
-
-    ){
-
-        return 0;
-
-    }
-
-    const horario = {
-
-        amanhecer:"amanhecer",
-
-        "manhã":"manha",
-
-        manha:"manha",
-
-        tarde:"tarde",
-
-        noite:"noite"
-
-    };
-
-    const key =
-
-        horario[
-
-            normalize(
-
-                filters.horario
-
-            )
-
-        ];
-
-    if(
-
-        !key
-
-    ){
-
-        return 0;
-
-    }
-
-    return (
-
-        lure.horario?.[key] ??
-
-        0
-
-    ) * 2;
-
-};
-
-const scoreWater = (
+const applyWater = (
 
     lure,
 
@@ -254,11 +261,11 @@ const scoreWater = (
 
     ){
 
-        return 0;
+        return;
 
     }
 
-    const agua = {
+    const key = {
 
         limpa:"limpa",
 
@@ -266,19 +273,15 @@ const scoreWater = (
 
         turva:"turva"
 
-    };
+    }[
 
-    const key =
+        normalize(
 
-        agua[
+            filters.agua
 
-            normalize(
+        )
 
-                filters.agua
-
-            )
-
-        ];
+    ];
 
     if(
 
@@ -286,301 +289,35 @@ const scoreWater = (
 
     ){
 
-        return 0;
+        return;
 
     }
 
-    return (
+    addScore(
 
-        lure.agua?.[key] ??
+        lure,
 
-        0
+        WEIGHTS.agua,
 
-    ) * 3;
+        (
 
-};
+            lure.agua?.[key] ??
 
-const scoreDepth = (
+            0
 
-    lure,
+        ) / 5,
 
-    filters
-
-)=>{
-
-    if(
-
-        !filters.profundidade
-
-    ){
-
-        return 0;
-
-    }
-
-    const descricao =
-
-        normalize(
-
-            lure.profundidade?.descricao
-
-        );
-
-    if(
-
-        !descricao
-
-    ){
-
-        return 0;
-
-    }
-
-    if(
-
-        descricao===
-
-        normalize(
-
-            filters.profundidade
-
-        )
-
-    ){
-
-        return SCORE.DEPTH;
-
-    }
-
-    return 0;
-
-};
-
-const scoreAssembly = (
-
-    lure,
-
-    filters
-
-)=>{
-
-    if(
-
-        !filters.montagem
-
-    ){
-
-        return 0;
-
-    }
-
-    if(
-
-        contains(
-
-            lure.montagens,
-
-            filters.montagem
-
-        )
-
-    ){
-
-        return SCORE.ASSEMBLY;
-
-    }
-
-    return -9999;
-
-};
-
-const scoreType = (
-
-    lure,
-
-    filters
-
-)=>{
-
-    if(
-
-        !filters.tipo
-
-    ){
-
-        return 0;
-
-    }
-
-    if(
-
-        normalize(
-
-            lure.origem
-
-        )===
-
-        normalize(
-
-            filters.tipo
-
-        )
-
-    ){
-
-        return SCORE.TYPE;
-
-    }
-
-    return -9999;
-
-};
-
-const scoreWeight = (
-
-    lure,
-
-    filters
-
-)=>{
-
-    if(
-
-        !filters.peso
-
-    ){
-
-        return 0;
-
-    }
-
-    if(
-
-        !lure.peso
-
-    ){
-
-        return 0;
-
-    }
-
-    if(
-
-        normalize(
-
-            lure.peso
-
-        )===
-
-        normalize(
-
-            filters.peso
-
-        )
-
-    ){
-
-        return SCORE.WEIGHT;
-
-    }
-
-    return 0;
-
-};
-
-const scoreFloat = (
-
-    lure,
-
-    filters
-
-)=>{
-
-    if(
-
-        !filters.flutuacao
-
-    ){
-
-        return 0;
-
-    }
-
-    if(
-
-        normalize(
-
-            lure.flutuacao
-
-        )===
-
-        normalize(
-
-            filters.flutuacao
-
-        )
-
-    ){
-
-        return SCORE.FLOAT;
-
-    }
-
-    return 0;
-
-};
-
-const scoreStructure = (
-
-    lure,
-
-    filters
-
-)=>{
-
-    if(
-
-        !filters.estrutura.length
-
-    ){
-
-        return 0;
-
-    }
-
-    let score = 0;
-
-    filters.estrutura.forEach(
-
-        item=>{
-
-            if(
-
-                contains(
-
-                    lure.estruturas,
-
-                    item
-
-                )
-
-            ){
-
-                score +=
-
-                    SCORE.STRUCTURE;
-
-            }
-
-        }
+        `Água: ${filters.agua}`
 
     );
 
-    return score;
-
 };
 
-const scoreWork = (
+/*=========================================================
+Horário
+=========================================================*/
+
+const applyTime = (
 
     lure,
 
@@ -590,47 +327,71 @@ const scoreWork = (
 
     if(
 
-        !filters.trabalho.length
+        !filters.horario
 
     ){
 
-        return 0;
+        return;
 
     }
 
-    let score = 0;
+    const key = {
 
-    filters.trabalho.forEach(
+        amanhecer:"amanhecer",
 
-        item=>{
+        manha:"manha",
 
-            if(
+        "manhã":"manha",
 
-                contains(
+        tarde:"tarde",
 
-                    lure.trabalhos,
+        noite:"noite"
 
-                    item
+    }[
 
-                )
+        normalize(
 
-            ){
+            filters.horario
 
-                score +=
+        )
 
-                    SCORE.WORK;
+    ];
 
-            }
+    if(
 
-        }
+        !key
+
+    ){
+
+        return;
+
+    }
+
+    addScore(
+
+        lure,
+
+        WEIGHTS.horario,
+
+        (
+
+            lure.horario?.[key] ??
+
+            0
+
+        ) / 5,
+
+        `Horário: ${filters.horario}`
 
     );
 
-    return score;
-
 };
 
-const scorePlace = (
+/*=========================================================
+Local de Pesca
+=========================================================*/
+
+const applyPlace = (
 
     lure,
 
@@ -644,11 +405,15 @@ const scorePlace = (
 
     ){
 
-        return 0;
+        return;
 
     }
 
-    if(
+    addScore(
+
+        lure,
+
+        WEIGHTS.local,
 
         contains(
 
@@ -658,21 +423,21 @@ const scorePlace = (
 
         )
 
-    ){
+            ? 1
 
-        return SCORE.PLACE;
+            : 0,
 
-    }
+        `Local: ${filters.local}`
 
-    return 0;
+    );
 
 };
 
 /*=========================================================
-Calcula Pontuação
+Tipo
 =========================================================*/
 
-const calculateScore = (
+const applyType = (
 
     lure,
 
@@ -680,119 +445,365 @@ const calculateScore = (
 
 )=>{
 
-    let score = 0;
+    if(
 
-    score +=
+        !filters.tipo
 
-        scoreSpecies(
+    ){
 
-            lure,
+        return;
 
-            filters
+    }
 
-        );
+    if(
 
-    score +=
+        normalize(
 
-        scoreTime(
+            lure.origem
 
-            lure,
+        )!==
 
-            filters
+        normalize(
 
-        );
+            filters.tipo
 
-    score +=
+        )
 
-        scoreWater(
+    ){
 
-            lure,
+        lure.score =
 
-            filters
+            -1;
 
-        );
+    }
 
-    score +=
+};
 
-        scoreDepth(
+/*=========================================================
+Montagem
+=========================================================*/
 
-            lure,
+const applyAssembly = (
 
-            filters
+    lure,
 
-        );
+    filters
 
-    score +=
+)=>{
 
-        scoreAssembly(
+    if(
 
-            lure,
+        !filters.montagem
 
-            filters
+    ){
 
-        );
+        return;
 
-    score +=
+    }
 
-        scoreType(
+    if(
 
-            lure,
+        !contains(
 
-            filters
+            lure.montagens,
 
-        );
+            filters.montagem
 
-    score +=
+        )
 
-        scoreWeight(
+    ){
 
-            lure,
+        lure.score =
 
-            filters
+            -1;
 
-        );
+        return;
 
-    score +=
+    }
 
-        scoreFloat(
+    addScore(
 
-            lure,
+        lure,
 
-            filters
+        WEIGHTS.montagem,
 
-        );
+        1,
 
-    score +=
+        `Montagem: ${filters.montagem}`
 
-        scoreStructure(
+    );
 
-            lure,
+};
 
-            filters
+/*=========================================================
+Profundidade
+=========================================================*/
 
-        );
+const applyDepth = (
 
-    score +=
+    lure,
 
-        scoreWork(
+    filters
 
-            lure,
+)=>{
 
-            filters
+    if(
 
-        );
+        !filters.profundidade
 
-    score +=
+    ){
 
-        scorePlace(
+        return;
 
-            lure,
+    }
 
-            filters
+    addScore(
 
-        );
+        lure,
 
-    return score;
+        WEIGHTS.profundidade,
+
+        normalize(
+
+            lure.profundidade?.descricao
+
+        )===
+
+        normalize(
+
+            filters.profundidade
+
+        )
+
+            ? 1
+
+            : 0,
+
+        `Profundidade: ${filters.profundidade}`
+
+    );
+
+};
+
+/*=========================================================
+Estrutura
+=========================================================*/
+
+const applyStructure = (
+
+    lure,
+
+    filters
+
+)=>{
+
+    if(
+
+        !filters.estrutura.length
+
+    ){
+
+        return;
+
+    }
+
+    const matches =
+
+        filters.estrutura.filter(
+
+            item=>
+
+                contains(
+
+                    lure.estruturas,
+
+                    item
+
+                )
+
+        ).length;
+
+    addScore(
+
+        lure,
+
+        WEIGHTS.estrutura,
+
+        matches /
+
+        filters.estrutura.length,
+
+        matches
+
+            ? "Estrutura"
+
+            : null
+
+    );
+
+};
+
+/*=========================================================
+Trabalho
+=========================================================*/
+
+const applyWork = (
+
+    lure,
+
+    filters
+
+)=>{
+
+    if(
+
+        !filters.trabalho.length
+
+    ){
+
+        return;
+
+    }
+
+    const matches =
+
+        filters.trabalho.filter(
+
+            item=>
+
+                contains(
+
+                    lure.trabalhos,
+
+                    item
+
+                )
+
+        ).length;
+
+    addScore(
+
+        lure,
+
+        WEIGHTS.trabalho,
+
+        matches /
+
+        filters.trabalho.length,
+
+        matches
+
+            ? "Trabalho"
+
+            : null
+
+    );
+
+};
+
+/*=========================================================
+Flutuação
+=========================================================*/
+
+const applyFloat = (
+
+    lure,
+
+    filters
+
+)=>{
+
+    if(
+
+        !filters.flutuacao
+
+    ){
+
+        return;
+
+    }
+
+    addScore(
+
+        lure,
+
+        WEIGHTS.flutuacao,
+
+        normalize(
+
+            lure.flutuacao
+
+        )===
+
+        normalize(
+
+            filters.flutuacao
+
+        )
+
+            ? 1
+
+            : 0,
+
+        `Flutuação: ${filters.flutuacao}`
+
+    );
+
+};
+
+/*=========================================================
+Peso
+=========================================================*/
+
+const applyWeight = (
+
+    lure,
+
+    filters
+
+)=>{
+
+    if(
+
+        !filters.peso ||
+
+        !lure.peso
+
+    ){
+
+        return;
+
+    }
+
+    addScore(
+
+        lure,
+
+        WEIGHTS.peso,
+
+        normalize(
+
+            String(
+
+                lure.peso
+
+            )
+
+        )===
+
+        normalize(
+
+            filters.peso
+
+        )
+
+            ? 1
+
+            : 0,
+
+        `Peso: ${filters.peso}`
+
+    );
 
 };
 
@@ -802,7 +813,7 @@ Pesquisa
 
 const search = filters => {
 
-    if (
+    if(
 
         !hasFilter(
 
@@ -810,61 +821,211 @@ const search = filters => {
 
         )
 
-    ) {
+    ){
 
         return [];
 
     }
 
-    const results =
+    return window.Database
 
-        window.Database
+        .get(
 
-            .get(
+            "iscas"
 
-                "iscas"
+        )
 
-            )
+        .map(
 
-            .map(
+            clone
 
-                lure => ({
+        )
 
-                    ...lure,
+        .map(
 
-                    score:
+            lure=>{
 
-                        calculateScore(
+                applyType(
 
-                            lure,
+                    lure,
 
-                            filters
+                    filters
+
+                );
+
+                if(
+
+                    lure.score<0
+
+                ){
+
+                    return lure;
+
+                }
+
+                applySpecies(
+
+                    lure,
+
+                    filters
+
+                );
+
+                if(
+
+                    lure.score<0
+
+                ){
+
+                    return lure;
+
+                }
+
+                applyWater(
+
+                    lure,
+
+                    filters
+
+                );
+
+                applyTime(
+
+                    lure,
+
+                    filters
+
+                );
+
+                applyPlace(
+
+                    lure,
+
+                    filters
+
+                );
+
+                applyAssembly(
+
+                    lure,
+
+                    filters
+
+                );
+
+                if(
+
+                    lure.score<0
+
+                ){
+
+                    return lure;
+
+                }
+
+                applyDepth(
+
+                    lure,
+
+                    filters
+
+                );
+
+                applyStructure(
+
+                    lure,
+
+                    filters
+
+                );
+
+                applyWork(
+
+                    lure,
+
+                    filters
+
+                );
+
+                applyFloat(
+
+                    lure,
+
+                    filters
+
+                );
+
+                applyWeight(
+
+                    lure,
+
+                    filters
+
+                );
+
+                lure.score =
+
+                    lure.maximo
+
+                        ? Math.round(
+
+                            (
+
+                                lure.pontos /
+
+                                lure.maximo
+
+                            ) * 100
 
                         )
 
-                })
+                        : 0;
 
-            )
+                return lure;
 
-            .filter(
+            }
 
-                lure =>
+        )
 
-                    lure.score >= 0
+        .filter(
 
-            )
+            lure=>
 
-            .sort(
+                lure.score>=0
 
-                (a,b)=>
+        )
 
-                    b.score -
+        .sort(
 
-                    a.score
+            (a,b)=>{
 
-            );
+                if(
 
-    return results;
+                    b.score!==a.score
+
+                ){
+
+                    return b.score-a.score;
+
+                }
+
+                return (
+
+                    b.eficiencia ??
+
+                    0
+
+                )-(
+
+                    a.eficiencia ??
+
+                    0
+
+                );
+
+            }
+
+        );
 
 };
 

@@ -144,11 +144,13 @@ stock.textContent =
       stock
     );
 
-    card.append(
-      image,
-      content
-    );
+card.append(
 
+    image,
+
+    content
+
+);
     return card;
   };
 

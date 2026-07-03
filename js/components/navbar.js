@@ -21,39 +21,49 @@ const create = (active = "") => {
     nav.className =
         "navbar";
 
-    const items = [
+const items = [
 
-        {
+    {
 
-            id: "home",
+        id: "home",
 
-            icon: "🏠",
+        icon: "🏠"
 
-            text: "Início"
+    },
 
-        },
+    {
 
-        {
+        id: "escolher",
 
-            id: "catalogo",
+        icon: "🎯"
 
-            icon: "📖",
+    },
 
-            text: "Catálogo"
+    {
 
-        },
+        id: "catalogo",
 
-        {
+        icon: "📖"
 
-            id: "escolher",
+    },
 
-            icon: "🎣",
+    {
 
-            text: "Escolher"
+        id: "diario",
 
-        }
+        icon: "📝"
 
-    ];
+    },
+
+    {
+
+        id: "configuracoes",
+
+        icon: "⚙️"
+
+    }
+
+];
 
     items.forEach(item => {
 
@@ -61,7 +71,7 @@ const create = (active = "") => {
             document.createElement("button");
 
         button.className =
-            "button button-secondary navbar-button";
+             "navbar-button";
 
         if (item.id === active) {
 
@@ -72,17 +82,13 @@ const create = (active = "") => {
         }
 
         button.textContent =
-            `${item.icon} ${item.text}`;
+    item.icon;
 
-        button.onclick = () => {
+button.onclick = () => {
 
-            if (item.id !== active) {
+    window.Router.open(item.id);
 
-                window.Router.open(item.id);
-
-            }
-
-        };
+};
 
         nav.append(button);
 

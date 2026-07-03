@@ -153,25 +153,73 @@ Card
 
 .suggestion-card{
 
-    background:var(--card,#1f2937);
+    display:flex;
 
-    border:1px solid rgba(255,255,255,.08);
+    align-items:flex-start;
 
-    border-radius:14px;
+    gap:18px;
 
     padding:18px;
 
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:var(--card,#1f2937);
+
+    transition:.2s;
+
 }
 
-.suggestion-header{
+.suggestion-card:hover{
+
+    border-color:#3b82f6;
+
+    transform:translateY(-2px);
+
+}
+
+.suggestion-left{
+
+    flex:0 0 90px;
+
+}
+
+.suggestion-photo{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+    background:#111827;
+
+    padding:6px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.suggestion-photo:hover{
+
+    transform:scale(1.05);
+
+}
+
+.suggestion-right{
+
+    flex:1;
 
     display:flex;
 
-    justify-content:space-between;
+    flex-direction:column;
 
-    align-items:center;
-
-    margin-bottom:14px;
+    gap:8px;
 
 }
 
@@ -179,45 +227,175 @@ Card
 
     margin:0;
 
-    font-size:1.1rem;
+    font-size:1.2rem;
 
-}
-
-.suggestion-codes{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:8px;
-
-}
-
-.suggestion-code{
-
-    border:none;
-
-    background:#374151;
+    font-weight:700;
 
     color:#fff;
 
-    padding:8px 14px;
+}
 
-    border-radius:999px;
+.suggestion-line{
 
-    cursor:pointer;
+    margin:0;
 
-    transition:.2s;
+    color:#d1d5db;
 
-    font-size:.9rem;
+    font-size:.92rem;
+
+    line-height:1.45;
 
 }
 
-.suggestion-code:hover{
+.suggestion-line:nth-child(2){
 
-    background:#2563eb;
+    color:#9ca3af;
+
+    font-size:.85rem;
 
 }
+
+.suggestion-stock{
+
+    margin-top:6px;
+
+    margin-bottom:0;
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+.suggestion-compatibility{
+
+    margin:0;
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+}
+
+.suggestion-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:8px;
+
+}
+
+.suggestion-footer .button{
+
+    min-width:150px;
+
+}
+
+.suggestion-empty{
+
+    text-align:center;
+
+    padding:32px 20px;
+
+    color:#9ca3af;
+
+    font-size:1rem;
+
+}
+
+
+/*=========================================================
+Responsivo
+=========================================================*/
+
+@media (max-width:768px){
+
+    .suggestion-card{
+
+        gap:14px;
+
+        padding:14px;
+
+    }
+
+    .suggestion-left{
+
+        flex:0 0 72px;
+
+    }
+
+    .suggestion-photo{
+
+        width:72px;
+
+        height:72px;
+
+        padding:4px;
+
+    }
+
+    .suggestion-title{
+
+        font-size:1rem;
+
+    }
+
+    .suggestion-line{
+
+        font-size:.84rem;
+
+    }
+
+    .suggestion-stock,
+
+    .suggestion-compatibility{
+
+        font-size:.84rem;
+
+    }
+
+    .suggestion-footer{
+
+        justify-content:stretch;
+
+    }
+
+    .suggestion-footer .button{
+
+        width:100%;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .suggestion-card{
+
+        gap:22px;
+
+        padding:20px;
+
+    }
+
+    .suggestion-left{
+
+        flex:0 0 100px;
+
+    }
+
+    .suggestion-photo{
+
+        width:100px;
+
+        height:100px;
+
+    }
+
+}
+
 
 /*=========================================================
 Desktop

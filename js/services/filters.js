@@ -30,17 +30,7 @@ const getSpecies = () => {
 
     return [
 
-        {
 
-            title: "Todas",
-
-            options: [
-
-                "Todas"
-
-            ]
-
-        },
 
         ...Object.keys(grupos)
 
