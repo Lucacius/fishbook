@@ -25,12 +25,12 @@ window.FishBook.Pages = window.FishBook.Pages ?? {};
       window.Router.start();
       await window.Router.open("home");
 
-      console.info("FishBook v0.4.42 iniciado com sucesso.");
+      console.info("FishBook iniciado com sucesso.");
       console.info("Banco carregado.");
       window.Validator.report(validationErrors);
     } catch (error) {
       console.error(
-        "FishBook v0.4.42 encontrou uma falha inesperada na inicialização.",
+        "FishBook encontrou uma falha inesperada na inicialização.",
         error,
       );
     }

@@ -134,7 +134,7 @@ details.innerHTML = `
 
 stock.textContent =
 
-    `📦 ${quantidade} unidade(s)`;
+    `📦 ${quantidade} un.`;
 
     content.append(
       code,

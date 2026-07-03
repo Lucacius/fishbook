@@ -316,33 +316,7 @@ Informações
 
     }
 
-    const estoque =
-        document.createElement(
-
-            "p"
-
-        );
-
-    estoque.className =
-        "suggestion-stock";
-
-    estoque.textContent =
-
-        `📦 Estoque: ${
-
-            lure.estoque ??
-
-            0
-
-        } un.`;
-
-    right.append(
-
-        estoque
-
-    );
-
-    const compatibilidade =
+       const compatibilidade =
         document.createElement(
 
             "p"
@@ -354,7 +328,7 @@ Informações
 
     compatibilidade.textContent =
 
-        "⭐ Compatibilidade: " +
+        "✔️ Compatibilidade: " +
 
         getCompatibility(
 

@@ -153,6 +153,54 @@
 
 }
 
+
+/*=========================================================
+Button
+=========================================================*/
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#59c7b3;
+
+    color:#fff;
+
+    font-size:0.95rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.button:hover{
+
+    background:#46b39f;
+
+}
+
+.button:active{
+
+    transform:scale(.98);
+
+}
+
+
 /*=========================================================
 Bottom Navbar
 =========================================================*/
