@@ -123,6 +123,36 @@
   transform: scale(0.98);
 }
 
+.fb-modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.6);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
+}
+
+.fb-modal{
+
+    width:min(500px,92vw);
+
+    background:#1f2937;
+
+    border-radius:16px;
+
+    padding:24px;
+
+}
+
 /*=========================================================
 Bottom Navbar
 =========================================================*/
