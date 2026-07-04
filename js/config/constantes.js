@@ -53,7 +53,7 @@ window.FishBook.Config.Constantes = Object.freeze({
 
     ],
 
-    versao: "0.0.42",
+    versao: "0.0.43",
 
     nomeSistema: "FishBook"
 
