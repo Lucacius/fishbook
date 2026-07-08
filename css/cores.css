@@ -1,0 +1,321 @@
+  [
+    {
+    "id": "natural",
+    "nome": "Natural",
+    "grupo": "Natural",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 2,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "entardecer": 5,
+      "noite": 1
+    },
+
+    "resumo": "Imita com fidelidade peixes forrageiros e funciona melhor em águas claras.",
+
+    "dica": "Ideal quando os peixes estão seletivos e há boa transparência da água."
+  },
+
+  {
+    "id": "osso",
+    "nome": "Osso",
+    "grupo": "Clara",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 4,
+      "solForte": 3,
+      "chuva": 2,
+      "noite": 2
+    },
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 3,
+      "entardecer": 5,
+      "noite": 2
+    },
+
+    "resumo": "Excelente para superfície em baixa luminosidade.",
+
+    "dica": "Muito eficiente no amanhecer e no entardecer, quando cria contraste sem perder naturalidade."
+  },
+
+  {
+    "id": "branca",
+    "nome": "Branca",
+    "grupo": "Clara",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 4,
+      "solForte": 3,
+      "chuva": 3,
+      "noite": 2
+    },
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 3,
+      "entardecer": 5,
+      "noite": 2
+    },
+
+    "resumo": "Cor versátil, com excelente contraste em diversas situações.",
+
+    "dica": "Costuma funcionar muito bem para iscas de superfície e meia água."
+  },
+
+  {
+    "id": "preta",
+    "nome": "Preta",
+    "grupo": "Escura",
+
+    "agua": {
+      "limpa": 3,
+      "turvaLeve": 4,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 2,
+      "solForte": 1,
+      "chuva": 5,
+      "noite": 5
+    },
+
+    "horario": {
+      "amanhecer": 4,
+      "manha": 2,
+      "tarde": 1,
+      "entardecer": 5,
+      "noite": 5
+    },
+
+    "resumo": "Cria uma silhueta muito forte contra a luz.",
+
+    "dica": "Excelente em pescarias noturnas e em águas bastante escuras."
+  },
+
+  {
+    "id": "roxa",
+    "nome": "Roxa",
+    "grupo": "Escura",
+
+    "agua": {
+      "limpa": 3,
+      "turvaLeve": 4,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 3,
+      "solForte": 2,
+      "chuva": 5,
+      "noite": 5
+    },
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 3,
+      "tarde": 2,
+      "entardecer": 5,
+      "noite": 5
+    },
+
+    "resumo": "Excelente em águas escuras e períodos de baixa luminosidade.",
+
+    "dica": "Produz ótima silhueta e costuma provocar ataques por reação."
+  },
+
+  {
+    "id": "fire-tiger",
+    "nome": "Fire Tiger",
+    "grupo": "Alta Visibilidade",
+
+    "agua": {
+      "limpa": 2,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 4,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 3,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Excelente em águas turvas e dias ensolarados.",
+
+    "dica": "Seu contraste intenso facilita a localização da isca pelos predadores."
+  },
+
+  {
+    "id": "chartreuse",
+    "nome": "Chartreuse",
+    "grupo": "Alta Visibilidade",
+
+    "agua": {
+      "limpa": 3,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 4,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 3,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Uma das cores mais visíveis para águas com pouca transparência.",
+
+    "dica": "Muito eficiente quando a água apresenta coloração barrenta."
+  },
+
+  {
+    "id": "dourada",
+    "nome": "Dourada",
+    "grupo": "Metálica",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 3,
+      "turva": 2
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 2,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Reflete intensamente a luz, simulando escamas douradas.",
+
+    "dica": "Excelente em dias claros e locais onde pequenos peixes possuem brilho dourado."
+  },
+
+  {
+    "id": "prata",
+    "nome": "Prata",
+    "grupo": "Metálica",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 5,
+      "solForte": 4,
+      "chuva": 2,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "entardecer": 5,
+      "noite": 1
+    },
+
+    "resumo": "Imita perfeitamente peixes de escamas prateadas.",
+
+    "dica": "É uma das cores mais universais para águas claras."
+  },
+
+  {
+    "id": "transparente",
+    "nome": "Transparente",
+    "grupo": "Transparente",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 3,
+      "turva": 1
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 2,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Extremamente discreta, ideal para peixes desconfiados.",
+
+    "dica": "Apresenta melhor desempenho em águas cristalinas e alta pressão de pesca."
+  }
+  ]

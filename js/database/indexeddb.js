@@ -11,11 +11,13 @@ IndexedDB
 
 const DB_NAME = "FishBookDB";
 
-const DB_VERSION = 4;
+const DB_VERSION = 5.0;
 
 const STORES = [
 
     "iscas",
+
+    "cores",
 
     "estoque",
 

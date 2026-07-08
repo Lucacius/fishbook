@@ -620,6 +620,22 @@ const getMontagens = () =>
 
     .sort();
 
+    const getColors = () =>
+
+    get("cores");
+
+const getColor = id =>
+
+    get("cores")
+
+        .find(
+
+            color =>
+
+                color.id === id
+
+        );
+
 /*=========================================================
 API
 =========================================================*/
@@ -811,6 +827,10 @@ getLures,
 
 getLure,
 
+getColors,
+
+getColor,
+
 getSpecies,
 
 getCategories,
@@ -844,6 +864,13 @@ nextStockId,
         return getLures();
 
     },
+
+    cores(){
+
+        return getColors();
+
+    },
+
 
     categorias(){
 

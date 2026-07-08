@@ -47,6 +47,14 @@ const items = [
 
     },
 
+ {
+
+        id: "cores",
+
+        icon: "🎨"
+
+    },
+
     {
 
         id: "diario",

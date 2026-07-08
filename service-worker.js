@@ -12,7 +12,7 @@ Versão 2.0
 VERSÃO DO CACHE
 =========================================================*/
 
-const CACHE_NAME = "fishbook-cache-2";
+const CACHE_NAME = "fishbook-cache-3";
 
 /*=========================================================
 ARQUIVOS DA APLICAÇÃO
@@ -71,6 +71,7 @@ const APP_FILES = [
 
     "./database/manifest.json",
     "./database/iscas.json",
+    "./database/cores.json",
     "./database/estoque.json",
     "./database/categorias.json",
     "./database/especies.json",
@@ -91,6 +92,7 @@ const NETWORK_FIRST = [
 
     "/database/manifest.json",
     "/database/iscas.json",
+    "/database/cores.json",
     "/database/estoque.json",
     "/database/categorias.json",
     "/database/especies.json"

@@ -19,6 +19,11 @@ const DASHBOARD_MODULES = Object.freeze([
     route: "catalogo",
   },
   {
+    icon: "🎨",
+    title: "Guia de Cores",
+    route: "cores",
+  },
+  {
     icon: "🐟",
     title: "Espécies",
     route: "especies",
@@ -93,7 +98,7 @@ brand.append(
 );
     const subtitle = document.createElement("p");
     subtitle.className = "dashboard-subtitle";
-    subtitle.textContent = "Catálogo Inteligente das Iscas Artificiais do Lucas";
+    subtitle.textContent = "Catálogo Inteligente das Iscas do Lucas";
 
     header.append(brand, subtitle);
     return header;
