@@ -41,5 +41,9 @@
       "id": "transparente",
       "nome": "Transparente"
     }
+     {
+      "id": "chartreuse",
+      "nome": "Chartreuse"
+    }
   ]
 }
