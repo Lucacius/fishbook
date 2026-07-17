@@ -12,7 +12,7 @@ Versão 2.0
 VERSÃO DO CACHE
 =========================================================*/
 
-const CACHE_NAME = "fishbook-cache-3";
+const CACHE_NAME = "fishbook-cache-4";
 
 /*=========================================================
 ARQUIVOS DA APLICAÇÃO
