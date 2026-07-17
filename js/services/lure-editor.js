@@ -8,13 +8,13 @@ const nextId = (categoria, subcategoria) => {
         Database.getCode(
             "categorias",
             categoria
-        )?.codigo;
+        );
 
     const subcategoriaCode =
         Database.getCode(
             "subcategorias",
             subcategoria
-        )?.codigo;
+        );
 
     if (!categoriaCode)
         throw new Error(
