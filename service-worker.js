@@ -15,14 +15,16 @@ VERSÃO DO CACHE
 const CACHE_NAME = "fishbook-cache-4";
 
 /*=========================================================
-ARQUIVOS DA APLICAÇÃO
+ARQUIVOS ESSENCIAIS
 =========================================================*/
 
-const APP_FILES = [
+const CORE_FILES = [
 
     "./",
     "./index.html",
     "./manifest.webmanifest",
+
+    /* CSS */
 
     "./css/reset.css",
     "./css/theme.css",
@@ -35,16 +37,22 @@ const APP_FILES = [
     "./css/escolher.css",
     "./css/responsive.css",
 
+    /* Núcleo */
+
     "./js/app.js",
     "./js/database.js",
     "./js/router.js",
     "./js/utils.js",
     "./js/validator.js",
 
+    /* Configurações */
+
     "./js/config/constantes.js",
     "./js/config/pesos.js",
     "./js/config/dicionario.js",
     "./js/config/filtros.js",
+
+    /* Componentes */
 
     "./js/components/index.js",
     "./js/components/button.js",
@@ -52,35 +60,17 @@ const APP_FILES = [
     "./js/components/badge.js",
     "./js/components/chip.js",
     "./js/components/section.js",
-"./js/components/navbar.js",
+    "./js/components/navbar.js",
     "./js/components/filter-group.js",
     "./js/components/suggestion-card.js",
     "./js/components/lure-card.js",
 
-    "./js/services/index.js",
-    "./js/services/catalogo.service.js",
-    "./js/services/escolher.service.js",
-
-    "./js/pages/home.js",
-    "./js/pages/catalogo.js",
-    "./js/pages/ficha.js",
-    "./js/pages/escolher.js",
-"./js/pages/estoque.js",
-"./js/pages/locais.js",
-"./js/pages/diario.js",
-
-    "./database/manifest.json",
-    "./database/iscas.json",
-    "./database/cores.json",
-    "./database/estoque.json",
-    "./database/categorias.json",
-    "./database/especies.json",
+    /* Ícones */
 
     "./assets/icons/favicon.ico",
     "./assets/icons/apple-touch-icon.png",
     "./assets/icons/icon-192.png",
-    "./assets/icons/icon-512.png",
-"./assets/iscas/semfoto.png",
+    "./assets/icons/icon-512.png"
 
 ];
 
@@ -127,23 +117,7 @@ self.addEventListener("install", event => {
 
             const cache = await caches.open(CACHE_NAME);
 
-            for (const file of APP_FILES) {
-
-                try {
-
-                    await cache.add(file);
-
-                    console.log("[SW] Cache:", file);
-
-                }
-
-                catch (err) {
-
-                    console.warn("[SW] Não foi possível cachear:", file);
-
-                }
-
-            }
+            await cache.addAll(CORE_FILES);
 
             await self.skipWaiting();
 
