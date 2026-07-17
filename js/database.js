@@ -21,6 +21,23 @@ const data =
 const loadErrors =
     [];
 
+    const COLLECTIONS = [
+
+    "iscas",
+    "categorias",
+    "caixas",
+    "estoque",
+    "especies",
+    "cores"
+
+];
+
+const SETTINGS = [
+
+    "codigos"
+
+];
+
 let loaded =
     false;
 
@@ -806,12 +823,33 @@ const Database = {
 
 for (const file of manifest.files) {
 
+    const name = normalizeName(file);
+
     try {
 
-        await syncStore(
+        if (SETTINGS.includes(name)) {
 
-            normalizeName(file)
+            data.set(
+                name,
+                await readJson(file)
+            );
 
+            continue;
+
+        }
+
+        if (COLLECTIONS.includes(name)) {
+
+            await syncStore(name);
+
+            continue;
+
+        }
+
+        throw createError(
+            "unknown-file",
+            file,
+            `O arquivo "${file}" não pertence a nenhuma categoria do banco.`
         );
 
     }
@@ -819,32 +857,19 @@ for (const file of manifest.files) {
     catch (error) {
 
         registerLoadError(
-
             error,
-
             file
-
         );
 
     }
 
-}
+}   // ← ESTA CHAVE ESTÁ FALTANDO NO SEU ARQUIVO
 
-        loaded=true;
+loaded = true;
 
-        return this.status();
+return this.status();
 
-    },
-
-    get(name){
-
-        return data.get(
-
-            normalizeName(name)
-
-        );
-
-    },
+},
 
 collection,
 
