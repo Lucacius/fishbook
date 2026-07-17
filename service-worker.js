@@ -121,19 +121,33 @@ INSTALL
 
 self.addEventListener("install", event => {
 
-    self.skipWaiting();
-
     event.waitUntil(
 
-        caches
+        (async () => {
 
-            .open(CACHE_NAME)
+            const cache = await caches.open(CACHE_NAME);
 
-            .then(cache =>
+            for (const file of APP_FILES) {
 
-                cache.addAll(APP_FILES)
+                try {
 
-            )
+                    await cache.add(file);
+
+                    console.log("[SW] Cache:", file);
+
+                }
+
+                catch (err) {
+
+                    console.warn("[SW] Não foi possível cachear:", file);
+
+                }
+
+            }
+
+            await self.skipWaiting();
+
+        })()
 
     );
 
@@ -149,24 +163,21 @@ self.addEventListener("activate", event => {
 
         (async () => {
 
-            const keys =
-                await caches.keys();
+            const keys = await caches.keys();
 
             await Promise.all(
 
-                keys
+                keys.map(key => {
 
-                    .filter(key =>
+                    if (key !== CACHE_NAME) {
 
-                        key !== CACHE_NAME
+                        console.log("[SW] Removendo cache:", key);
 
-                    )
+                        return caches.delete(key);
 
-                    .map(key =>
+                    }
 
-                        caches.delete(key)
-
-                    )
+                })
 
             );
 
@@ -224,7 +235,7 @@ self.addEventListener("fetch", event => {
 
                         await caches.open(CACHE_NAME);
 
-                    cache.put(
+                    await cache.put(
 
                         event.request,
 
