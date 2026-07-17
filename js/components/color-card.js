@@ -25,7 +25,7 @@ const create = ({
         document.createElement("article");
 
     card.className =
-        "lure-card";
+        "color-card";
 
     if(typeof onClick === "function"){
 
@@ -75,13 +75,16 @@ const create = ({
         document.createElement("img");
 
     image.className =
-        "lure-card__image";
+        "color-card-image";
+
+    image.src =
+        `assets/cores/${color.id}.png`;
 
     image.alt =
         color.nome;
 
-    image.src =
-        `assets/cores/${color.id}.png`;
+    image.loading =
+        "lazy";
 
     image.onerror = ()=>{
 
@@ -100,69 +103,42 @@ const create = ({
         document.createElement("div");
 
     content.className =
-        "lure-card__content";
-
-    const code =
-        document.createElement("span");
-
-    code.className =
-        "lure-card__code";
-
-    code.textContent =
-        color.id;
-
-    const title =
-        document.createElement("h2");
-
-    title.className =
-        "lure-card__title";
-
-    title.textContent =
-        color.nome;
+        "color-card-content";
 
     const group =
         document.createElement("div");
 
     group.className =
-        "ficha-subtitulo";
+        "color-card-group";
 
     group.textContent =
         color.grupo;
 
-    const resumo =
+    const title =
+        document.createElement("h2");
+
+    title.className =
+        "color-card-title";
+
+    title.textContent =
+        color.nome;
+
+    const summary =
         document.createElement("p");
 
-    resumo.textContent =
+    summary.className =
+        "color-card-summary";
+
+    summary.textContent =
         color.resumo;
-
-    const button =
-        document.createElement("button");
-
-    button.className =
-        "button";
-
-    button.textContent =
-        "Abrir ficha";
-
-    button.onclick = event=>{
-
-        event.stopPropagation();
-
-        onClick?.();
-
-    };
 
     content.append(
 
-        code,
+        group,
 
         title,
 
-        group,
-
-        resumo,
-
-        button
+        summary
 
     );
 

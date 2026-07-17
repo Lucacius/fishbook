@@ -5,6 +5,7 @@
     "estoque.json",
     "cores.json",
     "especies.json",
-    "caixas.json"
+    "caixas.json",
+    "codigos.json"
   ]
 }

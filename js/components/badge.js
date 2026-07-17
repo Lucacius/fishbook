@@ -5,28 +5,34 @@
 (() => {
     "use strict";
 
-    const MAP = {
-        5: {
-            text: "Excelente",
-            className: "badge-5"
-        },
-        4: {
-            text: "Muito boa",
-            className: "badge-4"
-        },
-        3: {
-            text: "Boa",
-            className: "badge-3"
-        },
-        2: {
-            text: "Regular",
-            className: "badge-2"
-        },
-        1: {
-            text: "Baixa",
-            className: "badge-1"
-        }
-    };
+  const MAP = {
+
+    5:{
+        text:"Excelente",
+        className:"badge-5"
+    },
+
+    4:{
+        text:"Muito Boa",
+        className:"badge-4"
+    },
+
+    3:{
+        text:"Boa",
+        className:"badge-3"
+    },
+
+    2:{
+        text:"Regular",
+        className:"badge-2"
+    },
+
+    1:{
+        text:"Ruim",
+        className:"badge-1"
+    }
+
+};
 
     const create = ({ value }) => {
 

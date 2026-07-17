@@ -22,6 +22,10 @@ const loadColor = id => {
         window.Database
             .getColor(id);
 
+                console.log("ID recebido:", id);
+
+    console.log("Cor encontrada:", color);
+
 };
 
 /*=========================================================
@@ -42,37 +46,33 @@ const createStars = value => {
 
 };
 
-const createItem = (
-
-    label,
-
-    value
-
-) => {
+const renderItem = (titulo, nota) => {
 
     const row =
         document.createElement("div");
 
     row.className =
-        "ficha-item";
+        "cor-rating-row";
 
-    const left =
+    const label =
         document.createElement("span");
 
-    left.textContent =
-        label;
+    label.className =
+        "cor-rating-label";
 
-    const right =
-        document.createElement("strong");
+    label.textContent =
+        titulo;
 
-    right.textContent =
-        createStars(value);
+    row.append(label);
 
     row.append(
 
-        left,
-
-        right
+        window.FishBook
+            .Components
+            .Badge
+            .create({
+                value: nota
+            })
 
     );
 
@@ -219,7 +219,7 @@ const renderWater = () => {
 
     card.append(
 
-        createItem(
+        renderItem(
 
             "Limpa",
 
@@ -227,7 +227,7 @@ const renderWater = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Turva Leve",
 
@@ -235,7 +235,7 @@ const renderWater = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Turva",
 
@@ -271,7 +271,7 @@ const renderWeather = () => {
 
     card.append(
 
-        createItem(
+        renderItem(
 
             "Nublado",
 
@@ -279,7 +279,7 @@ const renderWeather = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Sol",
 
@@ -287,7 +287,7 @@ const renderWeather = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Sol Forte",
 
@@ -295,7 +295,7 @@ const renderWeather = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Chuva",
 
@@ -303,7 +303,7 @@ const renderWeather = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Noite",
 
@@ -339,7 +339,7 @@ const renderSchedule = () => {
 
     card.append(
 
-        createItem(
+        renderItem(
 
             "Amanhecer",
 
@@ -347,7 +347,7 @@ const renderSchedule = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Manhã",
 
@@ -355,7 +355,7 @@ const renderSchedule = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Tarde",
 
@@ -363,7 +363,7 @@ const renderSchedule = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Entardecer",
 
@@ -371,7 +371,7 @@ const renderSchedule = () => {
 
         ),
 
-        createItem(
+        renderItem(
 
             "Noite",
 

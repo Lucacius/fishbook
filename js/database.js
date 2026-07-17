@@ -636,6 +636,25 @@ const getColor = id =>
 
         );
 
+const getCodes = () =>
+
+    data.get("codigos");
+
+const getCode = (grupo, nome) => {
+
+    const codes = getCodes();
+
+    return codes?.[grupo]?.[nome]?.codigo ?? null;
+
+};
+
+const getCodeInfo = (grupo, nome) => {
+
+    const codes = getCodes();
+
+    return codes?.[grupo]?.[nome] ?? null;
+
+};
 /*=========================================================
 API
 =========================================================*/
@@ -672,17 +691,25 @@ const syncStore = async name => {
 
         await readJson(`${name}.json`);
 
+    const lista =
+
+        Array.isArray(json)
+
+            ? json
+
+            : (json[name] ?? []);
+
     data.set(
 
         name,
 
-        json
+        {
+
+            [name]: lista
+
+        }
 
     );
-
-    const lista =
-
-        json[name] ?? [];
 
     for (const item of lista) {
 
@@ -844,6 +871,12 @@ getSubcategories,
 getMontagens,
 
 getDynamicFilters,
+
+getCodes,
+
+getCode,
+
+getCodeInfo,
 
 getBoxes,
 

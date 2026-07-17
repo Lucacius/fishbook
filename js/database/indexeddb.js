@@ -11,7 +11,7 @@ IndexedDB
 
 const DB_NAME = "FishBookDB";
 
-const DB_VERSION = 5.0;
+const DB_VERSION = 5.12;
 
 const STORES = [
 
@@ -27,7 +27,9 @@ const STORES = [
 
     "configuracoes",
 
-    "caixas"
+    "caixas",
+
+    "codigos"
 
 
 ];

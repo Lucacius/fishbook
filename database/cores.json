@@ -1,49 +1,321 @@
-{
-  "versao": "1.0",
-  "cores": [
-    {
-      "id": "natural",
-      "nome": "Natural"
+[
+  {
+    "id": "natural",
+    "nome": "Natural",
+    "grupo": "Natural",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
     },
-    {
-      "id": "osso",
-      "nome": "Osso"
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 2,
+      "noite": 1
     },
-    {
-      "id": "branca",
-      "nome": "Branca"
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "entardecer": 5,
+      "noite": 1
     },
-    {
-      "id": "verde-limao",
-      "nome": "Verde-limão"
+
+    "resumo": "Imita com fidelidade peixes forrageiros e funciona melhor em águas claras.",
+
+    "dica": "Ideal quando os peixes estão seletivos e há boa transparência da água."
+  },
+
+  {
+    "id": "osso",
+    "nome": "Osso",
+    "grupo": "Clara",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
     },
-    {
-      "id": "fire-tiger",
-      "nome": "Fire Tiger"
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 4,
+      "solForte": 3,
+      "chuva": 2,
+      "noite": 2
     },
-    {
-      "id": "prata",
-      "nome": "Prata"
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 3,
+      "entardecer": 5,
+      "noite": 2
     },
-    {
-      "id": "dourada",
-      "nome": "Dourada"
+
+    "resumo": "Excelente para iscas de superfície em condições de baixa luminosidade.",
+
+    "dica": "Produz ótimo contraste no amanhecer e no entardecer sem perder naturalidade."
+  },
+
+  {
+    "id": "branca",
+    "nome": "Branca",
+    "grupo": "Clara",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 3
     },
-    {
-      "id": "preta",
-      "nome": "Preta"
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 4,
+      "solForte": 3,
+      "chuva": 3,
+      "noite": 2
     },
-    {
-      "id": "rosa",
-      "nome": "Rosa"
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 4,
+      "tarde": 3,
+      "entardecer": 5,
+      "noite": 2
     },
+
+    "resumo": "Cor extremamente versátil para diferentes ambientes e espécies.",
+
+    "dica": "Excelente opção quando houver dúvida sobre qual cor utilizar."
+  },
+
+  {
+    "id": "preta",
+    "nome": "Preta",
+    "grupo": "Escura",
+
+    "agua": {
+      "limpa": 3,
+      "turvaLeve": 4,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 2,
+      "solForte": 1,
+      "chuva": 5,
+      "noite": 5
+    },
+
+    "horario": {
+      "amanhecer": 4,
+      "manha": 2,
+      "tarde": 1,
+      "entardecer": 5,
+      "noite": 5
+    },
+
+    "resumo": "Forma uma silhueta intensa, facilitando ataques por contraste.",
+
+    "dica": "Uma das melhores escolhas para pescarias noturnas ou em águas muito escuras."
+  },
+
     {
-      "id": "transparente",
-      "nome": "Transparente"
-    }
-     {
-      "id": "chartreuse",
-      "nome": "Chartreuse"
-    }
-  ]
-}
+    "id": "roxa",
+    "nome": "Roxa",
+    "grupo": "Escura",
+
+    "agua": {
+      "limpa": 3,
+      "turvaLeve": 4,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 3,
+      "solForte": 2,
+      "chuva": 5,
+      "noite": 5
+    },
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 3,
+      "tarde": 2,
+      "entardecer": 5,
+      "noite": 5
+    },
+
+    "resumo": "Excelente em águas escuras e em períodos de baixa luminosidade.",
+
+    "dica": "Muito eficiente para provocar ataques por reação em predadores."
+  },
+
+  {
+    "id": "fire-tiger",
+    "nome": "Fire Tiger",
+    "grupo": "Alta Visibilidade",
+
+    "agua": {
+      "limpa": 2,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 4,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 3,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Altíssimo contraste para águas turvas e dias ensolarados.",
+
+    "dica": "Uma das cores mais eficientes para provocar ataques por impulso."
+  },
+
+  {
+    "id": "chartreuse",
+    "nome": "Chartreuse",
+    "grupo": "Alta Visibilidade",
+
+    "agua": {
+      "limpa": 3,
+      "turvaLeve": 5,
+      "turva": 5
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 4,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 3,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Extremamente visível em águas barrentas e ambientes de pouca transparência.",
+
+    "dica": "Ideal quando a visibilidade da água estiver comprometida."
+  },
+
+  {
+    "id": "dourada",
+    "nome": "Dourada",
+    "grupo": "Metálica",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 3,
+      "turva": 2
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 2,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Reflexos dourados simulam pequenos peixes de escamas metálicas.",
+
+    "dica": "Excelente para dias claros e águas transparentes."
+  },
+
+    {
+    "id": "prata",
+    "nome": "Prata",
+    "grupo": "Metálica",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 4,
+      "turva": 2
+    },
+
+    "tempo": {
+      "nublado": 5,
+      "sol": 5,
+      "solForte": 4,
+      "chuva": 2,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 5,
+      "manha": 5,
+      "tarde": 4,
+      "entardecer": 5,
+      "noite": 1
+    },
+
+    "resumo": "Imita peixes de escamas prateadas com excelente reflexão da luz.",
+
+    "dica": "Uma das cores mais versáteis para águas claras e predadores visuais."
+  },
+
+  {
+    "id": "transparente",
+    "nome": "Transparente",
+    "grupo": "Transparente",
+
+    "agua": {
+      "limpa": 5,
+      "turvaLeve": 3,
+      "turva": 1
+    },
+
+    "tempo": {
+      "nublado": 4,
+      "sol": 5,
+      "solForte": 5,
+      "chuva": 2,
+      "noite": 1
+    },
+
+    "horario": {
+      "amanhecer": 4,
+      "manha": 5,
+      "tarde": 5,
+      "entardecer": 4,
+      "noite": 1
+    },
+
+    "resumo": "Discreta e eficiente quando os peixes estão muito pressionados.",
+
+    "dica": "Excelente escolha para água cristalina e dias de muito sol."
+  }
+]

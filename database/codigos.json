@@ -1,0 +1,43 @@
+{
+    "prefixos": {
+        "isca": "ISC"
+    },
+
+    "categorias": {
+        "Ultralight": {
+            "codigo": "U",
+            "descricao": "Equipamentos Ultralight"
+        },
+        "Power": {
+            "codigo": "P",
+            "descricao": "Equipamentos Power"
+        },
+        "Natural": {
+            "codigo": "N",
+            "descricao": "Equipamentos Natural"
+        }
+    },
+
+    "subcategorias": {
+        "Popper":        { "codigo": "POP" },
+        "Zara":          { "codigo": "ZAR" },
+        "Stick":         { "codigo": "STK" },
+        "Minnow":        { "codigo": "MIN" },
+        "Crank":         { "codigo": "CRK" },
+        "Spinner":       { "codigo": "SPN" },
+        "Spinnerbait":   { "codigo": "SPB" },
+        "Jig":           { "codigo": "JIG" },
+        "Soft Bait":     { "codigo": "SFT" },
+        "Colher":        { "codigo": "COL" },
+        "Frog":          { "codigo": "FRG" },
+        "Blade":         { "codigo": "BLD" },
+        "Lipless":       { "codigo": "LPL" },
+        "Vib":           { "codigo": "VIB" },
+        "Metal Jig":     { "codigo": "MTJ" },
+        "Plug":          { "codigo": "PLG" },
+        "Natural":       { "codigo": "NAT" },
+        "Acessório":     { "codigo": "ACS" }
+
+
+    }
+}
