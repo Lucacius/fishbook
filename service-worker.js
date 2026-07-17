@@ -119,23 +119,27 @@ const isNetworkFirst = request => {
 INSTALL
 =========================================================*/
 
-self.addEventListener("install", event => {
+const cache = await caches.open(CACHE_NAME);
 
-    event.waitUntil(
+for (const file of APP_FILES) {
 
-        (async () => {
+    try {
 
-            const cache = await caches.open(CACHE_NAME);
+        await cache.add(file);
 
-            await cache.addAll(CORE_FILES);
+        console.log("[SW] OK:", file);
 
-            await self.skipWaiting();
+    }
 
-        })()
+    catch (error) {
 
-    );
+        console.error("[SW]", file, error);
 
-});
+    }
+
+}
+
+await self.skipWaiting();
 
 /*=========================================================
 ACTIVATE
